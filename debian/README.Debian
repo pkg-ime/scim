@@ -22,11 +22,11 @@ conversion engine):
  (prime or canna) and scim-uim                (for alternative Japanese)
 
 Other packages may be installed are:
- scim-table-zh, scim-table-ko, scim-table-ja, scim-tables-additional
+ scim-tables-zh, scim-tables-ko, scim-tables-ja, scim-tables-additional
 These are simple conversion table based input methods and less
 intelligent ones.  As far as I can tell, not very useful for Japanese.
 But for Arabic and Indic languages, simple table based conversion with
-scim-tables-additional may be still quite useful.  Also, scim-table-zh
+scim-tables-additional may be still quite useful.  Also, scim-tables-zh
 provides the popular WuBi input method.
 
 In future, you may find some intelligent IMEngines:

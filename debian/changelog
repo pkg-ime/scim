@@ -1,6 +1,6 @@
 scim (1.0.2-2) unstable; urgency=low
 
-  * debian/README.Debian:  Fix typo.  [alee]
+  * debian/README.Debian:  Fix typo.  [alee, minghua]
   * debian/control:  Change the upstream website.  [minghua]
   * debian/copyright:  Change the upstream download repository to
     SourceForge.  [minghua]
