@@ -9,8 +9,8 @@ Standards-Version: 3.6.1
 Package: scim
 Architecture: any
 Depends: ${shlibs:Depends}
-Recommends: m17n-env, scim-gtk2-immodule (>= 1.0.1), scim-server-socket (>= 1.0.1), scim-frontend-socket (>= 1.0.1)
-Suggests: scim-config-gconf (>= 1.0.1), scim-uim, scim-chinese, scim-hangul, scim-m17n, scim-tables-additional, scim-tables-ja, scim-tables-ko, scim-tables-zh
+Recommends: m17n-env, scim-gtk2-immodule (>= 1.0.1)
+Suggests: scim-uim, scim-chinese, scim-hangul, scim-m17n, scim-tables-additional, scim-tables-ja, scim-tables-ko, scim-tables-zh
 Conflicts: scim-suite, scim-config-simple, scim-frontend-x11, scim-server-rawcode, scim-server-table, libscim-1.0-0 (<< 1.0.0), libscim-gtkutils-1.0-0 (<< 1.0.0), scim-tables-zh (<< 0.4.2), scim-tables-ja (<< 0.4.2), scim-tables-ko (<< 0.4.2), scim-tables-additional (<< 0.4.2), scim-chinese (<< 0.4.2)
 Replaces: scim-suite, scim-config-simple, scim-frontend-x11, scim-server-rawcode, scim-server-table, libscim-1.0-0 (<< 1.0.0), libscim-gtkutils-1.0-0 (<< 1.0.0)
 Description: Smart Common Input Method platform
@@ -99,7 +99,7 @@ Description: Socket IM engine module for SCIM
 
 Package: scim-gtk2-immodule
 Architecture: any
-Depends: ${shlibs:Depends}, scim-server-socket (>= 1.0.1)
+Depends: ${shlibs:Depends}, scim-server-socket (>= 1.0.1), scim-frontend-socket (>= 1.0.1), scim-config-socket (>= 1.0.1)
 Description: GTK2 IMModule with SCIM as backend
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .

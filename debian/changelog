@@ -1,8 +1,14 @@
 scim (1.0.1-4) unstable; urgency=low
 
-  * Update README.Debian
+  * Update README.Debian.  [osamu]
+  * debian/control:  Make scim-gtk2-immodule depend on scim-frontend-socket
+    and scim-config-socket.  This prevents IM engine loading each time scim
+    gtk module is invoked (which happens very often if GTK_IM_MODULE=scim).
+    (Closes: #285623)  [minghua]
+  * debian/watch:  Switch to Sourceforge repository since SCIM isn't hosted
+    on freedesktop.org anymore.  [minghua]
 
- -- Osamu Aoki <osamu@debian.org>  
+ -- Ming Hua <minghua@rice.edu>  Tue, 21 Dec 2004 20:36:10 -0600
 
 scim (1.0.1-3) unstable; urgency=high
 
