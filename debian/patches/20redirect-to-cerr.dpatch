@@ -1,0 +1,83 @@
+#! /bin/sh -e
+## 20redirect-to-cerr.dpatch by "Aaron M. Ucko" <ucko@debian.org>
+##   Fix Bug#280374: scim: spews to standard output
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Change the gtk immodule installation directory from
+## DP: /usr/lib/gtk-2.0/immodules/ to /usr/lib/gtk-2.0/2.4.0/immodules/.
+## DP: This is just a workaround for the problem that
+## DP: /usr/sbin/update-gtk-immodules used by GTK+ packages only looks
+## DP: for the specific versioned directory (so that 2.2.x and 2.4.x can
+## DP: coexist, probably).  I can use /usr/bin/gtk-query-immodules-2.0
+## DP: instead, but that completely rewrite /etc/gtk-2.0/gtk.immodules,
+## DP: and more importantly, it won't survive libgtk2.0-0 package
+## DP: upgrades.  After all, this patch has been working well.  Let's
+## DP: worry about compatibility with GTK+ 2.6.x later, at least not for
+## DP: sarge.
+
+if [ $# -lt 1 ]; then
+    echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch} ${2:+-d $2}"
+
+case "$1" in
+    -patch) patch -p1 ${patch_opts} < $0;;
+    -unpatch) patch -R -p1 ${patch_opts} < $0;;
+    *)
+        echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+        exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+diff -rNu scim-1.0.1.orig/src/scim_backend.cpp scim-1.0.1/src/scim_backend.cpp
+--- scim-1.0.1.orig/src/scim_backend.cpp
++++ scim-1.0.1/src/scim_backend.cpp
+@@ -773,14 +773,14 @@
+ 
+     //load IMEngine modules
+     for (size_t i = 0; i < modules.size (); ++i) {
+-        std::cout << "Loading IMEngine module: " << modules [i] << " ...\n";
++        std::cerr << "Loading IMEngine module: " << modules [i] << " ...\n";
+ 
+         module_factories_count = 0;
+ 
+         if (m_impl->m_engine_modules [i].load (modules [i], config) &&
+             m_impl->m_engine_modules [i].valid ()) {
+             for (size_t j=0; j < m_impl->m_engine_modules [i].number_of_factories (); ++j) {
+-                std::cout << "    Loading IMEngine Factory " << j << " ... ";
++                std::cerr << "    Loading IMEngine Factory " << j << " ... ";
+ 
+                 // Try to load a IMEngine Factory.
+                 try {
+@@ -799,19 +799,19 @@
+ 
+                         all_factories_count ++;
+                         module_factories_count ++;
+-                        std::cout << ": OK\n";
++                        std::cerr << ": OK\n";
+                     } else {
+-                        std::cout << ": Disabled\n";
++                        std::cerr << ": Disabled\n";
+                         factory.reset ();
+                     }
+                 } else {
+-                    std::cout << ": Failed\n";
++                    std::cerr << ": Failed\n";
+                 }
+             }
+             if (module_factories_count) {
+-                std::cout << modules [i] << " IMEngine module is successfully loaded.\n";
++                std::cerr << modules [i] << " IMEngine module is successfully loaded.\n";
+             } else {
+-                std::cout << "No Factory loaded from " << modules [i] << " IMEngine module!\n";
++                std::cerr << "No Factory loaded from " << modules [i] << " IMEngine module!\n";
+                 m_impl->m_engine_modules [i].unload ();
+             }
+         } else {
+
+

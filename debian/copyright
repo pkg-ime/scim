@@ -1,0 +1,33 @@
+This package was debianized by Anthony Fok <foka@debian.org> on
+Sat,  5 Apr 2003 23:38:30 +0800.  The current package maintainer is
+Ming Hua <minghua@rice.edu>.
+
+Upstream Author:  James Su <suzhe@tsinghua.org.cn>
+
+Home Page:  http://scim.freedesktop.org/
+
+The package was downloaded from http://freedesktop.org/~suzhe/sources/
+
+Copyright:
+
+    Smart Common Input Method
+
+    Copyright 2002-2004 James Su <suzhe@tsinghua.org.cn>
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307,
+    USA
+
+On Debian systems, the complete text of the GNU Lesser General
+Public License can be found in `/usr/share/common-licenses/LGPL'.

@@ -1,0 +1,97 @@
+=================================
+Brief User's Guide for SCIM 1.0.1
+=================================
+
+Install following basic packages as starter:
+ scim, scim-frontend-socket, scim-server-socket, scim-config-gconf,
+ scim-gtk2-immodule
+
+Install following packages for each needs of IMEngine (input method
+conversion engine):
+ scim-chinese                      (for Chinese, tightly integrated)
+ scim-hangul                       (for Korean, tightly integrated)
+ scim-m17n and libm17n-0  (most languages: Arabic, Thai, Greek, ...)
+ anthy and (scim-m17n or scim-uim) (for Japanese)
+ (prime or canna) and scim-uim     (for alternative Japanese)
+
+Other packages may be installed are:
+ scim-table-zh, scim-table-ko, scim-table-ja, scim-tables-additional
+These are simple conversion table based input methods and less 
+inteligent ones.  As far as I can tell, not very useful for Japanese.
+
+SCIM can be automatically started during the X start up.  This
+configuration can be easily done by the helper package m17n-env.  All
+you have to do is to install m17n-env package and then to run
+set-m17n-env command from the root and your user shell account while
+choosing scim as your preferred IM from the menu choice.  (This is just
+a helper package focused on mostly Gnome/Gtk+2 environment.)
+
+Alternatively, you can do this manually.  In order to provide the SCIM
+input method for the traditional X programs such as xterm, start SCIM
+before running such programs:
+ $ scim -d
+ $ XMODIFIERS="@im=SCIM"; export XMODIFIERS
+
+Gtk+2 programs can select their input method by right clicking input
+field.  If you chose XIM in this right clicked selections, then above
+initialization should be sufficient for SCIM to provide input method.
+
+Alternatively, Gtk+2 programs can directly obtain their input from SCIM
+through GTK IMModule by selecting SCIM in the right clicked selections
+when scim-gtk2-immodule package is installed.  In order to make this as
+the default behavior, set the environment variable GTK_IM_MODULE in X
+session as:
+ $ GTK_IM_MODULE="scim"; export GTK_IM_MODULE
+
+There is also a separate qt(kde) module for scim, but it's not packaged
+(yet).
+
+SCIM supports any locales which are supported by IMEngines directly.  
+Any UTF-8 locales can be supported by modifying ~/.scim/config:
+
+After first run of SCIM, ~/.scim/config contains:
+    /SupportedUnicodeLocales = en_US.UTF-8
+To add ja_JP.UTF-8, modify this to:
+    /SupportedUnicodeLocales = en_US.UTF-8,ja_JP.UTF-8
+
+Alternatively, /etc/scim/global may be set this globally when you have
+root access.
+
+If ~/.scim/config is not existent, run ``scim'' from terminal, then use
+Ctrl-C to abort it, this configure file should be created for the user.
+
+Then run any application that support XIM (still using the same terminal
+with the environment set):
+    $ gedit
+Now press Ctrl-Space should switch input from English and Japanese.  If
+you have a notification area on the panel, there would also be an icon
+there indicating the status of scim.
+
+Although you can set system wide environment variables such as LANG from
+/etc/environment, I would not recommend to set it to any CJK (Chinese,
+Japanese, Korean) locales there since normal Linux terminal will have
+trouble with it.  Leave console locales as default ("C") or something
+like "en_US.ISO-8859-1".  If you want to use UTF-8 locales in X use GDM
+(or KDM) which run X start up script while using ~/.dmrc to set X locale
+and session type (Gnome, KDE, Xfce, ...).  Custom X start up script can
+be placed in /etc/X11/Xsession.d/ .
+
+If you are wondering why you can not disable SCIM by just removing start
+up script like old XIM input methods, the reason is that SCIM is also
+started as Gtk+2 immodule for Mozilla and other Gtk+2 programs.  You
+should remove scim-gtk2-immodule package to disable this behavior.
+
+----------------
+More information
+----------------
+
+The upstream website is at http://scim.freedesktop.org/ .
+
+The details about how to start scim correctly are based on a mail from
+the upstream author James Su, you can look at it if interested:
+    http://freedesktop.org/pipermail/scim/2004-June/000221.html
+    http://freedesktop.org/pipermail/scim/2004-October/001082.html
+
+-- Ming Hua <minghua@rice.edu>  Thu, 24 Sep 2004 12:26:29 -0500
+-- Osamu Aoki <osamu@debian.org>  Sun, 28 Nov 2004 16:50:30 +0100
+

@@ -1,0 +1,8 @@
+# watch control file for scim
+# see uscan(1)
+
+# format version number
+version=2
+# Freedesktop.org repository by upstream author
+http://freedesktop.org/~suzhe/sources/scim-([\d\.]*)\.tar\.gz debian uupdate
+

@@ -1,0 +1,59 @@
+#! /bin/sh -e
+## 01_gtk-immodule-install-dir.dpatch by Ming Hua <minghua@rice.edu>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Change the gtk immodule installation directory from
+## DP: /usr/lib/gtk-2.0/immodules/ to /usr/lib/gtk-2.0/2.4.0/immodules/.
+## DP: This is just a workaround for the problem that
+## DP: /usr/sbin/update-gtk-immodules used by GTK+ packages only looks
+## DP: for the specific versioned directory (so that 2.2.x and 2.4.x can
+## DP: coexist, probably).  I can use /usr/bin/gtk-query-immodules-2.0
+## DP: instead, but that completely rewrite /etc/gtk-2.0/gtk.immodules,
+## DP: and more importantly, it won't survive libgtk2.0-0 package
+## DP: upgrades.  After all, this patch has been working well.  Let's
+## DP: worry about compatibility with GTK+ 2.6.x later, at least not for
+## DP: sarge.
+
+if [ $# -lt 1 ]; then
+    echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch} ${2:+-d $2}"
+
+case "$1" in
+    -patch) patch -p1 ${patch_opts} < $0;;
+    -unpatch) patch -R -p1 ${patch_opts} < $0;;
+    *)
+        echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+        exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+diff -urNad /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.am scim-0.99.1/extras/gtk2_immodule/Makefile.am
+--- /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.am	2004-06-27 04:47:52.000000000 -0500
++++ scim-0.99.1/extras/gtk2_immodule/Makefile.am	2004-06-27 04:50:54.000000000 -0500
+@@ -21,7 +21,7 @@
+ 
+ noinst_HEADERS = gtkimcontextscim.h
+ 
+-moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
++moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules
+ 
+ module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
+ 
+diff -urNad /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.in scim-0.99.1/extras/gtk2_immodule/Makefile.in
+--- /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.in	2004-06-27 04:47:52.000000000 -0500
++++ scim-0.99.1/extras/gtk2_immodule/Makefile.in	2004-06-27 04:50:54.000000000 -0500
+@@ -329,7 +329,7 @@
+ 
+ @SCIM_BUILD_GTK2_IMMODULE_TRUE@CONFIG_GTK2_IMMODULE = im-scim.la
+ noinst_HEADERS = gtkimcontextscim.h
+-moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
++moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules
+ module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
+ im_scim_la_SOURCES = gtkimcontextscim.cpp imscim.cpp
+ im_scim_la_CXXFLAGS = @GTK2_CFLAGS@

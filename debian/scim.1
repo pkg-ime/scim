@@ -1,0 +1,55 @@
+.\" Authors: Osamu Aoki, Ming Hua
+.TH "SCIM" "1" "September 2004" "scim 1.0"
+.SH "NAME" 
+scim \(em Smart common input method server
+.SH "SYNOPSIS" 
+.PP 
+\fBscim\fR [\fB\fIoption\fR\fP]...
+.SH "DESCRIPTION" 
+.PP 
+\fBscim\fR is a program that provide the smart common input method (SCIM)
+server. 
+.PP 
+Currently SCIM is focused on CJK (Chinese/Japanese/Korean) Input Methods, but it
+can be extended to other languages very easily. 
+.PP 
+SCIM is a higher level library comparing with XIM or IIIMF.  It has much simpler
+interface than XIM or IIIMF.  And it can work with XIM or even IIIMF (in the
+future). 
+.SH "OPTIONS" 
+.PP 
+These programs follow the usual GNU command line syntax, with long options
+starting with two dashes (`\-').  A summary of options is included below. 
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+Show summary of options. 
+.TP
+\fB\-l\fP, \fB\-\-list\fP
+List all of available modules. 
+.TP
+\fB\-f\fP, \fB\-\-frontend\fP name 
+Use specified FrontEnd module. 
+.TP
+\fB\-c\fP, \fB\-\-config\fP name 
+Use specified Config module. 
+.TP
+\fB\-e\fP, \fB\-\-engines\fP name[,name]... 
+Load specified set of IMEngine modules. 
+.TP
+\fB\-ne\fP, \fB\-\-no-engines\fP name[,name]...
+Do not load those set of IMEngine modules. 
+.TP
+\fB\-d\fP, \fB\-\-daemon\fP
+Run scim as a daemon. 
+.SH "SEE ALSO" 
+.PP 
+The user manual in Chinese is available at
+/usr/share/doc/scim/zh_CN/user\-manual.html. On Debian systems, an English user
+manual is in /usr/share/doc/scim/README.Debian (English).
+.SH "AUTHOR" 
+.PP 
+This manual page was written by Osamu Aoki <osamu@debian.org> and Ming Hua
+<minghua@rice.edu> for the \fBDebian\fP system (but may be used by others).
+Permission is granted to copy, distribute and/or modify this document under the
+terms of the GNU Public License, Version 2.0 or any later version published by
+the Free Software Foundation. 
