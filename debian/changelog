@@ -1,3 +1,11 @@
+scim (1.0.2-3) unstable; urgency=low
+
+  * debian/README.Debian:  Small update.  [minghua]
+  * debian/patches/{00list,01xim-freeze.dpatch}:  Pulled from upstream CVS,
+    fix a freeze.  [minghua]
+
+ -- Ming Hua <minghua@rice.edu>  Tue,  8 Mar 2005 09:36:50 -0600
+
 scim (1.0.2-2) unstable; urgency=low
 
   * debian/README.Debian:  Fix typo (Thanks, Carlos Z.F. Liu).  [alee, minghua]
