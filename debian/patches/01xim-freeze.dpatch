@@ -1,0 +1,36 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01xim-freeze.dpatch by Ming Hua <minghua@rice.edu>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Pulled from upstream CVS branch scim_1_0 tip, claim to fix a XIM
+## DP: freeze issue.
+
+@DPATCH@
+diff -urNad scim-1.0.2/modules/FrontEnd/scim_x11_frontend.cpp /tmp/dpep.H03ep9/scim-1.0.2/modules/FrontEnd/scim_x11_frontend.cpp
+--- scim-1.0.2/modules/FrontEnd/scim_x11_frontend.cpp	2004-12-29 22:51:53.000000000 -0600
++++ /tmp/dpep.H03ep9/scim-1.0.2/modules/FrontEnd/scim_x11_frontend.cpp	2005-03-08 09:25:08.000000000 -0600
+@@ -436,9 +436,14 @@
+ 
+     // Select between the X Server and the Panel GUI.
+     while (!m_should_exit) {
++        struct timeval tval;
++        int ret;
++
+         read_fds = active_fds;
++        tval.tv_usec = 100000;
++        tval.tv_sec = 0;
+ 
+-        if (select (max_fd + 1, &read_fds, NULL, NULL, NULL) < 0) {
++        if ((ret = select (max_fd + 1, &read_fds, NULL, NULL, &tval)) < 0) {
+             SCIM_DEBUG_FRONTEND(1) << "X11 -- Error when watching events!\n";
+             return;
+         }
+@@ -462,7 +467,7 @@
+             }
+         }
+ 
+-        if (FD_ISSET (xserver_fd, &read_fds)) {
++        if (FD_ISSET (xserver_fd, &read_fds) || ret == 0) {
+             while (XPending (m_display)) {
+                 XNextEvent (m_display, &event);
+                 XFilterEvent (&event, None);

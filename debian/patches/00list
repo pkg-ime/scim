@@ -6,5 +6,6 @@
 # - Note the patches are applied in the order of their numbers.  So if
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
+01xim-freeze.dpatch
 10gtk-immodule-install-dir.dpatch
 20-gcc-4.0-ftbfs.dpatch
