@@ -7,8 +7,11 @@ Japanese, Russian, Arabic, Chinese, etc in X environment under UTF-8
 locale.
 
 Install following basic packages as starter:
- scim, scim-frontend-socket, scim-server-socket, scim-config-gconf,
- scim-config-socket, scim-gtk2-immodule
+ scim                                  (the core libraries and programs)
+ scim-gtk2-immodule     (GTK immodule, for context menu in GTK programs)
+scim-gtk2-immodule depends on scim-frontend-socket, scim-server-socket
+and scim-config-socket packages.  You'll automatically install them when
+you choose to install scim-gtk2-immodule.
 
 Install following packages for each needs of IMEngine (input method
 conversion engine):
@@ -27,8 +30,8 @@ scim-tables-additional may be still quite useful.  Also, scim-table-zh
 provides the popular WuBi input method.
 
 In future, you may find some intelligent IMEngines:
- scim-anthy   (for customizable Japanese input with anthy)
- scim-chewing (for intelligent Chinese Zhuyin input with libchewing)
+ scim-anthy                 (for customizable Japanese input with anthy)
+ scim-chewing     (for intelligent Chinese Zhuyin input with libchewing)
 
 SCIM can be automatically started during the X start up.  This
 configuration can be easily done by the helper package m17n-env (*).
@@ -139,7 +142,7 @@ customization for a single non-UTF-8 locale.
 More information
 ----------------
 
-The upstream website is at http://scim.freedesktop.org/ .
+The upstream website is at http://www.scim-im.org/ .
 
 The details about how to start scim correctly are based on a mail from
 the upstream author James Su, you can look at it if interested:
