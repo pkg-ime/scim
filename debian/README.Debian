@@ -81,7 +81,7 @@ Each locale means:
  zh_CN.UTF-8 for Chinese (simplified) menu UTF-8 system
  zh_TW.UTF-8 for Korean (traditional) menu UTF-8 system
 
-Alternatively, /etc/scim/global may be set this globally when you have
+Alternatively, /etc/scim/global may set this globally when you have
 root access.  (The m17n-env package does not change /etc/scim/global
 automatically to enable for all available UTF-8 locales since you may
 want to start some locale without scim.)
