@@ -57,9 +57,10 @@ the default behavior, set the environment variable GTK_IM_MODULE in X
 session as:
  $ GTK_IM_MODULE="scim"; export GTK_IM_MODULE
 
-There is also a separate qt(kde) module for scim, but it's not packaged
-(yet).
-
+There is also a separate qt(kde) module for scim (scim-qtimm), but it's
+not packaged for Debian since compatible version of KDE applications are
+not available yet in Debian archive.  
+ 
 SCIM supports any locales which are supported by IMEngines directly.  
 Any UTF-8 locales can be added as a supported locale by modifying
 ~/.scim/global as below:
@@ -150,5 +151,5 @@ the upstream author James Su, you can look at it if interested:
     http://freedesktop.org/pipermail/scim/2004-October/001082.html
 
 -- Ming Hua <minghua@rice.edu>  Thu, 24 Sep 2004 12:26:29 -0500
--- Osamu Aoki <osamu@debian.org>  Tue, 11 Jan 2005 19:17:49 +0100
+-- Osamu Aoki <osamu@debian.org>  Sun, 30 Jan 2005 20:51:54 +0100
 
