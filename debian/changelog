@@ -8,8 +8,10 @@ scim (1.0.2-2) unstable; urgency=low
     [minghua]
   * debian/README.Debian: ~/.scim/config -> ~/.scim/global (Thanks, Florian
     Schlichting).  (Closes: #291543)  [osamu]
+  * debian/README.Debian: mention gksu configuration. (Closes: #283746)
+    [osamu]
 
- -- Ming Hua <minghua@rice.edu>  Fri, 28 Jan 2005 20:12:50 -0600
+ -- Ming Hua <minghua@rice.edu>  Wed,  2 Feb 2005 00:19:03 +0100
 
 scim (1.0.2-1) unstable; urgency=low
 
