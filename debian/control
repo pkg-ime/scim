@@ -40,7 +40,7 @@ Description: Smart Common Input Method platform
  .
  Author: James Su <suzhe@tsinghua.org.cn>
  .
- Homepage: http://scim.freedesktop.org/
+ Homepage: http://www.scim-im.org/
 
 Package: scim-config-gconf
 Architecture: any
