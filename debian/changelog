@@ -6,8 +6,8 @@ scim (1.0.2-2) unstable; urgency=low
     - Change the upstream website.  [minghua]
   * debian/copyright:  Change the upstream download repository to SourceForge.
     [minghua]
-  * debian/README.Debian: ~/.scim/config -> ~/.scim/global
-    (Closes: #291543) [f.schlichting, osamu]
+  * debian/README.Debian: ~/.scim/config -> ~/.scim/global (Thanks, Florian
+    Schlichting).  (Closes: #291543)  [osamu]
 
  -- Ming Hua <minghua@rice.edu>  Fri, 28 Jan 2005 20:12:50 -0600
 
