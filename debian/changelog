@@ -1,3 +1,12 @@
+scim (1.0.2-1) unstable; urgency=low
+
+  * New Upstream release.
+  * debian/control:  Make scim conflict with old scim-gtk2-immodule (<<
+    1.0.0) to avoid broken upgrade if user choose to upgrade only scim
+    but not scim-gtk2-immodule.  (Closes: #287348)  [minghua]
+
+ -- Ming Hua <minghua@rice.edu>  Sat,  8 Jan 2005 14:06:00 -0600
+
 scim (1.0.1-4) unstable; urgency=low
 
   * Update README.Debian.  [osamu]
