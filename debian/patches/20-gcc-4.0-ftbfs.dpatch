@@ -1,0 +1,20 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 20-gcc-4.0-ftbfs.dpatch by  Andreas Jochens <aj@andaco.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fixes FTBFS on AMD64 with gcc-4.0.  See Debian bug #288470 for
+## DP: details.
+
+@DPATCH@
+diff -urNad scim-1.0.2/src/scim_utility.cpp /tmp/dpep.ghdVHK/scim-1.0.2/src/scim_utility.cpp
+--- scim-1.0.2/src/scim_utility.cpp	2004-12-01 08:48:13.000000000 -0600
++++ /tmp/dpep.ghdVHK/scim-1.0.2/src/scim_utility.cpp	2005-01-08 14:49:09.000000000 -0600
+@@ -433,7 +433,7 @@
+     return false;
+ }
+ 
+-struct {
++static struct {
+     ucs4_t half;
+     ucs4_t full;
+     ucs4_t size;
