@@ -10,7 +10,7 @@ Package: scim
 Architecture: any
 Depends: ${shlibs:Depends}
 Recommends: m17n-env, scim-gtk2-immodule (>= 1.0.1)
-Suggests: scim-uim, scim-chinese, scim-hangul, scim-m17n, scim-tables-additional, scim-tables-ja, scim-tables-ko, scim-tables-zh
+Suggests: scim-uim, scim-chinese, scim-hangul, scim-chewing, scim-m17n, scim-tables-additional, scim-tables-ja, scim-tables-ko, scim-tables-zh
 Conflicts: scim-suite, scim-config-simple, scim-frontend-x11, scim-server-rawcode, scim-server-table, libscim-1.0-0 (<< 1.0.0), libscim-gtkutils-1.0-0 (<< 1.0.0), scim-tables-zh (<< 0.4.2), scim-tables-ja (<< 0.4.2), scim-tables-ko (<< 0.4.2), scim-tables-additional (<< 0.4.2), scim-chinese (<< 0.4.2), scim-gtk2-immodule (<< 1.0.0), scim-server-socket (<< 1.0.0), scim-frontend-socket (<< 1.0.0), scim-config-socket (<< 1.0.0), scim-config-gconf (<< 1.0.0)
 Replaces: scim-suite, scim-config-simple, scim-frontend-x11, scim-server-rawcode, scim-server-table, libscim-1.0-0 (<< 1.0.0), libscim-gtkutils-1.0-0 (<< 1.0.0)
 Description: Smart Common Input Method platform
@@ -27,13 +27,13 @@ Description: Smart Common Input Method platform
  .
  Currently, SCIM supports XIM, GTK+ immodule, and Qt immodule framework,
  features various input method engines such as scim-table, scim-chinese
- (smart pinyin), scim-uim (using UIM library), scim-hangul, and
- scim-m17n (using libm17n library).
+ (smart pinyin), scim-uim (using UIM library), scim-hangul, scim-chewing
+ (using libchewing library), and scim-m17n (using libm17n library).
  .
  If you use generic table IM engine, you need to get the data table in
  other packages, such as scim-tables-zh, scim-tables-ja, scim-tables-ko,
  or scim-tables-additional.  You can also use other IM engines packaged
- in scim-chinese, scim-uim, scim-hangul and scim-m17n.
+ in scim-chinese, scim-uim, scim-hangul, scim-chewing and scim-m17n.
  .
  For development on SCIM platform, please see the description of package
  scim-dev.
@@ -134,8 +134,8 @@ Description: Smart Common Input Method platform (development files)
  interface, such as GTK2 immodule or Qt immodule.  As an IM application,
  SCIM can use various IM engines to provide input method in many
  languages, either by native modules (scim-table, scim-chinese,
- scim-hangul) or an interface to other IM libraries (scim-uim,
- scim-m17n).
+ scim-hangul) or an interface to other IM libraries (scim-uim, 
+ scim-m17n, scim-chewing).
  .
  For more information about SCIM, please see the description of the scim
  package.
