@@ -62,9 +62,9 @@ There is also a separate qt(kde) module for scim, but it's not packaged
 
 SCIM supports any locales which are supported by IMEngines directly.  
 Any UTF-8 locales can be added as a supported locale by modifying
-~/.scim/config as below:
+~/.scim/global as below:
 
-After first run of SCIM, ~/.scim/config contains:
+After first run of SCIM, ~/.scim/global contains:
     /SupportedUnicodeLocales = en_US.UTF-8
 To enable SCIM under ja_JP.UTF-8, modify this to:
     /SupportedUnicodeLocales = ja_JP.UTF-8
@@ -90,7 +90,7 @@ root access.  (The m17n-env package does not change /etc/scim/global
 automatically to enable for all available UTF-8 locales since you may
 want to start some locale without scim.)
 
-If ~/.scim/config is not existent, run ``scim'' from terminal, then use
+If ~/.scim/global is not existent, run ``scim'' from terminal, then use
 Ctrl-C to abort it, this configure file should be created for the user.
 
 Then run any application that support XIM (still using the same terminal
