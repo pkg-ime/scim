@@ -1,5 +1,5 @@
 =================================
-Brief User's Guide for SCIM 1.0.1
+Brief User's Guide for SCIM 1.0.2
 =================================
 
 SCIM enables easy input of characters not found on your keyboard such as
@@ -150,5 +150,5 @@ the upstream author James Su, you can look at it if interested:
     http://freedesktop.org/pipermail/scim/2004-October/001082.html
 
 -- Ming Hua <minghua@rice.edu>  Thu, 24 Sep 2004 12:26:29 -0500
--- Osamu Aoki <osamu@debian.org>  Tue, 21 Dec 2004 01:00:53 +0100
+-- Osamu Aoki <osamu@debian.org>  Tue, 11 Jan 2005 19:17:49 +0100
 
