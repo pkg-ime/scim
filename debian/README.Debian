@@ -12,18 +12,19 @@ Install following basic packages as starter:
 
 Install following packages for each needs of IMEngine (input method
 conversion engine):
- scim-chinese                      (for intelligent Chinese Pinyin input)
- scim-hangul                       (for intelligent Korean input)
- scim-m17n and libm17n-0  (most languages: Arabic, Thai, Greek, ...)
- anthy and (scim-m17n or scim-uim) (for Japanese)
- (prime or canna) and scim-uim     (for alternative Japanese)
+ scim-chinese                     (for intelligent Chinese PinYin input)
+ scim-hangul                              (for intelligent Korean input)
+ scim-m17n and libm17n-0      (most languages: Arabic, Thai, Greek, ...)
+ anthy and (scim-m17n or scim-uim)                        (for Japanese)
+ (prime or canna) and scim-uim                (for alternative Japanese)
 
 Other packages may be installed are:
  scim-table-zh, scim-table-ko, scim-table-ja, scim-tables-additional
 These are simple conversion table based input methods and less
 intelligent ones.  As far as I can tell, not very useful for Japanese.
 But for Arabic and Indic languages, simple table based conversion with
-scim-tables-additional may be still quite useful.
+scim-tables-additional may be still quite useful.  Also, scim-table-zh
+provides the popular WuBi input method.
 
 In future, you may find some intelligent IMEngines:
  scim-anthy   (for customizable Japanese input with anthy)
