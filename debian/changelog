@@ -4,8 +4,13 @@ scim (1.0.2-1) unstable; urgency=low
   * debian/control:  Make scim conflict with old scim-gtk2-immodule (<<
     1.0.0) to avoid broken upgrade if user choose to upgrade only scim
     but not scim-gtk2-immodule.  (Closes: #287348)  [minghua]
+  * debian/patches/{00list,20redirect-to-cerr.dpatch,30gnumeric.dpatch}:
+    Delete old patches that are already included by upstream.  [minghua]
+  * debian/patches/{00list,20-gcc-4.0-ftbfs.dpatch}:  Add patch from Andreas
+    Jochens <aj@andaco.de> to fix FTBFS on amd64/gcc-4.0.  (Closes: #288470)
+    [minghua]
 
- -- Ming Hua <minghua@rice.edu>  Sat,  8 Jan 2005 14:06:00 -0600
+ -- Ming Hua <minghua@rice.edu>  Sat,  8 Jan 2005 14:55:47 -0600
 
 scim (1.0.1-4) unstable; urgency=low
 
