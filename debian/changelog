@@ -1,13 +1,15 @@
 scim (1.0.2-2) unstable; urgency=low
 
-  * debian/README.Debian:  Fix typo.  [alee, minghua]
-  * debian/control:  Change the upstream website.  [minghua]
-  * debian/copyright:  Change the upstream download repository to
-    SourceForge.  [minghua]
-  * debian/README.Debian: ~/.scim/config -> ~/.scim/global 
+  * debian/README.Debian:  Fix typo (Thanks, Carlos Z.F. Liu).  [alee, minghua]
+  * debian/control:
+    - Make scim conflict with all old (<< 1.0.0) modules.  [minghua]
+    - Change the upstream website.  [minghua]
+  * debian/copyright:  Change the upstream download repository to SourceForge.
+    [minghua]
+  * debian/README.Debian: ~/.scim/config -> ~/.scim/global
     (Closes: #291543) [f.schlichting, osamu]
 
- -- Osamu Aoki <osamu@debian.org>  Wed, 26 Jan 2005 08:24:36 +0100
+ -- Ming Hua <minghua@rice.edu>  Fri, 28 Jan 2005 20:12:50 -0600
 
 scim (1.0.2-1) unstable; urgency=low
 
