@@ -1,7 +1,4 @@
-TODO items for 1.0.1-1
+Long term
 ----------------------
-Update README.Debian
-
-TODO items for 1.0.1-2
-----------------------
-Some way to specify shlibs as >= 1.0.0 instead of -V (which will give >= ${Source-Version})
+Some way to specify shlibs as >= 1.0.0 instead of -V (which will give >=
+${Source-Version})
