@@ -4,5 +4,5 @@
 # format version number
 version=2
 # SourceForge repository
-http://prdownloads.sourceforge.net/scim/scim-([\d\.]*)\.tar\.gz debian uupdate
+http://prdownloads.sourceforge.net/scim/scim-(1\.0\.[\d\.]*)\.tar\.gz debian uupdate
 

@@ -9,8 +9,9 @@ scim (1.0.2-1) unstable; urgency=low
   * debian/patches/{00list,20-gcc-4.0-ftbfs.dpatch}:  Add patch from Andreas
     Jochens <aj@andaco.de> to fix FTBFS on amd64/gcc-4.0.  (Closes: #288470)
     [minghua]
+  * debian/watch:  Only track 1.0.x branch on upstream.  [osamu,minghua]
 
- -- Ming Hua <minghua@rice.edu>  Sat,  8 Jan 2005 14:55:47 -0600
+ -- Ming Hua <minghua@rice.edu>  Tue, 11 Jan 2005 20:14:17 -0600
 
 scim (1.0.1-4) unstable; urgency=low
 
