@@ -3,8 +3,8 @@ Brief User's Guide for SCIM 1.0.2
 =================================
 
 SCIM enables easy input of characters not found on your keyboard such as
-Japanese, Russian, Arabic, Chinese, etc in X environment under UTF-8
-locale.
+Japanese, Chinese, Korean, Russian, Arabic, etc. in X environment under
+UTF-8 locale.
 
 Install following basic packages as starter:
  scim                                  (the core libraries and programs)
@@ -13,8 +13,8 @@ scim-gtk2-immodule depends on scim-frontend-socket, scim-server-socket
 and scim-config-socket packages.  You'll automatically install them when
 you choose to install scim-gtk2-immodule.
 
-Install following packages for each needs of IMEngine (input method
-conversion engine):
+Install one (or any) of the following packages for your needs of
+IMEngine (input method conversion engine):
  scim-chinese                     (for intelligent Chinese PinYin input)
  scim-hangul                              (for intelligent Korean input)
  scim-m17n and libm17n-0      (most languages: Arabic, Thai, Greek, ...)
@@ -27,7 +27,8 @@ These are simple conversion table based input methods and less
 intelligent ones.  As far as I can tell, not very useful for Japanese.
 But for Arabic and Indic languages, simple table based conversion with
 scim-tables-additional may be still quite useful.  Also, scim-tables-zh
-provides the popular WuBi input method.
+provides the popular WuBi input method (although not best performance,
+you may consider package fcitx if you use WuBi only).
 
 In future, you may find some intelligent IMEngines:
  scim-anthy                 (for customizable Japanese input with anthy)
@@ -59,11 +60,14 @@ session as:
 
 There is also a separate qt(kde) module for scim (scim-qtimm), but it's
 not packaged for Debian since compatible version of KDE applications are
-not available yet in Debian archive.  
+not available yet in Debian archive (it requires a patch for Qt 3).
+Another scim related program is skim (aka scim-panel-kde), but it's not
+packaged either due to lack of packagers familar with KDE.
  
-SCIM supports any locales which are supported by IMEngines directly.  
-Any UTF-8 locales can be added as a supported locale by modifying
-~/.scim/global as below:
+SCIM supports any locales which are supported by IMEngines directly.
+However you need to enable your locale for SCIM except you use
+en_US.UTF-8.  Any UTF-8 locales can be added as a supported locale by
+modifying ~/.scim/global as below:
 
 After first run of SCIM, ~/.scim/global contains:
     /SupportedUnicodeLocales = en_US.UTF-8
@@ -86,13 +90,13 @@ Each locale means:
  zh_CN.UTF-8 for Chinese (simplified) menu UTF-8 system
  zh_TW.UTF-8 for Chinese (traditional) menu UTF-8 system
 
+If ~/.scim/global is not existent, run ``scim'' from terminal, then use
+Ctrl-C to abort it, this configure file should be created for the user.
+
 Alternatively, /etc/scim/global may set this globally when you have
 root access.  (The m17n-env package does not change /etc/scim/global
 automatically to enable for all available UTF-8 locales since you may
 want to start some locale without scim.)
-
-If ~/.scim/global is not existent, run ``scim'' from terminal, then use
-Ctrl-C to abort it, this configure file should be created for the user.
 
 Then run any application that support XIM (still using the same terminal
 with the environment set):
@@ -155,6 +159,6 @@ the upstream author James Su, you can look at it if interested:
     http://freedesktop.org/pipermail/scim/2004-June/000221.html
     http://freedesktop.org/pipermail/scim/2004-October/001082.html
 
--- Ming Hua <minghua@rice.edu>  Thu, 24 Sep 2004 12:26:29 -0500
+-- Ming Hua <minghua@rice.edu>  Tue, 08 Mar 2005 02:43:58 -0600
 -- Osamu Aoki <osamu@debian.org>  Sun, 30 Jan 2005 20:51:54 +0100
 
