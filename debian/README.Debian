@@ -2,26 +2,36 @@
 Brief User's Guide for SCIM 1.0.1
 =================================
 
+SCIM enables easy input of characters not found on your keyboard such as
+Japanese, Russian, Arabic, Chinese, etc in X environment under UTF-8
+locale.
+
 Install following basic packages as starter:
  scim, scim-frontend-socket, scim-server-socket, scim-config-gconf,
- scim-gtk2-immodule
+ scim-config-socket, scim-gtk2-immodule
 
 Install following packages for each needs of IMEngine (input method
 conversion engine):
- scim-chinese                      (for Chinese, tightly integrated)
- scim-hangul                       (for Korean, tightly integrated)
+ scim-chinese                      (for intelligent Chinese Pinyin input)
+ scim-hangul                       (for intelligent Korean input)
  scim-m17n and libm17n-0  (most languages: Arabic, Thai, Greek, ...)
  anthy and (scim-m17n or scim-uim) (for Japanese)
  (prime or canna) and scim-uim     (for alternative Japanese)
 
 Other packages may be installed are:
  scim-table-zh, scim-table-ko, scim-table-ja, scim-tables-additional
-These are simple conversion table based input methods and less 
-inteligent ones.  As far as I can tell, not very useful for Japanese.
+These are simple conversion table based input methods and less
+intelligent ones.  As far as I can tell, not very useful for Japanese.
+But for Arabic and Indic languages, simple table based conversion with
+scim-tables-additional may be still quite useful.
+
+In future, you may find some intelligent IMEngines:
+ scim-anthy   (for customizable Japanese input with anthy)
+ scim-chewing (for intelligent Chinese Zhuyin input with libchewing)
 
 SCIM can be automatically started during the X start up.  This
-configuration can be easily done by the helper package m17n-env.  All
-you have to do is to install m17n-env package and then to run
+configuration can be easily done by the helper package m17n-env (*).
+All you have to do is to install m17n-env package and then to run
 set-m17n-env command from the root and your user shell account while
 choosing scim as your preferred IM from the menu choice.  (This is just
 a helper package focused on mostly Gnome/Gtk+2 environment.)
@@ -47,15 +57,34 @@ There is also a separate qt(kde) module for scim, but it's not packaged
 (yet).
 
 SCIM supports any locales which are supported by IMEngines directly.  
-Any UTF-8 locales can be supported by modifying ~/.scim/config:
+Any UTF-8 locales can be added as a supported locale by modifying
+~/.scim/config as below:
 
 After first run of SCIM, ~/.scim/config contains:
     /SupportedUnicodeLocales = en_US.UTF-8
-To add ja_JP.UTF-8, modify this to:
-    /SupportedUnicodeLocales = en_US.UTF-8,ja_JP.UTF-8
+To enable SCIM under ja_JP.UTF-8, modify this to:
+    /SupportedUnicodeLocales = ja_JP.UTF-8
+To enable SCIM under many locales, modify this to list all locales:
+    /SupportedUnicodeLocales = en_US.UTF-8,en_GB.UTF-8,fr_FR.UTF-8,de_DE.UTF-8,ja_JP.UTF-8,ko_KR.UTF-8,zh_CN.UTF-8,zh_TW.UTF-8
+
+The /SupportedUnicodeLocales entry in above example must be one long
+line and each locale is separated only by comma without space.
+
+Each locale means:
+ en_US.UTF-8 for English menu UTF-8 system
+ en_GB.UTF-8 for English menu UTF-8 system
+                 (with British convention for date etc.)
+ fr_FR.UTF-8 for French menu UTF-8 system
+ de_DE.UTF-8 for German menu UTF-8 system
+ ja_JP.UTF-8 for Japanese menu UTF-8 system
+ ko_KR.UTF-8 for Korean menu UTF-8 system
+ zh_CN.UTF-8 for Chinese (simplified) menu UTF-8 system
+ zh_TW.UTF-8 for Korean (traditional) menu UTF-8 system
 
 Alternatively, /etc/scim/global may be set this globally when you have
-root access.
+root access.  (The m17n-env package does not change /etc/scim/global
+automatically to enable for all available UTF-8 locales since you may
+want to start some locale without scim.)
 
 If ~/.scim/config is not existent, run ``scim'' from terminal, then use
 Ctrl-C to abort it, this configure file should be created for the user.
@@ -70,16 +99,40 @@ there indicating the status of scim.
 Although you can set system wide environment variables such as LANG from
 /etc/environment, I would not recommend to set it to any CJK (Chinese,
 Japanese, Korean) locales there since normal Linux terminal will have
-trouble with it.  Leave console locales as default ("C") or something
-like "en_US.ISO-8859-1".  If you want to use UTF-8 locales in X use GDM
-(or KDM) which run X start up script while using ~/.dmrc to set X locale
-and session type (Gnome, KDE, Xfce, ...).  Custom X start up script can
-be placed in /etc/X11/Xsession.d/ .
+trouble with it.  I suggest to leave console locales as default ("C") or
+something simple like "en_US.ISO-8859-1".  
+
+If you want to use UTF-8 locales in X use GDM (or KDM) which run X start
+up script while using ~/.dmrc to set X locale and session type (Gnome,
+KDE, Xfce, ...).  Custom X start up script can be placed in
+/etc/X11/Xsession.d/ .  The m17n-env package installs hook script here
+so you can set up user specific startup customization script in
+~/.xsession.d/ .  This allow us to switch desktop through GDM menu.
+(You can customize X in traditional ways by providing start up script as
+in ~/.xssession or ~/.xinitrc.  If you do this, you lose ability to
+switch desktop from GDM menu while sharing the startup script between
+Gnome and KDE.)
 
 If you are wondering why you can not disable SCIM by just removing start
 up script like old XIM input methods, the reason is that SCIM is also
 started as Gtk+2 immodule for Mozilla and other Gtk+2 programs.  You
 should remove scim-gtk2-immodule package to disable this behavior.
+
+SCIM still is not perfect in some corner case usability issues such as
+on-the-spot conversion, but this program is quite usable state and gives
+very intuitive access to many input methods which no other programs on
+Debian provide.
+
+See http://pkg-ime.alioth.debian.org/ or 
+http://pkg-ime.alioth.debian.org/cgi-bin/wiki/index.cgi
+for the latest information on SCIM and related packages of Debian.
+
+(*) m17n-env package:
+The m17n-env package provides customization which set your system to
+multilingualization (m17n) environment by working with X run under UTF-8
+locale together with the scim package and Debian menu system.  This
+required new approach since the good old language-env package provides
+customization for a single non-UTF-8 locale.
 
 ----------------
 More information
@@ -93,5 +146,5 @@ the upstream author James Su, you can look at it if interested:
     http://freedesktop.org/pipermail/scim/2004-October/001082.html
 
 -- Ming Hua <minghua@rice.edu>  Thu, 24 Sep 2004 12:26:29 -0500
--- Osamu Aoki <osamu@debian.org>  Sun, 28 Nov 2004 16:50:30 +0100
+-- Osamu Aoki <osamu@debian.org>  Tue, 21 Dec 2004 01:00:53 +0100
 
