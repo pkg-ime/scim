@@ -83,7 +83,7 @@ Each locale means:
  ja_JP.UTF-8 for Japanese menu UTF-8 system
  ko_KR.UTF-8 for Korean menu UTF-8 system
  zh_CN.UTF-8 for Chinese (simplified) menu UTF-8 system
- zh_TW.UTF-8 for Korean (traditional) menu UTF-8 system
+ zh_TW.UTF-8 for Chinese (traditional) menu UTF-8 system
 
 Alternatively, /etc/scim/global may set this globally when you have
 root access.  (The m17n-env package does not change /etc/scim/global
