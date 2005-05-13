@@ -16,6 +16,7 @@ you choose to install scim-gtk2-immodule.
 Install one (or any) of the following packages for your needs of
 IMEngine (input method conversion engine):
  scim-chinese                     (for intelligent Chinese PinYin input)
+ scim-chewing     (for intelligent Chinese Zhuyin input with libchewing)
  scim-hangul                              (for intelligent Korean input)
  scim-m17n and libm17n-0      (most languages: Arabic, Thai, Greek, ...)
  anthy and (scim-m17n or scim-uim)                        (for Japanese)
@@ -32,7 +33,6 @@ you may consider package fcitx if you use WuBi only).
 
 In future, you may find some intelligent IMEngines:
  scim-anthy                 (for customizable Japanese input with anthy)
- scim-chewing     (for intelligent Chinese Zhuyin input with libchewing)
 
 SCIM can be automatically started during the X start up.  This
 configuration can be easily done by the helper package m17n-env (*).

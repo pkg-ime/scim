@@ -1,10 +1,13 @@
 scim (1.0.2-3) unstable; urgency=low
 
-  * debian/README.Debian:  Small update.  [minghua]
+  * debian/README.Debian:  Documentation update.  [minghua]
+    - Clarify the situation of skim and scim-qt-immodule in Debian.
+    - List scim-chewing as available IM engine instead of a potential one since
+      it's in sarge now.  (Closes: #306759)
   * debian/patches/{00list,01xim-freeze.dpatch}:  Pulled from upstream CVS,
     fix a freeze.  [minghua]
 
- -- Ming Hua <minghua@rice.edu>  Tue,  8 Mar 2005 09:36:50 -0600
+ -- Ming Hua <minghua@rice.edu>  Fri, 13 May 2005 16:35:31 -0500
 
 scim (1.0.2-2) unstable; urgency=low
 
