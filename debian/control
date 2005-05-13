@@ -44,7 +44,7 @@ Description: Smart Common Input Method platform
 
 Package: scim-config-gconf
 Architecture: any
-Depends: ${shlibs:Depends}, gconf2
+Depends: ${shlibs:Depends}, gconf2, scim (<< 1.1)
 Description: GConf configure module for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -58,7 +58,7 @@ Description: GConf configure module for SCIM
 
 Package: scim-config-socket
 Architecture: any
-Depends: ${shlibs:Depends}, scim-frontend-socket (>= 1.0.1)
+Depends: ${shlibs:Depends}, scim-frontend-socket (>= 1.0.1), scim (<< 1.1)
 Description: Socket configure module for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -70,7 +70,7 @@ Description: Socket configure module for SCIM
 
 Package: scim-frontend-socket
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, scim (<< 1.1)
 Description: Socket front end module for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -84,7 +84,7 @@ Description: Socket front end module for SCIM
 
 Package: scim-server-socket
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, scim (<< 1.1)
 Description: Socket IM engine module for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -99,7 +99,7 @@ Description: Socket IM engine module for SCIM
 
 Package: scim-gtk2-immodule
 Architecture: any
-Depends: ${shlibs:Depends}, scim-server-socket (>= 1.0.1), scim-frontend-socket (>= 1.0.1), scim-config-socket (>= 1.0.1)
+Depends: ${shlibs:Depends}, scim-server-socket (>= 1.0.1), scim-frontend-socket (>= 1.0.1), scim-config-socket (>= 1.0.1), scim (<< 1.1)
 Description: GTK2 IMModule with SCIM as backend
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
