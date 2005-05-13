@@ -4,6 +4,8 @@ scim (1.0.2-3) unstable; urgency=low
     - Clarify the situation of skim and scim-qt-immodule in Debian.
     - List scim-chewing as available IM engine instead of a potential one since
       it's in sarge now.  (Closes: #306759)
+    - Remove notes about gksu configurations, since gksu 1.2.4 and higher
+      doesn't lock XIM anymore.
   * debian/control:  Make all dynamic loadable module packages depend on scim
     (<< 1.1), to smooth future upgrades.  [minghua]
 

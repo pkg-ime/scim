@@ -127,11 +127,6 @@ up script like old XIM input methods, the reason is that SCIM is also
 started as Gtk+2 immodule for Mozilla and other Gtk+2 programs.  You
 should remove scim-gtk2-immodule package to disable this behavior.
 
-Gksu may require special attention to avoid occasional frozen X when
-used with SCIM.  Please set /etc/gksu.conf to "disable-grab = yes".
-Please be advised that this creates security concern if someone can
-eavesdrop X.
-
 SCIM still is not perfect in some corner case usability issues such as
 on-the-spot conversion, but this program is quite usable state and gives
 very intuitive access to many input methods which no other programs on
