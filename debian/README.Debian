@@ -64,7 +64,7 @@ There is also a separate qt(kde) module for scim (scim-qtimm), but it's
 not packaged for Debian since compatible version of KDE applications are
 not available yet in Debian archive (it requires a patch for Qt 3).
 Another scim related program is skim (aka scim-panel-kde), but it's not
-packaged either due to lack of packagers familar with KDE.
+packaged either due to lack of packagers familiar with KDE.
  
 SCIM supports any locales which are supported by IMEngines directly.
 However you need to enable your locale for SCIM except you use
