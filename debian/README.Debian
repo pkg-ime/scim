@@ -33,6 +33,8 @@ you may consider package fcitx if you use WuBi only).
 
 In future, you may find some intelligent IMEngines:
  scim-anthy                 (for customizable Japanese input with anthy)
+ scim-prime                              (for Japanese input with prime)
+ scim-skk                                  (for Japanese input with skk)
 
 SCIM can be automatically started during the X start up.  This
 configuration can be easily done by the helper package m17n-env (*).
