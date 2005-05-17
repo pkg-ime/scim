@@ -1,5 +1,6 @@
-scim (1.0.2-3) unstable; urgency=low
+scim (1.0.2-3) unstable; urgency=medium
 
+  * Urgency set to medium to push these documentation changes into sarge.
   * debian/README.Debian:  Documentation update.  [minghua]
     - Clarify the situation of skim and scim-qt-immodule in Debian.
     - List scim-chewing as available IM engine instead of a potential one since
@@ -10,7 +11,7 @@ scim (1.0.2-3) unstable; urgency=low
   * debian/control:  Make all dynamic loadable module packages depend on scim
     (<< 1.1), to smooth future upgrades.  [minghua]
 
- -- Ming Hua <minghua@rice.edu>  Fri, 13 May 2005 16:35:31 -0500
+ -- Ming Hua <minghua@rice.edu>  Mon, 16 May 2005 21:11:00 -0500
 
 scim (1.0.2-2) unstable; urgency=low
 
