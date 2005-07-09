@@ -7,4 +7,3 @@
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
 10gtk-immodule-install-dir.dpatch
-20-gcc-4.0-ftbfs.dpatch

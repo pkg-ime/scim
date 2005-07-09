@@ -93,8 +93,8 @@ install-stamp: build-stamp
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
 	# Clean up unnecessary static libraries for modules
-	rm debian/tmp/usr/lib/scim-1.0/1.0.0/*/*.la
-	rm debian/tmp/usr/lib/scim-1.0/1.0.0/*/*.a
+	rm debian/tmp/usr/lib/scim-1.0/1.2.0/*/*.la
+	rm debian/tmp/usr/lib/scim-1.0/1.2.0/*/*.a
 	rm debian/tmp/usr/lib/gtk-2.0/2.4.0/immodules/im-scim.a
 	rm debian/tmp/usr/lib/gtk-2.0/2.4.0/immodules/im-scim.la
 
@@ -128,9 +128,9 @@ binary-common:
 	dh_fixperms
 #	dh_perl
 #	dh_python
-	dh_makeshlibs -V -X usr/lib/gtk-2.0/immodules -X usr/lib/scim-1.0/1.0.0
+	dh_makeshlibs -X usr/lib/gtk-2.0/2.4.0/immodules -X usr/lib/scim-1.0/1.2.0
 	dh_installdeb
-	dh_shlibdeps
+	dh_shlibdeps -L libscim6 -l debian/libscim6/usr/lib
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
