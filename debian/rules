@@ -130,7 +130,7 @@ binary-common:
 #	dh_python
 	dh_makeshlibs -X usr/lib/gtk-2.0/2.4.0/immodules -X usr/lib/scim-1.0/1.2.0
 	dh_installdeb
-	dh_shlibdeps -L libscim6 -l debian/libscim6/usr/lib
+	dh_shlibdeps -L libscim6c2 -l debian/libscim6c2/usr/lib
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
