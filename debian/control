@@ -45,7 +45,8 @@ Package: libscim6c2
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}
-Conflicts: scim (<< 1.2.0)
+Conflicts: scim (<< 1.2.0), libscim6
+Replaces: libscim6
 Description: library for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
