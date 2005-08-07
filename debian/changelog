@@ -3,6 +3,8 @@ scim (1.2.3-0+SVN) UNRELEASED; urgency=low
   * New upstream release.  (Closes: #308064)
     - Build with GCC 4.0.  Use libscim6c2 as the shared library package name
       to avoid problem with some unofficial builds.
+  * debian/NEWS:  Create this file, and add notes about scim 1.0 to 1.2
+    upgrade and C++ ABI transtion.
   * debian/patches/{00list,20-gcc-4.0-ftbfs.dpatch}:  Already included by
     upstream, removed.  [minghua]
   * debian/control, debian/{scim,scim-dev,libscim6c2,libscim-dev}.install:
@@ -24,7 +26,7 @@ scim (1.2.3-0+SVN) UNRELEASED; urgency=low
       libc6-dev | libc-dev dependency.
   * debian/watch:  Track 1.2 series.  [minghua]
 
- -- Ming Hua <minghua@rice.edu>  Tue, 12 Jul 2005 20:35:00 -0500
+ -- Ming Hua <minghua@rice.edu>  Sun,  7 Aug 2005 14:18:29 -0500
 
 scim (1.0.2-3) unstable; urgency=medium
 
