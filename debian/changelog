@@ -1,4 +1,4 @@
-scim (1.2.3-0+SVN) UNRELEASED; urgency=low
+scim (1.2.3-1) unstable; urgency=low
 
   * New upstream release.  (Closes: #308064)
     - Build with GCC 4.0.  Use libscim6c2 as the shared library package name
