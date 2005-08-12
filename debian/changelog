@@ -1,6 +1,10 @@
 scim (1.4.1-0+SVN) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/{libscim6c2,libscim8,libscim-dev,scim,scim-module-socket}.install,
+    debian/{control,rules}:  ABI change.  Change binary package libscim6c2 to
+    libscim8, and all modules are in /usr/lib/scim-1.0/1.4.0/ now.  There are
+    also a new shared library (libscim-x11utils-1.0) and new modules.
 
  -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 20:10:07 -0500
 

@@ -10,14 +10,14 @@ usr/lib/scim-1.0/scim-helper-manager
 usr/lib/scim-1.0/scim-launcher
 usr/lib/scim-1.0/scim-panel-gtk
 
-usr/lib/scim-1.0/1.2.0/Config/simple.so
-usr/lib/scim-1.0/1.2.0/FrontEnd/x11.so
-usr/lib/scim-1.0/1.2.0/IMEngine/rawcode.so
-usr/lib/scim-1.0/1.2.0/SetupUI/aaa-imengine-setup.so
-usr/lib/scim-1.0/1.2.0/SetupUI/frontend-hotkeys-setup.so
-usr/lib/scim-1.0/1.2.0/SetupUI/panel-gtk-setup.so
-usr/lib/scim-1.0/1.2.0/SetupUI/x11-frontend-setup.so
-usr/lib/scim-1.0/1.2.0/Helper/setup.so
+usr/lib/scim-1.0/1.4.0/Config/simple.so
+usr/lib/scim-1.0/1.4.0/Filter/sctc.so
+usr/lib/scim-1.0/1.4.0/FrontEnd/x11.so
+usr/lib/scim-1.0/1.4.0/Helper/setup.so
+usr/lib/scim-1.0/1.4.0/IMEngine/rawcode.so
+usr/lib/scim-1.0/1.4.0/SetupUI/aaa-frontend-setup.so
+usr/lib/scim-1.0/1.4.0/SetupUI/aaa-imengine-setup.so
+usr/lib/scim-1.0/1.4.0/SetupUI/panel-gtk-setup.so
 
 usr/share/applications/scim-setup.desktop
 usr/share/control-center-2.0/capplets/scim-setup.desktop
