@@ -1,9 +1,9 @@
 # Patch naming guideline:
-# - Please use ##xxx-xxx.dpatch pattern for naming the patch.  ## is a
+# - Please use ##_xxx-xxx.dpatch pattern for naming the patch.  ## is a
 #   two digit number, and xxx-xxx describe the content of the patch.
 # - Use number 0# for patches pulled from upstream CVS.
 # - Group patches of similar usage with the same first digit.
 # - Note the patches are applied in the order of their numbers.  So if
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
-10gtk-immodule-install-dir.dpatch
+10_gtk-immodule-install-dir.dpatch

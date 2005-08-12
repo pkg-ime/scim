@@ -1,5 +1,5 @@
 #! /bin/sh -e
-## 01_gtk-immodule-install-dir.dpatch by Ming Hua <minghua@rice.edu>
+## 10_gtk-immodule-install-dir.dpatch by Ming Hua <minghua@rice.edu>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
 ## DP: Change the gtk immodule installation directory from
@@ -33,10 +33,10 @@ esac
 exit 0
 
 @DPATCH@
-diff -urNad /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.am scim-0.99.1/extras/gtk2_immodule/Makefile.am
---- /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.am	2004-06-27 04:47:52.000000000 -0500
-+++ scim-0.99.1/extras/gtk2_immodule/Makefile.am	2004-06-27 04:50:54.000000000 -0500
-@@ -21,7 +21,7 @@
+diff -urNad --exclude=CVS --exclude=.svn ./extras/gtk2_immodule/Makefile.am /tmp/dpep-work.pSFvig/scim-1.4.1/extras/gtk2_immodule/Makefile.am
+--- ./extras/gtk2_immodule/Makefile.am	2005-08-11 20:39:15.000000000 -0500
++++ /tmp/dpep-work.pSFvig/scim-1.4.1/extras/gtk2_immodule/Makefile.am	2005-08-11 20:52:41.868781848 -0500
+@@ -32,7 +32,7 @@
  
  noinst_HEADERS = gtkimcontextscim.h
  
@@ -45,12 +45,12 @@ diff -urNad /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immod
  
  module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
  
-diff -urNad /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.in scim-0.99.1/extras/gtk2_immodule/Makefile.in
---- /home/minghua/chroot/scim-beta/1.0-pre/scim-0.99.1/extras/gtk2_immodule/Makefile.in	2004-06-27 04:47:52.000000000 -0500
-+++ scim-0.99.1/extras/gtk2_immodule/Makefile.in	2004-06-27 04:50:54.000000000 -0500
-@@ -329,7 +329,7 @@
- 
- @SCIM_BUILD_GTK2_IMMODULE_TRUE@CONFIG_GTK2_IMMODULE = im-scim.la
+diff -urNad --exclude=CVS --exclude=.svn ./extras/gtk2_immodule/Makefile.in /tmp/dpep-work.pSFvig/scim-1.4.1/extras/gtk2_immodule/Makefile.in
+--- ./extras/gtk2_immodule/Makefile.in	2005-08-11 20:39:15.000000000 -0500
++++ /tmp/dpep-work.pSFvig/scim-1.4.1/extras/gtk2_immodule/Makefile.in	2005-08-11 20:52:41.870781544 -0500
+@@ -366,7 +366,7 @@
+ @SCIM_BUILD_X11_UTILS_TRUE@X11_UTILS = $(top_builddir)/utils/libscim-x11utils-1.0.la
+ @SCIM_LD_VERSION_SCRIPT_TRUE@LD_VERSION_SCRIPT_OPTION = "-Wl,--version-script=$(srcdir)/im-scim.version-script"
  noinst_HEADERS = gtkimcontextscim.h
 -moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
 +moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules

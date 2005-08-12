@@ -5,6 +5,9 @@ scim (1.4.1-0+SVN) UNRELEASED; urgency=low
     debian/{control,rules}:  ABI change.  Change binary package libscim6c2 to
     libscim8, and all modules are in /usr/lib/scim-1.0/1.4.0/ now.  There are
     also a new shared library (libscim-x11utils-1.0) and new modules.
+  * debian/patches/{00list,10gtk-immodule-install-dir.dpatch}:  Unfuzzy patch,
+    and rename it to 10_gtk-immodule-install-dir.dpatch according to new
+    naming template.
 
  -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 20:10:07 -0500
 
