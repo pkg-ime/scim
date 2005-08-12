@@ -1,7 +1,15 @@
-1.2.0
-----------------------
-Some way to specify shlibs as >= 1.0.0 instead of -V (which will give >=
-${Source-Version})
+1.4.0
+-----
+Update to Debian policy 3.6.2.
 
+Revise README.Debian and man page.
+
+
+Long Term
+---------
 Tighten xlibs-dev build-dependence (perhaps to libx11-dev and x-dev, but
 right now the configure script requires libxt-dev for X11/Intrinsic.h)
+
+Add im-switch support.
+
+Investigate "SONAME in dynamic loaded module" issue.
