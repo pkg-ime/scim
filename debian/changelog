@@ -8,6 +8,7 @@ scim (1.4.1-0+SVN) UNRELEASED; urgency=low
   * debian/patches/{00list,10gtk-immodule-install-dir.dpatch}:  Unfuzzy patch,
     and rename it to 10_gtk-immodule-install-dir.dpatch according to new
     naming template.
+  * debian/watch:  Track 1.4 series.
 
  -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 20:10:07 -0500
 
