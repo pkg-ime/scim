@@ -16,9 +16,9 @@ scim (1.2.3-1) unstable; urgency=low
 
   * New upstream release.  (Closes: #308064)
     - Build with GCC 4.0.  Use libscim6c2 as the shared library package name
-      to avoid problem with some unofficial builds.
+      to avoid problem with some unofficial builds.  [minghua]
   * debian/NEWS:  Create this file, and add notes about scim 1.0 to 1.2
-    upgrade and C++ ABI transtion.
+    upgrade and C++ ABI transtion.  [minghua]
   * debian/patches/{00list,20-gcc-4.0-ftbfs.dpatch}:  Already included by
     upstream, removed.  [minghua]
   * debian/control, debian/{scim,scim-dev,libscim6c2,libscim-dev}.install:
