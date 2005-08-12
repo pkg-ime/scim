@@ -1,17 +1,17 @@
-scim (1.2.3-1) unstable; urgency=low
+scim (1.4.1-1) unstable; urgency=low
 
-  After upgrading from scim 1.0 to 1.2, you need to restart scim to have
+  After upgrading from scim 1.0 to 1.4, you need to restart scim to have
   it working properly.  The simple way to restart scim is just
   restarting X.  Also the settings in ~/.scim for 1.0 may be
-  incompatible with 1.2, so if you encounter strange behaviour after
+  incompatible with 1.4, so if you encounter strange behaviour after
   upgrading, move ~/.scim out of the way and try again.
 
-  New scim 1.2 packages are not compatible with old IMEngines compiled
-  against scim 1.0.  The new scim 1.2.3-1 package should conflict with
+  New scim 1.4 packages are not compatible with old IMEngines compiled
+  against scim 1.0.  The new scim 1.4.1-1 package should conflict with
   all old scim 1.0 packages, but if you are using unofficial IMEngines,
   you need to install libscim-dev and recompile.
 
-  Debian is having a C++ ABI transition, and new scim 1.2 packages are
+  Debian is having a C++ ABI transition, and new scim 1.4 packages are
   compiled with g++ 4.0.  This may cause prolem if you are using third
   party softwares that are compiled with g++ 3.3 (or even some Debian
   packages that hasn't finished the transition yet), especially if you
@@ -19,4 +19,4 @@ scim (1.2.3-1) unstable; urgency=low
   by setting GTK_IM_MODULE to xim.  Please read the documentation in
   /usr/share/doc/scim/README.Debian.gz for details.
 
- -- Ming Hua <minghua@rice.edu>  Sun,  7 Aug 2005 13:03:04 -0500
+ -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 22:36:52 -0500

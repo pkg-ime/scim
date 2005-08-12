@@ -9,8 +9,10 @@ scim (1.4.1-0+SVN) UNRELEASED; urgency=low
     and rename it to 10_gtk-immodule-install-dir.dpatch according to new
     naming template.
   * debian/watch:  Track 1.4 series.
+  * debian/NEWS:  Change news entry version from 1.2.3-1 to 1.4.1-1, since
+    1.2.3-1 was never released.  Also refer to scim 1.4 instead of 1.2.
 
- -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 20:10:07 -0500
+ -- Ming Hua <minghua@rice.edu>  Thu, 11 Aug 2005 22:38:20 -0500
 
 scim (1.2.3-1) unstable; urgency=low
 
