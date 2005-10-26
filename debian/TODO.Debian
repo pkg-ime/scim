@@ -1,15 +1,19 @@
-1.4.0
+1.4.2
 -----
 Update to Debian policy 3.6.2.
 
 Revise README.Debian and man page.
 
+Check rules to meet requirements of the new dpkg-dev.
 
-Long Term
----------
 Tighten xlibs-dev build-dependence (perhaps to libx11-dev and x-dev, but
 right now the configure script requires libxt-dev for X11/Intrinsic.h)
 
+Use autotools-dev correctly.
+
+
+Long Term
+---------
 Add im-switch support.
 
 Investigate "SONAME in dynamic loaded module" issue.
