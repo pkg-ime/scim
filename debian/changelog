@@ -1,6 +1,8 @@
 scim (1.4.2-0+SVN) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/control:  Update Suggests list.  Add Japanese IM engines and
+    replace scim-chinese with scim-pinyin.  (Closes: #335909)
 
  -- Ming Hua <minghua@rice.edu>  Fri, 12 Aug 2005 12:53:24 -0500
 
