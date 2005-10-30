@@ -25,14 +25,14 @@ Description: Smart Common Input Method platform
  GUI setup tools.
  .
  Currently, SCIM supports XIM, GTK+ immodule, and Qt immodule framework,
- features various input method engines such as scim-table, scim-chinese
+ features various input method engines such as scim-table, scim-pinyin
  (smart pinyin), scim-uim (using UIM library), scim-hangul, scim-chewing
  (using libchewing library), and scim-m17n (using libm17n library).
  .
  If you use generic table IM engine, you need to get the data table in
  other packages, such as scim-tables-zh, scim-tables-ja, scim-tables-ko,
  or scim-tables-additional.  You can also use other IM engines packaged
- in scim-chinese, scim-uim, scim-hangul, scim-chewing and scim-m17n.
+ in scim-pinyin, scim-uim, scim-hangul, scim-chewing and scim-m17n.
  .
  For development on SCIM platform, please see the description of package
  scim-dev.
@@ -71,7 +71,7 @@ Description: development library for SCIM platform
  such as XIM or IIIMF (in progress), as well as using client specific IM
  interface, such as GTK2 immodule or Qt immodule.  As an IM application,
  SCIM can use various IM engines to provide input method in many
- languages, either by native modules (scim-table, scim-chinese,
+ languages, either by native modules (scim-table, scim-pinyin,
  scim-hangul) or an interface to other IM libraries (scim-uim, 
  scim-m17n, scim-chewing).
  .
