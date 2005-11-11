@@ -37,8 +37,6 @@ Description: Smart Common Input Method platform
  For development on SCIM platform, please see the description of package
  scim-dev.
  .
- Author: James Su <suzhe@tsinghua.org.cn>
- .
  Homepage: http://www.scim-im.org/
 
 Package: libscim8
