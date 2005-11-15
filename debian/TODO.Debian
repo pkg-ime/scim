@@ -1,19 +1,24 @@
-1.4.2
------
-Update to Debian policy 3.6.2.
+1.4.2-1
+-------
+Rename libscim8 package name for C++ ABI transition (#339261).
 
+Add assistant script for reportbug.
+
+
+1.4.2-2
+-------
 Revise README.Debian and man page.
 
 Check rules to meet requirements of the new dpkg-dev.
 
-Tighten xlibs-dev build-dependence (perhaps to libx11-dev and x-dev, but
-right now the configure script requires libxt-dev for X11/Intrinsic.h)
-
-Use autotools-dev correctly.
+Add lintian override for the soname-and-library-name-mismatch error.
 
 
 Long Term
 ---------
+Write a patch for configure process so that it doesn't check X11/Intrinsic.h
+for X availablity, and get rid of the libxt-dev build-dependency.
+
 Add im-switch support.
 
 Investigate "SONAME in dynamic loaded module" issue.
