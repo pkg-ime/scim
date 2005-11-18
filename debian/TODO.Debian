@@ -1,7 +1,5 @@
 1.4.2-1
 -------
-Rename libscim8 package name for C++ ABI transition (#339261).
-
 Add assistant script for reportbug.
 
 

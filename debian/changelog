@@ -1,6 +1,8 @@
 scim (1.4.2-0+SVN) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/{control,rules,libscim8.install}:  C++ ABI transtion, rename binary
+    package libscim8 to libscim8c2a.  (Closes: #339261)
   * debian/control:  Update Suggests list.  Add Japanese IM engines and
     replace scim-chinese with scim-pinyin.  (Closes: #335909)
   * debian/control:  Upgrade to policy version 3.6.2 (no actual changes).
@@ -8,7 +10,7 @@ scim (1.4.2-0+SVN) UNRELEASED; urgency=low
   * debian/{control,rules}:  Build-Depends on autotools-dev and use the
     config.guess and config.sub files from autotools-dev unconditionally.
 
- -- Ming Hua <minghua@rice.edu>  Tue, 15 Nov 2005 11:09:26 -0600
+ -- Ming Hua <minghua@rice.edu>  Thu, 17 Nov 2005 19:34:27 -0600
 
 scim (1.4.1-1) unstable; urgency=low
 
