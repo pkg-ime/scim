@@ -9,6 +9,8 @@ scim (1.4.2-0+SVN) UNRELEASED; urgency=low
   * debian/copyright:  Update copyright notice and FSF address.
   * debian/{control,rules}:  Build-Depends on autotools-dev and use the
     config.guess and config.sub files from autotools-dev unconditionally.
+  * debian/control:  Use individual X library packages in Build-Depends
+    instead of the xlibs-dev metapackage.
   * debian/{scim.script,rules}:  Add reportbug information gathering script.
 
  -- Ming Hua <minghua@rice.edu>  Fri, 25 Nov 2005 17:55:25 -0600
