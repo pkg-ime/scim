@@ -99,6 +99,10 @@ install-stamp: build-stamp
 	# Prepare files for different packages to separate directories
 	dh_install --sourcedir=debian/tmp --fail-missing
 
+	# Install reportbug script for scim binary package
+	install -m 755 -D \
+		debian/scim.script debian/scim/usr/share/bug/scim/script
+
 	touch install-stamp
 
 # Must not depend on anything. This is to be called by

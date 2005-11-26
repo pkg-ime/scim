@@ -9,8 +9,9 @@ scim (1.4.2-0+SVN) UNRELEASED; urgency=low
   * debian/copyright:  Update copyright notice and FSF address.
   * debian/{control,rules}:  Build-Depends on autotools-dev and use the
     config.guess and config.sub files from autotools-dev unconditionally.
+  * debian/{scim.script,rules}:  Add reportbug information gathering script.
 
- -- Ming Hua <minghua@rice.edu>  Thu, 17 Nov 2005 19:34:27 -0600
+ -- Ming Hua <minghua@rice.edu>  Fri, 25 Nov 2005 17:55:25 -0600
 
 scim (1.4.1-1) unstable; urgency=low
 
