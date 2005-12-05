@@ -1,4 +1,4 @@
-scim (1.4.2-0+SVN) UNRELEASED; urgency=low
+scim (1.4.2-1) unstable; urgency=low
 
   * New upstream release.
   * debian/{control,rules,libscim8.install}:  C++ ABI transtion, rename binary
