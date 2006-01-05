@@ -8,7 +8,7 @@ echo >&3
 
 # environment variables
 echo "Related environment variables:" >&3
-echo "\$XMODIFIERS=$MODIFIERS" >&3
+echo "\$XMODIFIERS=$XMODIFIERS" >&3
 echo "\$GTK_IM_MODULE=$GTK_IM_MODULE" >&3
 
 echo >&3

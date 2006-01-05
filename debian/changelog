@@ -1,8 +1,8 @@
 scim (1.4.2-1+SVN) UNRELEASED; urgency=low
 
-  * dummy entry
+  * Fix typo in reportbug script.
 
- -- Ming Hua <minghua@rice.edu>  Mon,  5 Dec 2005 18:19:06 -0600
+ -- Ming Hua <minghua@rice.edu>  Thu,  5 Jan 2006 00:44:10 -0600
 
 scim (1.4.2-1) unstable; urgency=low
 
