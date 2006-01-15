@@ -1,9 +1,13 @@
-scim (1.4.2-1+SVN) UNRELEASED; urgency=low
+scim (1.4.4-0+SVN) UNRELEASED; urgency=low
 
+  * New upstream release.
+    - The locales that prefer scim as GTK IM module has changed.
   * Fix typo in reportbug script.
   * Update scim(1) man page.
+  * Complete documetation rewrite, add two more README files for using SCIM in
+    different desktop environments.
 
- -- Ming Hua <minghua@rice.edu>  Thu,  5 Jan 2006 00:44:10 -0600
+ -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 08:13:58 -0600
 
 scim (1.4.2-1) unstable; urgency=low
 

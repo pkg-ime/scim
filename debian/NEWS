@@ -1,3 +1,17 @@
+scim (1.4.4-1) unstable; urgency=low
+
+  Since scim 1.4.3, upstream has changed in which locales GTK+ will prefer
+  scim as the IM module, from "*" (every locale) to "" (no locale).  This
+  means if environment variable GTK_IM_MODULE is not set, GTK+ applications
+  will no longer use scim as its IM module by default (the default module will
+  depend on your locale and other installed input methods).  So if you have
+  been relying on this behavior, your input method in GTK+ applications will
+  stop working after scim upgrade.  To use scim as the GTK input method, make
+  sure you have set GTK_IM_MODULE to scim.  Please read README.GTK in
+  /usr/share/doc/scim/ for more details.
+
+ -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 03:20:04 -0600
+
 scim (1.4.1-1) unstable; urgency=low
 
   After upgrading from scim 1.0 to 1.4, you need to restart scim to have

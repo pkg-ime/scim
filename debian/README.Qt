@@ -1,0 +1,28 @@
+SCIM supports three different input modes - XIM mode, GTK IM mode, and Qt IM
+mode.  Currently the Debian packages only supports XIM and GTK IM, as the Qt
+IM mode needs an unofficial patch for Qt 3, and Trolltech has said that such
+patch can't go into Qt 3 because being considered too intrusive.  At the time
+of writing this README, Debian's Qt 3 package doesn't include this patch
+either.
+
+But don't worry, Qt/KDE applications can use XIM mode just fine.  You only
+need to pay extra attention on two things:
+
+1. Both Qt and SCIM has their own settings for XIM style, so you need to make
+sure they match.  There are two commonly used XIM styles, usually called "on
+the spot" and "over the spot".  To change the style in SCIM, run scim-setup
+(or choose "SCIM Input Method Setup" from your menu), and go to the "FrontEnd
+-> Global Setup" page.  The option to change XIM style is "Embed Preedit
+String into client window", when it is selected, you are using "on the spot"
+style; and when it is not selected, you are using "over the spot" style.  To
+change the style in Qt, run qtconfig (or choose "Qt3 Configuration" from your
+menu), go to "Interface" tab, and choose the style in the "XIM Input Style"
+dropdown menu at the bottom.  You usually don't need the "off the spot" or
+"root" style.
+
+2. It is reported that some of the KDE applications don't work very well when
+using "on the spot" style.  So if your application behaves strangely, you may
+want to try switching to "over the spot" style first.
+
+vim:textwidth=78:
+

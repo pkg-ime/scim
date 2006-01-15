@@ -1,161 +1,223 @@
-=================================
-Brief User's Guide for SCIM 1.0.2
-=================================
+               ===========================================
+               Brief User's Guide for SCIM (version 1.4.4)
+               ===========================================
 
-SCIM enables easy input of characters not found on your keyboard such as
-Japanese, Chinese, Korean, Russian, Arabic, etc. in X environment under
-UTF-8 locale.
+SCIM is an input method platform, and supports many different input methods
+(IMs) to make input of complicated characters in X environment possible.
+There are SCIM plugin modules for many languages such as Japanese, Chinese,
+Korean, Arabic, and many Indic languages.
 
-Install following basic packages as starter:
- scim                                  (the core libraries and programs)
- scim-gtk2-immodule     (GTK immodule, for context menu in GTK programs)
-scim-gtk2-immodule depends on scim-frontend-socket, scim-server-socket
-and scim-config-socket packages.  You'll automatically install them when
-you choose to install scim-gtk2-immodule.
+---------------
+Debian Packages
+---------------
 
-Install one (or any) of the following packages for your needs of
-IMEngine (input method conversion engine):
- scim-chinese                     (for intelligent Chinese PinYin input)
- scim-chewing     (for intelligent Chinese Zhuyin input with libchewing)
- scim-hangul                              (for intelligent Korean input)
- scim-m17n and libm17n-0      (most languages: Arabic, Thai, Greek, ...)
- anthy and (scim-m17n or scim-uim)                        (for Japanese)
- (prime or canna) and scim-uim                (for alternative Japanese)
+The package scim is the core package of SCIM platform.  To really use SCIM you
+also need one module package to provide input methods for the language you
+use.  The modules packaged in Debian currently are (categorized by language):
 
-Other packages may be installed are:
- scim-tables-zh, scim-tables-ko, scim-tables-ja, scim-tables-additional
-These are simple conversion table based input methods and less
-intelligent ones.  As far as I can tell, not very useful for Japanese.
-But for Arabic and Indic languages, simple table based conversion with
-scim-tables-additional may be still quite useful.  Also, scim-tables-zh
-provides the popular WuBi input method (although not best performance,
-you may consider package fcitx if you use WuBi only).
+scim-anthy, scim-uim, scim-skk, scim-prime, scim-canna, scim-tables-ja
+                                                                (for Japanese)
+scim-pinyin, scim-tables-zh
+                                                      (for simplified Chinese)
+scim-chewing, scim-tables-zh
+                                                     (for traditional Chinese)
+scim-hangul, scim-tables-ko, scim-uim
+                                                                  (for Korean)
+scim-m17n, scim-tables-additional, scim-uim
+                                                         (for other languages)
 
-In future, you may find some intelligent IMEngines:
- scim-anthy                 (for customizable Japanese input with anthy)
- scim-prime                              (for Japanese input with prime)
- scim-skk                                  (for Japanese input with skk)
+You need to read the documentation of the particular module package to see if
+your language or favorite input method is supported.
 
-SCIM can be automatically started during the X start up.  This
-configuration can be easily done by the helper package m17n-env (*).
-All you have to do is to install m17n-env package and then to run
-set-m17n-env command from the root and your user shell account while
-choosing scim as your preferred IM from the menu choice.  (This is just
-a helper package focused on mostly Gnome/Gtk+2 environment.)
+The package scim-gtk2-immodule provides GTK IM mode for SCIM.  Contrary to the
+popular conception, you do NOT need this package to be able to use SCIM in
+GTK+/GNOME applications.  Those applications can use XIM mode just fine.  For
+more details, please read README.GTK.
 
-Alternatively, you can do this manually.  In order to provide the SCIM
-input method for the traditional X programs such as xterm, start SCIM
-before running such programs:
- $ scim -d
- $ XMODIFIERS="@im=SCIM"; export XMODIFIERS
+There are two other programs need mentioning: skim and scim-qtimm.  Both are
+for Qt/KDE integration of SCIM, but they are not packaged in Debian (yet).
+Especially scim-qtimm requires an unofficial patch for Qt 3, so it's prabably
+quite hard to get it into Debian.  William J Beksi is working on packaging
+skim, and please refer to ITP bug #309857 for progress.  Although these
+programs are not available in Debian, Qt/KDE applications can also use XIM
+mode just fine.  Read README.Qt if you want to use SCIM in Qt/KDE
+applications.
 
-Gtk+2 programs can select their input method by right clicking input
-field.  If you chose XIM in this right clicked selections, then above
-initialization should be sufficient for SCIM to provide input method.
+In summary, you should install package scim and one of the IM module package
+to start.  You may install scim-gtk2-immodule if you use GTK+ applications and
+want to try the GTK IM mode.  You shouldn't need to explicitly install any
+other package as they should be installed as necessary due to dependency.
 
-Alternatively, Gtk+2 programs can directly obtain their input from SCIM
-through GTK IMModule by selecting SCIM in the right clicked selections
-when scim-gtk2-immodule package is installed.  In order to make this as
-the default behavior, set the environment variable GTK_IM_MODULE in X
-session as:
- $ GTK_IM_MODULE="scim"; export GTK_IM_MODULE
+-------
+Locales
+-------
 
-There is also a separate qt(kde) module for scim (scim-qtimm), but it's
-not packaged for Debian since compatible version of KDE applications are
-not available yet in Debian archive (it requires a patch for Qt 3).
-Another scim related program is skim (aka scim-panel-kde), but it's not
-packaged either due to lack of packagers familiar with KDE.
- 
-SCIM supports any locales which are supported by IMEngines directly.
-However you need to enable your locale for SCIM except you use
-en_US.UTF-8.  Any UTF-8 locales can be added as a supported locale by
-modifying ~/.scim/global as below:
+SCIM should work in all UTF-8 locales.  It can also work in some Chinese (zh),
+Japanese (ja), and Korean (ko) non UTF-8 locales, but it usually requires some
+additional configuration.  The maintainer of scim package recommends using
+UTF-8 locale. :-)
 
-After first run of SCIM, ~/.scim/global contains:
-    /SupportedUnicodeLocales = en_US.UTF-8
-To enable SCIM under ja_JP.UTF-8, modify this to:
-    /SupportedUnicodeLocales = ja_JP.UTF-8
-To enable SCIM under many locales, modify this to list all locales:
-    /SupportedUnicodeLocales = en_US.UTF-8,en_GB.UTF-8,fr_FR.UTF-8,de_DE.UTF-8,ja_JP.UTF-8,ko_KR.UTF-8,zh_CN.UTF-8,zh_TW.UTF-8
+There is one limitation in SCIM, that you must tell SCIM the UTF-8 locale you
+want to use SCIM in.  This is recorded in the user's configuration file
+~/.scim/global.  You need to add a line of the format
+    /SupportedUnicodeLocales = <your_locale>
+to your ~/.scim/global file unless you use en_US.UTF-8 locale (which is
+supported by default).  The <your_locale> string should be in ll_CC.UTF-8
+form, where ll being the language, and CC being the country.  You can always
+use the "locale" command to check your locale setting.  You can also add
+mutiple locales there, just separate them by comma without space, like
+    /SupportedUnicodeLocales = en_US.UTF-8,en_GB.UTF_8,fr_FR.UTF-8
 
-The /SupportedUnicodeLocales entry in above example must be one long
-line and each locale is separated only by comma without space.
+If you have never used SCIM before, your ~/.scim/global may be not existent.
+You can run ``scim'' from an X terminal, then press Ctrl-C to abort it, this
+configure file should be created for the user.
 
-Each locale means:
- en_US.UTF-8 for English menu UTF-8 system
- en_GB.UTF-8 for English menu UTF-8 system
-                 (with British convention for date etc.)
- fr_FR.UTF-8 for French menu UTF-8 system
- de_DE.UTF-8 for German menu UTF-8 system
- ja_JP.UTF-8 for Japanese menu UTF-8 system
- ko_KR.UTF-8 for Korean menu UTF-8 system
- zh_CN.UTF-8 for Chinese (simplified) menu UTF-8 system
- zh_TW.UTF-8 for Chinese (traditional) menu UTF-8 system
+If there are many users on a system and use the same locale, you may want to
+consider change the system configuration file /etc/scim/global to set the
+supported locale.
 
-If ~/.scim/global is not existent, run ``scim'' from terminal, then use
-Ctrl-C to abort it, this configure file should be created for the user.
+----------
+Using SCIM
+----------
 
-Alternatively, /etc/scim/global may set this globally when you have
-root access.  (The m17n-env package does not change /etc/scim/global
-automatically to enable for all available UTF-8 locales since you may
-want to start some locale without scim.)
+After setting up locale, you can try using SCIM to input in your language.
+SCIM can be used in two modes: XIM mode and GTK IM mode.
 
-Then run any application that support XIM (still using the same terminal
-with the environment set):
+To use XIM (X Input Method) mode, you need to set the environment variable
+XMODIFIERS and GTK_IM_MODULE before starting your X application (you only need
+to set GTK_IM_MODULE if the X application you want to run also uses GTK+).
+Run the following commands in an X terminal (such as xterm, gnome-terminal or
+konsole):
+    $ XMODIFIERS="@im=SCIM"
+    $ export XMODIFIERS
+    $ GTK_IM_MODULE="xim"
+    $ export GTK_IM_MODULE
+    $ scim -d
+Now you should see some output by SCIM saying it's successfully launched, and
+if your have a system tray, there should be an icon of keyboard image
+appearing there (the image of the icon will change according to the input
+method status).  Then you can start an X program in the same terminal, for
+example
     $ gedit
-Now press Ctrl-Space should switch input from English and Japanese.  If
-you have a notification area on the panel, there would also be an icon
-there indicating the status of scim.
+will start the gedit text editor.  Press Ctrl-space should activate SCIM and
+you can start using your input method (remember you need to install the module
+package for your input method).  Note you must start the program you want to
+use input method in from the same X terminal.  To enable using SCIM in
+programs launched in any way, see the "Autostart SCIM" section below.
 
-Although you can set system wide environment variables such as LANG from
-/etc/environment, I would not recommend to set it to any CJK (Chinese,
-Japanese, Korean) locales there since normal Linux terminal will have
-trouble with it.  I suggest to leave console locales as default ("C") or
-something simple like "en_US.ISO-8859-1".  
+GTK+ 2 has its own input method framework, so GTK+/GNOME programs can use SCIM
+in an additional mode, GTK IM mode.  Note again that GTK+/GNOME programs can
+use XIM mode, too, so the scim-gtk2-immodule and GTK IM mode are not essential
+for using input methods in GTK+ applications.  SCIM's GTK IM mode is provided
+as a GTK IM module by the scim-gtk2-immodule package, and SCIM can
+automatically start if you choose this module.  So using GTK IM mode is
+simpler, just start a GTK+/GNOME program, right-click and choose "Input
+Methods -> SCIM Input Method" in the pop-up menu, and SCIM should
+automatically start if it's not started yet.  Now pressing Ctrl-space should
+also activate SCIM and you can start inputing.  An alternative way to start
+GTK+ applications using SCIM at the GTK IM module is by using GTK_IM_MODULE
+environment variable, such as:
+    $ GTK_IM_MODULE="scim"
+    $ export GTK_IM_MODULE
+    $ gedit
+This way SCIM will automatically start when you start the GTK+ program, and
+automatically stop when you quit the program.  This may cause delay for
+program start/quit though, so it's always a good idea to explicitly start SCIM
+by "scim -d" command.
 
-If you want to use UTF-8 locales in X, you should use GDM (or KDM) which
-runs X start up script while using ~/.dmrc to set X locale and session
-type (Gnome, KDE, Xfce, ...).  Custom X start up script can be placed in
-/etc/X11/Xsession.d/ .  The m17n-env package installs a hook script here
-so you can set up user specific startup customization scripts in
-~/.xsession.d/ .  This allows us to switch desktop through GDM menu.
-(You can customize X in traditional ways by providing the start up
-script as in ~/.xssession or ~/.xinitrc.  If you do this, you lose
-ability to switch desktop from GDM menu while sharing the startup script
-between Gnome and KDE.)
+--------------
+Autostart SCIM
+--------------
 
-If you are wondering why you can not disable SCIM by just removing start
-up script like old XIM input methods, the reason is that SCIM is also
-started as Gtk+2 immodule for Mozilla and other Gtk+2 programs.  You
-should remove scim-gtk2-immodule package to disable this behavior.
+It's quite inconvenient to set environment variables and manually start SCIM
+each time you login, so you want to start SCIM automatically when your X
+session starts.  This is not hard, you just need to put the commands of
+setting variables and start SCIM into a configuration file X reads when it
+starts.  For example, the following lines in ~/.gnomerc should work if you
+want to start SCIM automatically with GNOME:
+    LANG=en_US.UTF-8
+    export LANG
+    XMODIFIERS="@im=SCIM"
+    export XMODIFIERS
+    GTK_IM_MODULE="xim"
+    export GTK_IM_MODULE
+    scim -d
+Change the en_US.UTF-8 to your preferred locale, and change GTK_IM_MODULE to
+"scim" if you want to use GTK IM mode instead of XIM mode.
 
-SCIM still is not perfect in some corner case usability issues such as
-on-the-spot conversion, but this program is quite usable state and gives
-very intuitive access to many input methods which no other programs on
-Debian provide.
+The hard part is to figure out which configuration file to put these in.  One
+choice is to put it in ~/.xsession, and add your X session command at the end
+of the file (such as "exec gnome-session" or "exec startkde").  But this way
+you always need to modify this file to change X session, and the feature of
+choosing session in GDM/KDM will not work anymore.
 
-See http://pkg-ime.alioth.debian.org/ or 
-http://pkg-ime.alioth.debian.org/cgi-bin/wiki/index.cgi
-for the latest information on SCIM and related packages of Debian.
+There are other packages to help these configuration easier, see the next
+section. 
 
-(*) m17n-env package:
+---------------
+Helper Packages
+---------------
+
+There are other Debian packages that help user to set up their input methods.
+The most popular ones are probably m17n-env and im-switch.
+
 The m17n-env package provides customization which sets your system to
 multilingualization (m17n) environment by working with X run under UTF-8
-locale together with the scim package and Debian menu system.  This
-objective required a new approach since the good old language-env
-package provides customization for a single non-UTF-8 locale only.
+locale together with the scim package and Debian menu system.  This objective
+required a new approach since the good old language-env package provides
+customization for a single non-UTF-8 locale only.
 
-----------------
-More information
-----------------
+SCIM has m17n-env support.  You can install m17n-env package and just run
+set-m17n-env command from the root (for the whold system) or your user shell
+(for a single user), choose scim as your preferred IM from the menu choice.
+Note this is a helper package focused on mostly GTK+/GNOME 2 environment.
 
-The upstream website is at http://www.scim-im.org/ .
+Also, the m17n-env package does not change ~/.scim/global or /etc/scim/global
+to enable all available UTF-8 locales for SCIM since you may want to start
+some locales without SCIM.  You still need to manually enable your locale (see
+the "Locales" section above).
 
-The details about how to start scim correctly are based on a mail from
-the upstream author James Su, you can look at it if interested:
-    http://freedesktop.org/pipermail/scim/2004-June/000221.html
-    http://freedesktop.org/pipermail/scim/2004-October/001082.html
+If you use GDM/KDM which use ~/.dmrc to set the user's configuration, you can
+put your user specific startup customization scripts in ~/.xsession.d/
+directory.  The m17n-env package installs a hook script in the system
+/etc/X11/Xsession.d/ directory to handle these user specific scripts.  You can
+also add customization scripts in /etc/X11/Xsession.d/ directly, of course,
+but the maintainer would discourge this.
 
--- Ming Hua <minghua@rice.edu>  Tue, 08 Mar 2005 02:43:58 -0600
--- Osamu Aoki <osamu@debian.org>  Sun, 30 Jan 2005 20:51:54 +0100
+The im-switch package provides another framework for input method packages to
+provide their own customization scirpts.  It also uses hook script in
+/etc/X11/Xsession.d/ to read these customization scripts and set enviroment
+for input methods.  Several SCIM module packages provides im-switch support,
+but not all, and the scim core package doesn't support im-switch either.  The
+work to add im-switch support is planned, though.
 
+-------------------
+Further information
+-------------------
+
+Debian users should read the other README files in /usr/share/doc/scim/ for
+using SCIM in different desktop environments.  There is also an scim(1) man
+page worth reading.
+
+The Debian packaging work of SCIM related packages is coordinated on a mailing
+list on Alioth, pkg-ime-devel@list.alioth.debian.org.  You can subscribe to it
+or read the web archives for some useful information.  See
+    http://lists.alioth.debian.org/mailman/listinfo/pkg-ime-devel
+about this mailing list.
+
+The SCIM upstream website is at http://www.scim-im.org/ but the Debian
+specific information is probably quite sparse.
+
+-----------
+Report Bugs
+-----------
+
+SCIM is still not perfect, and there are always some corner case usability
+issues.  So please report bugs (install the reportbug package and use the
+reportbug program, it's not hard to report a bug)!  SCIM involves many
+languages and input methods, only with every user's testing and help, can we
+keep improving it and provide better input method support in Debian.  Thanks!
+
+ -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 08:15:48 -0600
+
+vim:textwidth=78:

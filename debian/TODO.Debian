@@ -1,7 +1,5 @@
-1.4.2-2
+1.4.4-2
 -------
-Revise README.Debian.
-
 Check rules to meet requirements of the new dpkg-dev.
 
 Add lintian override for the soname-and-library-name-mismatch error.
