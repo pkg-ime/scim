@@ -1,6 +1,6 @@
 1.4.2-2
 -------
-Revise README.Debian and man page.
+Revise README.Debian.
 
 Check rules to meet requirements of the new dpkg-dev.
 
