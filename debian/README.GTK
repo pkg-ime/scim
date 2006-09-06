@@ -29,7 +29,7 @@ version higher than 1.4.2, you need to set GTK_IM_MODULE to scim to resume the
 previous behavior.
 
 The support for XIM mode in GTK+ 2.x has been significantly improved since the
-days ofversion 2.0.  Although there are still small glitches here an there,
+days of version 2.0.  Although there are still small glitches here an there,
 XIM mode is generally quite usable.  Because of the crash bug mentioned above,
 as well as the default mode change by upstream, the maintainer now recommends
 using XIM mode even in GTK+ applications.  The maintainer himself has been

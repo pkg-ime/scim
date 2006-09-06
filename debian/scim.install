@@ -1,6 +1,8 @@
 etc/scim/config
 etc/scim/global
 
+etc/X11/xinit/xinput.d/scim
+
 usr/bin/scim
 usr/bin/scim-config-agent
 usr/bin/scim-setup

@@ -158,38 +158,48 @@ section.
 Helper Packages
 ---------------
 
-There are other Debian packages that help user to set up their input methods.
-The most popular ones are probably m17n-env and im-switch.
+The im-switch package will help user to set up their input methods.
 
-The m17n-env package provides customization which sets your system to
-multilingualization (m17n) environment by working with X run under UTF-8
-locale together with the scim package and Debian menu system.  This objective
-required a new approach since the good old language-env package provides
-customization for a single non-UTF-8 locale only.
-
-SCIM has m17n-env support.  You can install m17n-env package and just run
-set-m17n-env command from the root (for the whold system) or your user shell
-(for a single user), choose scim as your preferred IM from the menu choice.
-Note this is a helper package focused on mostly GTK+/GNOME 2 environment.
-
-Also, the m17n-env package does not change ~/.scim/global or /etc/scim/global
-to enable all available UTF-8 locales for SCIM since you may want to start
-some locales without SCIM.  You still need to manually enable your locale (see
-the "Locales" section above).
-
-If you use GDM/KDM which use ~/.dmrc to set the user's configuration, you can
-put your user specific startup customization scripts in ~/.xsession.d/
-directory.  The m17n-env package installs a hook script in the system
-/etc/X11/Xsession.d/ directory to handle these user specific scripts.  You can
-also add customization scripts in /etc/X11/Xsession.d/ directly, of course,
-but the maintainer would discourge this.
-
-The im-switch package provides another framework for input method packages to
-provide their own customization scirpts.  It also uses hook script in
+The im-switch package provides the framework for input method packages to
+provide their own customization scirpts.  It uses hook script in
 /etc/X11/Xsession.d/ to read these customization scripts and set enviroment
-for input methods.  Several SCIM module packages provides im-switch support,
-but not all, and the scim core package doesn't support im-switch either.  The
-work to add im-switch support is planned, though.
+for input methods.  But this package's configuration is choosing among
+SCIM, UIM, ... etc only.  The detail choices within SCIM modules are done by 
+installing relevant packages and configuring through SCIM GUI configuration 
+tool. (This is the same situation between UIM modules.)
+
+If you start X in one of CJK environment while scim and im-switch are
+installed, it should start SCIM automatically unless you have higher 
+priority package for IM.
+
+To see what is your IM,
+  $ im-swich -l
+will list complete situation.  If you just want to set one user account 
+to use SCIM, just type
+  $ im-switch -c
+and select scim.  If you do the same from root use, you set system wide
+default.  If your locale can not configure as above, use following instead
+for root.
+  # im-switch -z all_ALL -c
+
+There is another interesting package m17n-env.  This provides terminals
+run under all possible locales, e.g., ja_JP.UTF-8, ja_JP.eucJP, 
+fr_FR.ISO-8859-1, ... to enable multilingualization (m17n) environment.
+
+The good old language-env package provided customization for a 
+single non-UTF-8 locale only.  So as of now, it is not so useful under 
+UTF-8 but font recommendation etc are quite informative.
+
+The im-switch package does not change ~/.scim/global or /etc/scim/global
+to enable all available UTF-8 locales for SCIM since you may want to start
+some locales without SCIM.  You still need to manually enable your locale 
+(see the "Locales" section above).
+
+Select UTF-8 locale using GDM/KDM menu.
+
+(You can also add customization scripts in /etc/X11/Xsession.d/ directly, 
+of course, but the maintainer would discourge this.)
+
 
 -------------------
 Further information
@@ -219,5 +229,6 @@ languages and input methods, only with every user's testing and help, can we
 keep improving it and provide better input method support in Debian.  Thanks!
 
  -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 08:15:48 -0600
+ -- Osamu Aoki <osamu@debian.org>  Sat, 20 May 2006 02:45:20 +0900
 
 vim:textwidth=78:

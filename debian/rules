@@ -90,6 +90,10 @@ install-stamp: build-stamp
 	# debian/tmp
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 
+	install -D -o root -g root -m 644 \
+		$(CURDIR)/debian/im-switch/scim \
+		$(CURDIR)/debian/tmp/etc/X11/xinit/xinput.d/scim; \
+
 	# Clean up unnecessary static libraries for modules
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.la
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.a

@@ -1,8 +1,9 @@
-scim (1.4.4-1+SVN) UNRELEASED; urgency=low
+scim (1.4.4-2) unstable; urgency=low
 
-  * 
+  * Updated documentation and dependency to match m17n-env changes.
+  * Provided support for im-switch.
 
- -- Ming Hua <minghua@rice.edu>  Fri, 20 Jan 2006 18:07:45 -0600
+ -- Osamu Aoki <osamu@debian.org>  Sat, 20 May 2006 03:03:39 +0900
 
 scim (1.4.4-1) unstable; urgency=low
 
