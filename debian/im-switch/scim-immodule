@@ -1,0 +1,18 @@
+#
+# This configuration file for SCIM is deprecated.
+#
+# Use "X input Method" for standard X applications
+# Use "SCIM immodule" for GTK applications
+#
+# Using this configuration may improve some usability for GTK applications
+# such as the location of word selection window.
+#
+
+# You still need these XIM settings for non-GTK programs.
+XIM=SCIM
+XIM_PROGRAM=/usr/bin/scim
+XIM_ARGS="-d"
+GTK_IM_MODULE=uim
+# Qt immodule is not ready
+#QT_IM_MODULE=uim
+DEPENDS="scim,scim-gtk2-immodule,scim-anthy|scim-canna|scim-chewing|scim-pinyin|scim-hangle|scim-prime|scim-skk|scim-tables-additional|scim-m17n|scim-uim|scim-tables-ja|scim-tables-ko|scim-tables-zh"

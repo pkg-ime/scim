@@ -1,3 +1,14 @@
+scim (1.4.4-3) unstable; urgency=low
+
+  * Fixed typo in /etc/X11/xinit/xinput.d/scim thanks to Ethan
+    Glasser-Cam. (Closes: #370606)
+  * Changed to use XIM for all applications for better im-switch
+    behavior.
+  * Added scim-immodule choice for im-switch while marking it
+    deprecated in README.Debian.
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 17 Jun 2006 09:55:08 +0900
+
 scim (1.4.4-2) unstable; urgency=low
 
   * Updated documentation and dependency to match m17n-env changes.

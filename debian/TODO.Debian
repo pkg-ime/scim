@@ -12,6 +12,4 @@ Long Term
 Write a patch for configure process so that it doesn't check X11/Intrinsic.h
 for X availablity, and get rid of the libxt-dev build-dependency.
 
-Add im-switch support.
-
 Investigate "SONAME in dynamic loaded module" issue.

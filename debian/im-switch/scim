@@ -1,31 +1,17 @@
 #
-# Following choice scripts are disabled in line with Ming's Documentation.
+# Use "X input Method" for all applications
 #
-##scim_bridge="/usr/lib/gtk-2.0/2.4.0/immodules/im-scim-bridge.so"
-##im_scim="/usr/lib/gtk-2.0/2.4.0/immodules/im-scim.so"
-##libqscim="/usr/lib/qt3/plugins/inputmethods/libqscim.so"
-##
-##if [ -e "$scim_bridge" ]; then
-##        gtkim="scim-bridge"
-##elif [ -e "$im_scim" ]; then
-##	gtkim="scim"
-##else
-##        gtkim="xim"
-##fi
-##
-##if [ -e "$libqscim" ]; then
-##	qtim="scim"
-##else
-##	qtim="xim"
-##fi
-
-# Use safe default.  You can menu select IM default anyway.
-gtkim="xim"
-qtim="xim"
+# Per Ming's Documentation in SCIM, XIM Input Method is activated
+# not only for old X-applications but also for GTK and QT appplication.
+#
+# If a user wish to use, GTK Input Method, (s)he can right-click input 
+# area and select "Input Methods" and change from "X input Method" to 
+# "SCIM Input Method".
+#
 
 XIM=SCIM
 XIM_PROGRAM=/usr/bin/scim
 XIM_ARGS="-d"
-GTK_IM_MODULE="$gtkim"
-QT_IM_MODULE="$qtim"
-DEPENDS="scim,scim-gtk2-immodule,scim-anthy|scim-canna|scim-chewing|scim-pynyin|scim-hangle|scim-prime|scim-skk|scim-tables-additional|scim-m17n|scim-uim|scim-tables-ja|scim-tables-ko|scim-tables-zh"
+GTK_IM_MODULE=xim
+QT_IM_MODULE=xim
+DEPENDS="scim,scim-anthy|scim-canna|scim-chewing|scim-pinyin|scim-hangle|scim-prime|scim-skk|scim-tables-additional|scim-m17n|scim-uim|scim-tables-ja|scim-tables-ko|scim-tables-zh"

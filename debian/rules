@@ -93,6 +93,9 @@ install-stamp: build-stamp
 	install -D -o root -g root -m 644 \
 		$(CURDIR)/debian/im-switch/scim \
 		$(CURDIR)/debian/tmp/etc/X11/xinit/xinput.d/scim; \
+	install -D -o root -g root -m 644 \
+		$(CURDIR)/debian/im-switch/scim-immodule \
+		$(CURDIR)/debian/tmp/etc/X11/xinit/xinput.d/scim-immodule; \
 
 	# Clean up unnecessary static libraries for modules
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.la

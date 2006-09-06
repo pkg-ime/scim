@@ -163,24 +163,44 @@ The im-switch package will help user to set up their input methods.
 The im-switch package provides the framework for input method packages to
 provide their own customization scirpts.  It uses hook script in
 /etc/X11/Xsession.d/ to read these customization scripts and set enviroment
-for input methods.  But this package's configuration is choosing among
-SCIM, UIM, ... etc only.  The detail choices within SCIM modules are done by 
-installing relevant packages and configuring through SCIM GUI configuration 
+for input methods.  But this package's configuration is choosing among SCIM,
+UIM, ... etc only.  The detail choices within SCIM modules are done by
+installing relevant packages and configuring through SCIM GUI configuration
 tool. (This is the same situation between UIM modules.)
 
 If you start X in one of CJK environment while scim and im-switch are
-installed, it should start SCIM automatically unless you have higher 
-priority package for IM.
+installed, it should start SCIM automatically unless you have higher priority
+package for IM.
 
 To see what is your IM,
   $ im-swich -l
 will list complete situation.  If you just want to set one user account 
-to use SCIM, just type
+to use SCIM, just type:
+  $ im-switch -s scim
+The same can be done with menu selection as:
   $ im-switch -c
-and select scim.  If you do the same from root use, you set system wide
-default.  If your locale can not configure as above, use following instead
-for root.
-  # im-switch -z all_ALL -c
+
+If you do the same from root use, you set system wide default.  
+  # im-switch -s scim
+  # im-switch -c
+
+The activation of SCIM is default only for Chinese, Japanese and Korean (CJK)
+enviroment.  Above command set up SCIM only for one locale.  If you wish to
+enable SCIM system wide for all locales, configure SCIM from root as:
+  # im-switch -z zh_CN -s scim
+  # im-switch -z zh_TW -s scim
+  # im-switch -z zh_HK -s scim
+  # im-switch -z zh_SG -s scim
+  # im-switch -z ja_JP -s scim
+  # im-switch -z ko_KR -s scim
+  # im-switch -z all_ALL -s scim
+
+Then you clear the user specific configurations with
+  $ im-switch -a
+
+If you wish to load SCIM for the GTK applications through immodule mechanism
+despite the warning in the README.GTK, we offer a configuration file
+"scim-immodule" for it.  Use it at your risk.
 
 There is another interesting package m17n-env.  This provides terminals
 run under all possible locales, e.g., ja_JP.UTF-8, ja_JP.eucJP, 
@@ -199,7 +219,6 @@ Select UTF-8 locale using GDM/KDM menu.
 
 (You can also add customization scripts in /etc/X11/Xsession.d/ directly, 
 of course, but the maintainer would discourge this.)
-
 
 -------------------
 Further information
