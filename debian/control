@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Ming Hua <minghua@rice.edu>
 Uploaders: Osamu Aoki <osamu@debian.org>
-Build-Depends: debhelper (>= 4.0.0), dpatch, autotools-dev, intltool, x-dev | xlibs-dev, libx11-dev | xlibs-dev, libgtk2.0-dev (>= 2.4.0), libxt-dev | xlibs-dev
+Build-Depends: debhelper (>= 4.0.0), dpatch, autotools-dev, intltool, x11proto-core-dev, libx11-dev, libgtk2.0-dev (>= 2.4.0), libxt-dev
 Standards-Version: 3.6.2
 
 Package: scim
