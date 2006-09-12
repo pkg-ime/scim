@@ -4,6 +4,9 @@ scim (1.4.4-4+SVN) UNRELEASED; urgency=low
     x11proto-core-dev, and drop all alternative xlibs-dev dependencies.
   * Relibtoolize.  Add one big patch 11_relibtoolize.dpatch for all the
     autotools generated files.
+  * Make scim-gtk2-immodule depend on libgtk2.0-bin explicitly as it uses
+    /usr/sbin/update-gtk-immodules in the maintainer scripts.  Thanks to caleb
+    on OFTC.
 
  -- Ming Hua <minghua@rice.edu>  Mon, 11 Sep 2006 18:55:24 -0500
 
