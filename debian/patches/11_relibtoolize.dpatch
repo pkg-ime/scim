@@ -15,8 +15,8 @@
 
 @DPATCH@
 diff -urNad scim-1.4.4~/Makefile.in scim-1.4.4/Makefile.in
---- scim-1.4.4~/Makefile.in	2006-01-11 02:57:47.000000000 -0600
-+++ scim-1.4.4/Makefile.in	2006-09-10 23:28:45.000000000 -0500
+--- scim-1.4.4~/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/Makefile.in	2006-09-12 17:28:01.000000000 -0500
 @@ -53,16 +53,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -106,8 +106,8 @@ diff -urNad scim-1.4.4~/Makefile.in scim-1.4.4/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/aclocal.m4 scim-1.4.4/aclocal.m4
---- scim-1.4.4~/aclocal.m4	2006-01-11 02:57:32.000000000 -0600
-+++ scim-1.4.4/aclocal.m4	2006-09-10 23:28:15.000000000 -0500
+--- scim-1.4.4~/aclocal.m4	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/aclocal.m4	2006-09-12 17:26:30.000000000 -0500
 @@ -13,7 +13,7 @@
  
  # libtool.m4 - Configure libtool for the host system. -*-Autoconf-*-
@@ -2309,9 +2309,64 @@ diff -urNad scim-1.4.4~/aclocal.m4 scim-1.4.4/aclocal.m4
  m4_include([m4/lcmessage.m4])
  m4_include([m4/lib-ld.m4])
  m4_include([m4/lib-link.m4])
+diff -urNad scim-1.4.4~/config.h.in scim-1.4.4/config.h.in
+--- scim-1.4.4~/config.h.in	2006-01-11 03:08:14.000000000 -0600
++++ scim-1.4.4/config.h.in	2006-09-12 17:26:30.000000000 -0500
+@@ -458,19 +458,19 @@
+ /* The release version of SCIM library. */
+ #undef SCIM_VERSION
+ 
+-/* The size of a `char', as computed by sizeof. */
++/* The size of `char', as computed by sizeof. */
+ #undef SIZEOF_CHAR
+ 
+-/* The size of a `unsigned int', as computed by sizeof. */
++/* The size of `unsigned int', as computed by sizeof. */
+ #undef SIZEOF_UNSIGNED_INT
+ 
+-/* The size of a `unsigned long int', as computed by sizeof. */
++/* The size of `unsigned long int', as computed by sizeof. */
+ #undef SIZEOF_UNSIGNED_LONG_INT
+ 
+-/* The size of a `unsigned long long int', as computed by sizeof. */
++/* The size of `unsigned long long int', as computed by sizeof. */
+ #undef SIZEOF_UNSIGNED_LONG_LONG_INT
+ 
+-/* The size of a `unsigned short int', as computed by sizeof. */
++/* The size of `unsigned short int', as computed by sizeof. */
+ #undef SIZEOF_UNSIGNED_SHORT_INT
+ 
+ /* Define as the maximum value of type 'size_t', if the system doesn't define
+@@ -479,7 +479,7 @@
+ 
+ /* If using the C implementation of alloca, define if you know the
+    direction of stack growth for your system; otherwise it will be
+-   automatically deduced at run-time.
++   automatically deduced at runtime.
+ 	STACK_DIRECTION > 0 => grows toward higher addresses
+ 	STACK_DIRECTION < 0 => grows toward lower addresses
+ 	STACK_DIRECTION = 0 => direction of growth unknown */
+@@ -512,7 +512,7 @@
+ /* Define to rpl_malloc if the replacement function should be used. */
+ #undef malloc
+ 
+-/* Define to `long' if <sys/types.h> does not define. */
++/* Define to `long int' if <sys/types.h> does not define. */
+ #undef off_t
+ 
+ /* Define as the type of the result of subtracting two pointers, if the system
+@@ -522,7 +522,7 @@
+ /* Define to empty if the C compiler doesn't support this keyword. */
+ #undef signed
+ 
+-/* Define to `unsigned' if <sys/types.h> does not define. */
++/* Define to `unsigned int' if <sys/types.h> does not define. */
+ #undef size_t
+ 
+ /* Define to unsigned long or unsigned long long if <stdint.h> and
 diff -urNad scim-1.4.4~/configs/Makefile.in scim-1.4.4/configs/Makefile.in
---- scim-1.4.4~/configs/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/configs/Makefile.in	2006-09-10 23:28:33.000000000 -0500
+--- scim-1.4.4~/configs/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/configs/Makefile.in	2006-09-12 17:27:49.000000000 -0500
 @@ -44,16 +44,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -2401,8 +2456,8 @@ diff -urNad scim-1.4.4~/configs/Makefile.in scim-1.4.4/configs/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/configure scim-1.4.4/configure
---- scim-1.4.4~/configure	2006-01-11 02:57:48.000000000 -0600
-+++ scim-1.4.4/configure	2006-09-10 23:28:52.000000000 -0500
+--- scim-1.4.4~/configure	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/configure	2006-09-12 17:28:18.000000000 -0500
 @@ -1,10 +1,11 @@
  #! /bin/sh
  # Guess values for system-dependent variables and create Makefiles.
@@ -36575,8 +36630,8 @@ diff -urNad scim-1.4.4~/configure scim-1.4.4/configure
 +" >&6; }
  
 diff -urNad scim-1.4.4~/data/Makefile.in scim-1.4.4/data/Makefile.in
---- scim-1.4.4~/data/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/data/Makefile.in	2006-09-10 23:28:33.000000000 -0500
+--- scim-1.4.4~/data/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/data/Makefile.in	2006-09-12 17:27:50.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -36666,8 +36721,8 @@ diff -urNad scim-1.4.4~/data/Makefile.in scim-1.4.4/data/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/data/icons/Makefile.in scim-1.4.4/data/icons/Makefile.in
---- scim-1.4.4~/data/icons/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/data/icons/Makefile.in	2006-09-10 23:28:34.000000000 -0500
+--- scim-1.4.4~/data/icons/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/data/icons/Makefile.in	2006-09-12 17:27:50.000000000 -0500
 @@ -44,16 +44,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -36757,8 +36812,8 @@ diff -urNad scim-1.4.4~/data/icons/Makefile.in scim-1.4.4/data/icons/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/data/pixmaps/Makefile.in scim-1.4.4/data/pixmaps/Makefile.in
---- scim-1.4.4~/data/pixmaps/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/data/pixmaps/Makefile.in	2006-09-10 23:28:34.000000000 -0500
+--- scim-1.4.4~/data/pixmaps/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/data/pixmaps/Makefile.in	2006-09-12 17:27:50.000000000 -0500
 @@ -44,16 +44,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -36848,8 +36903,8 @@ diff -urNad scim-1.4.4~/data/pixmaps/Makefile.in scim-1.4.4/data/pixmaps/Makefil
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/docs/Makefile.in scim-1.4.4/docs/Makefile.in
---- scim-1.4.4~/docs/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/docs/Makefile.in	2006-09-10 23:28:34.000000000 -0500
+--- scim-1.4.4~/docs/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/docs/Makefile.in	2006-09-12 17:27:51.000000000 -0500
 @@ -44,16 +44,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -36939,8 +36994,8 @@ diff -urNad scim-1.4.4~/docs/Makefile.in scim-1.4.4/docs/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/docs/manual/Makefile.in scim-1.4.4/docs/manual/Makefile.in
---- scim-1.4.4~/docs/manual/Makefile.in	2006-01-11 02:57:41.000000000 -0600
-+++ scim-1.4.4/docs/manual/Makefile.in	2006-09-10 23:28:35.000000000 -0500
+--- scim-1.4.4~/docs/manual/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/docs/manual/Makefile.in	2006-09-12 17:27:51.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37030,8 +37085,8 @@ diff -urNad scim-1.4.4~/docs/manual/Makefile.in scim-1.4.4/docs/manual/Makefile.
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/docs/manual/zh_CN/Makefile.in scim-1.4.4/docs/manual/zh_CN/Makefile.in
---- scim-1.4.4~/docs/manual/zh_CN/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/docs/manual/zh_CN/Makefile.in	2006-09-10 23:28:35.000000000 -0500
+--- scim-1.4.4~/docs/manual/zh_CN/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/docs/manual/zh_CN/Makefile.in	2006-09-12 17:27:51.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37121,8 +37176,8 @@ diff -urNad scim-1.4.4~/docs/manual/zh_CN/Makefile.in scim-1.4.4/docs/manual/zh_
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/docs/manual/zh_CN/figures/Makefile.in scim-1.4.4/docs/manual/zh_CN/figures/Makefile.in
---- scim-1.4.4~/docs/manual/zh_CN/figures/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/docs/manual/zh_CN/figures/Makefile.in	2006-09-10 23:28:36.000000000 -0500
+--- scim-1.4.4~/docs/manual/zh_CN/figures/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/docs/manual/zh_CN/figures/Makefile.in	2006-09-12 17:27:52.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37212,8 +37267,8 @@ diff -urNad scim-1.4.4~/docs/manual/zh_CN/figures/Makefile.in scim-1.4.4/docs/ma
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/extras/Makefile.in scim-1.4.4/extras/Makefile.in
---- scim-1.4.4~/extras/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/extras/Makefile.in	2006-09-10 23:28:36.000000000 -0500
+--- scim-1.4.4~/extras/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/extras/Makefile.in	2006-09-12 17:27:52.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37303,8 +37358,8 @@ diff -urNad scim-1.4.4~/extras/Makefile.in scim-1.4.4/extras/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.in scim-1.4.4/extras/gtk2_immodule/Makefile.in
---- scim-1.4.4~/extras/gtk2_immodule/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/extras/gtk2_immodule/Makefile.in	2006-09-10 23:28:37.000000000 -0500
+--- scim-1.4.4~/extras/gtk2_immodule/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/extras/gtk2_immodule/Makefile.in	2006-09-12 17:27:53.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37403,8 +37458,8 @@ diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.in scim-1.4.4/extras/gtk2_
  im_scim_la_SOURCES = gtkimcontextscim.cpp imscim.cpp
  im_scim_la_CXXFLAGS = @GTK2_CFLAGS@
 diff -urNad scim-1.4.4~/extras/panel/Makefile.in scim-1.4.4/extras/panel/Makefile.in
---- scim-1.4.4~/extras/panel/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/extras/panel/Makefile.in	2006-09-10 23:28:37.000000000 -0500
+--- scim-1.4.4~/extras/panel/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/extras/panel/Makefile.in	2006-09-12 17:27:53.000000000 -0500
 @@ -45,16 +45,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37494,8 +37549,8 @@ diff -urNad scim-1.4.4~/extras/panel/Makefile.in scim-1.4.4/extras/panel/Makefil
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/extras/setup/Makefile.in scim-1.4.4/extras/setup/Makefile.in
---- scim-1.4.4~/extras/setup/Makefile.in	2006-01-11 02:57:43.000000000 -0600
-+++ scim-1.4.4/extras/setup/Makefile.in	2006-09-10 23:28:38.000000000 -0500
+--- scim-1.4.4~/extras/setup/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/extras/setup/Makefile.in	2006-09-12 17:27:54.000000000 -0500
 @@ -48,16 +48,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -37585,7 +37640,7 @@ diff -urNad scim-1.4.4~/extras/setup/Makefile.in scim-1.4.4/extras/setup/Makefil
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/ltmain.sh scim-1.4.4/ltmain.sh
---- scim-1.4.4~/ltmain.sh	2005-09-09 09:53:57.000000000 -0500
+--- scim-1.4.4~/ltmain.sh	2006-09-12 17:16:21.000000000 -0500
 +++ scim-1.4.4/ltmain.sh	2006-03-11 12:49:04.000000000 -0600
 @@ -43,8 +43,8 @@
  
@@ -39131,8 +39186,8 @@ diff -urNad scim-1.4.4~/ltmain.sh scim-1.4.4/ltmain.sh
  
  # Local Variables:
 diff -urNad scim-1.4.4~/m4/Makefile.in scim-1.4.4/m4/Makefile.in
---- scim-1.4.4~/m4/Makefile.in	2006-01-11 02:57:44.000000000 -0600
-+++ scim-1.4.4/m4/Makefile.in	2006-09-10 23:28:38.000000000 -0500
+--- scim-1.4.4~/m4/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/m4/Makefile.in	2006-09-12 17:27:54.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39222,8 +39277,8 @@ diff -urNad scim-1.4.4~/m4/Makefile.in scim-1.4.4/m4/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/Config/Makefile.in scim-1.4.4/modules/Config/Makefile.in
---- scim-1.4.4~/modules/Config/Makefile.in	2006-01-11 02:57:44.000000000 -0600
-+++ scim-1.4.4/modules/Config/Makefile.in	2006-09-10 23:28:39.000000000 -0500
+--- scim-1.4.4~/modules/Config/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/Config/Makefile.in	2006-09-12 17:27:55.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39313,8 +39368,8 @@ diff -urNad scim-1.4.4~/modules/Config/Makefile.in scim-1.4.4/modules/Config/Mak
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/Filter/Makefile.in scim-1.4.4/modules/Filter/Makefile.in
---- scim-1.4.4~/modules/Filter/Makefile.in	2006-01-11 02:57:44.000000000 -0600
-+++ scim-1.4.4/modules/Filter/Makefile.in	2006-09-10 23:28:39.000000000 -0500
+--- scim-1.4.4~/modules/Filter/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/Filter/Makefile.in	2006-09-12 17:27:55.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39404,8 +39459,8 @@ diff -urNad scim-1.4.4~/modules/Filter/Makefile.in scim-1.4.4/modules/Filter/Mak
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/FrontEnd/IMdkit/Makefile.in scim-1.4.4/modules/FrontEnd/IMdkit/Makefile.in
---- scim-1.4.4~/modules/FrontEnd/IMdkit/Makefile.in	2006-01-11 02:57:45.000000000 -0600
-+++ scim-1.4.4/modules/FrontEnd/IMdkit/Makefile.in	2006-09-10 23:28:40.000000000 -0500
+--- scim-1.4.4~/modules/FrontEnd/IMdkit/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/FrontEnd/IMdkit/Makefile.in	2006-09-12 17:27:56.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39495,8 +39550,8 @@ diff -urNad scim-1.4.4~/modules/FrontEnd/IMdkit/Makefile.in scim-1.4.4/modules/F
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/FrontEnd/Makefile.in scim-1.4.4/modules/FrontEnd/Makefile.in
---- scim-1.4.4~/modules/FrontEnd/Makefile.in	2006-01-11 02:57:45.000000000 -0600
-+++ scim-1.4.4/modules/FrontEnd/Makefile.in	2006-09-10 23:28:40.000000000 -0500
+--- scim-1.4.4~/modules/FrontEnd/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/FrontEnd/Makefile.in	2006-09-12 17:27:57.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39586,8 +39641,8 @@ diff -urNad scim-1.4.4~/modules/FrontEnd/Makefile.in scim-1.4.4/modules/FrontEnd
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/IMEngine/Makefile.in scim-1.4.4/modules/IMEngine/Makefile.in
---- scim-1.4.4~/modules/IMEngine/Makefile.in	2006-01-11 02:57:45.000000000 -0600
-+++ scim-1.4.4/modules/IMEngine/Makefile.in	2006-09-10 23:28:41.000000000 -0500
+--- scim-1.4.4~/modules/IMEngine/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/IMEngine/Makefile.in	2006-09-12 17:27:57.000000000 -0500
 @@ -46,16 +46,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39677,8 +39732,8 @@ diff -urNad scim-1.4.4~/modules/IMEngine/Makefile.in scim-1.4.4/modules/IMEngine
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/Makefile.in scim-1.4.4/modules/Makefile.in
---- scim-1.4.4~/modules/Makefile.in	2006-01-11 02:57:45.000000000 -0600
-+++ scim-1.4.4/modules/Makefile.in	2006-09-10 23:28:41.000000000 -0500
+--- scim-1.4.4~/modules/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/Makefile.in	2006-09-12 17:27:58.000000000 -0500
 @@ -43,16 +43,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39768,8 +39823,8 @@ diff -urNad scim-1.4.4~/modules/Makefile.in scim-1.4.4/modules/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/modules/SetupUI/Makefile.in scim-1.4.4/modules/SetupUI/Makefile.in
---- scim-1.4.4~/modules/SetupUI/Makefile.in	2006-01-11 02:57:46.000000000 -0600
-+++ scim-1.4.4/modules/SetupUI/Makefile.in	2006-09-10 23:28:42.000000000 -0500
+--- scim-1.4.4~/modules/SetupUI/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/modules/SetupUI/Makefile.in	2006-09-12 17:27:58.000000000 -0500
 @@ -44,16 +44,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39859,8 +39914,8 @@ diff -urNad scim-1.4.4~/modules/SetupUI/Makefile.in scim-1.4.4/modules/SetupUI/M
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/src/Makefile.in scim-1.4.4/src/Makefile.in
---- scim-1.4.4~/src/Makefile.in	2006-01-11 02:57:46.000000000 -0600
-+++ scim-1.4.4/src/Makefile.in	2006-09-10 23:28:43.000000000 -0500
+--- scim-1.4.4~/src/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/src/Makefile.in	2006-09-12 17:27:59.000000000 -0500
 @@ -51,16 +51,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -39950,8 +40005,8 @@ diff -urNad scim-1.4.4~/src/Makefile.in scim-1.4.4/src/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/tests/Makefile.in scim-1.4.4/tests/Makefile.in
---- scim-1.4.4~/tests/Makefile.in	2006-01-11 02:57:46.000000000 -0600
-+++ scim-1.4.4/tests/Makefile.in	2006-09-10 23:28:43.000000000 -0500
+--- scim-1.4.4~/tests/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/tests/Makefile.in	2006-09-12 17:28:00.000000000 -0500
 @@ -48,16 +48,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
@@ -40041,8 +40096,8 @@ diff -urNad scim-1.4.4~/tests/Makefile.in scim-1.4.4/tests/Makefile.in
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
 diff -urNad scim-1.4.4~/utils/Makefile.in scim-1.4.4/utils/Makefile.in
---- scim-1.4.4~/utils/Makefile.in	2006-01-11 02:57:47.000000000 -0600
-+++ scim-1.4.4/utils/Makefile.in	2006-09-10 23:28:44.000000000 -0500
+--- scim-1.4.4~/utils/Makefile.in	2006-09-12 17:16:21.000000000 -0500
++++ scim-1.4.4/utils/Makefile.in	2006-09-12 17:28:01.000000000 -0500
 @@ -47,16 +47,17 @@
  	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intdiv0.m4 \
  	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/intmax.m4 \
