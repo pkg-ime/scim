@@ -15,6 +15,11 @@
 ## DP: upgrades of libgtk2.0-0 and other input method packages that use
 ## DP: /usr/sbin/update-gtk-immodules.
 ## DP:
+## DP: This patch only changes extras/gtk_immodule/Makefile.am, and the
+## DP: change necessary for extras/gtk_immodule/Makefile.in is
+## DP: incorporated in 11_relibtoolize.dpatch.  If the relibtoolize
+## DP: patch is removed, this patch should change Makefile.in as well.
+## DP:
 ## DP: Note that this patch will break for GTK+ 2.10.x as there is an
 ## DP: ABI change for the immodules, and the installation directory
 ## DP: should be changed to /usr/lib/gtk-2.0/2.10.0/immodules/ when
@@ -23,7 +28,7 @@
 @DPATCH@
 diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.am scim-1.4.4/extras/gtk2_immodule/Makefile.am
 --- scim-1.4.4~/extras/gtk2_immodule/Makefile.am	2005-07-10 08:45:36.000000000 -0500
-+++ scim-1.4.4/extras/gtk2_immodule/Makefile.am	2006-09-10 21:22:05.000000000 -0500
++++ scim-1.4.4/extras/gtk2_immodule/Makefile.am	2006-09-10 23:22:07.000000000 -0500
 @@ -32,7 +32,7 @@
  
  noinst_HEADERS = gtkimcontextscim.h
@@ -33,15 +38,3 @@ diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.am scim-1.4.4/extras/gtk2_
  
  module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
  
-diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.in scim-1.4.4/extras/gtk2_immodule/Makefile.in
---- scim-1.4.4~/extras/gtk2_immodule/Makefile.in	2006-01-11 02:57:42.000000000 -0600
-+++ scim-1.4.4/extras/gtk2_immodule/Makefile.in	2006-09-10 21:22:36.000000000 -0500
-@@ -365,7 +365,7 @@
- @SCIM_BUILD_X11_UTILS_TRUE@X11_UTILS = $(top_builddir)/utils/libscim-x11utils-1.0.la
- @SCIM_LD_VERSION_SCRIPT_TRUE@LD_VERSION_SCRIPT_OPTION = "-Wl,--version-script=$(srcdir)/im-scim.version-script"
- noinst_HEADERS = gtkimcontextscim.h
--moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
-+moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules
- module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
- im_scim_la_SOURCES = gtkimcontextscim.cpp imscim.cpp
- im_scim_la_CXXFLAGS = @GTK2_CFLAGS@
