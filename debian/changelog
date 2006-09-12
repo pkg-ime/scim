@@ -1,4 +1,4 @@
-scim (1.4.4-4+SVN) UNRELEASED; urgency=low
+scim (1.4.4-5) unstable; urgency=low
 
   * Adjust build dependency to X.org package layout:  Change x-dev to
     x11proto-core-dev, and drop all alternative xlibs-dev dependencies.
@@ -9,8 +9,9 @@ scim (1.4.4-4+SVN) UNRELEASED; urgency=low
     on OFTC.
   * Fix the postrm script of scim-gtk2-immodule so that it can be removed
     cleanly when libgtk2.0-bin is already removed (This is Ubuntu bug #52087).
+  * Update to policy version 3.7.2, no actual changes needed.
 
- -- Ming Hua <minghua@rice.edu>  Mon, 11 Sep 2006 18:55:24 -0500
+ -- Ming Hua <minghua@rice.edu>  Tue, 12 Sep 2006 16:54:30 -0500
 
 scim (1.4.4-4) unstable; urgency=low
 
