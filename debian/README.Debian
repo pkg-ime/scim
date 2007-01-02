@@ -7,6 +7,13 @@ SCIM is an input method platform, and supports many different input methods
 There are SCIM plugin modules for many languages such as Japanese, Chinese,
 Korean, Arabic, and many Indic languages.
 
+Alternative documents in Japanese and English are available at:
+ http://wiki.debian.org/JapaneseEnvironmentE (English)
+ http://wiki.debian.org/JapaneseEnvironment  (Japanese)
+ http://wiki.debian.org/UTF8vimE (English)
+ http://wiki.debian.org/UTF8vim  (Japanese)
+These are focused to use im-switch and UTF-8 locales under etch.
+
 ---------------
 Debian Packages
 ---------------
@@ -202,13 +209,11 @@ If you wish to load SCIM for the GTK applications through immodule mechanism
 despite the warning in the README.GTK, we offer a configuration file
 "scim-immodule" for it.  Use it at your risk.
 
-There is another interesting package m17n-env.  This provides terminals
-run under all possible locales, e.g., ja_JP.UTF-8, ja_JP.eucJP, 
-fr_FR.ISO-8859-1, ... to enable multilingualization (m17n) environment.
-
-The good old language-env package provided customization for a 
-single non-UTF-8 locale only.  So as of now, it is not so useful under 
-UTF-8 but font recommendation etc are quite informative.
+UTF-8 locales such as ja_JP.UTF-8 enables to edit any text of any 
+languages, i.e., multilingualization (m17n) environment. Thus UTF-8
+locale are recommended to be used with SCIM.  In order to edit files
+encoded in other locales such as ja_JP.eucJP, pl_PL.ISO-8859-2, ...,
+you need to set up editor to handle them too.  Please reffer to
 
 The im-switch package does not change ~/.scim/global or /etc/scim/global
 to enable all available UTF-8 locales for SCIM since you may want to start
