@@ -1,9 +1,3 @@
-scim (1.4.4-7) unstable; urgency=high
-
-  * Removed 'debian/svn-commit.tmp' file from failed svn commit.
-
- -- Osamu Aoki <osamu@debian.org>  Tue,  2 Jan 2007 14:30:12 +0900
-
 scim (1.4.4-6) unstable; urgency=high
 
   * Removed m17n-env in control. (closes: Bug#405032)
