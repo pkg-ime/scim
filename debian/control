@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Ming Hua <minghua@rice.edu>
 Uploaders: Osamu Aoki <osamu@debian.org>
-Build-Depends: debhelper (>= 4.0.0), dpatch, autotools-dev, intltool, x11proto-core-dev, libx11-dev, libgtk2.0-dev (>= 2.4.0)
+Build-Depends: debhelper (>= 4.0.0), dpatch, autotools-dev, intltool, x11proto-core-dev, libx11-dev, libgtk2.0-dev (>= 2.10.1-1)
 Standards-Version: 3.7.2
 
 Package: scim
@@ -84,7 +84,7 @@ Description: development library for SCIM platform
 
 Package: scim-gtk2-immodule
 Architecture: any
-Depends: scim, scim-modules-socket (= ${Source-Version}), libgtk2.0-bin, ${shlibs:Depends}
+Depends: scim, scim-modules-socket (= ${Source-Version}), libgtk2.0-bin, ${shlibs:Depends}, ${misc:Depends}
 Description: GTK+2 input method module with SCIM as backend
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .

@@ -19,22 +19,17 @@
 ## DP: change necessary for extras/gtk_immodule/Makefile.in is
 ## DP: incorporated in 11_relibtoolize.dpatch.  If the relibtoolize
 ## DP: patch is removed, this patch should change Makefile.in as well.
-## DP:
-## DP: Note that this patch will break for GTK+ 2.10.x as there is an
-## DP: ABI change for the immodules, and the installation directory
-## DP: should be changed to /usr/lib/gtk-2.0/2.10.0/immodules/ when
-## DP: built against GTK+ 2.10.x.
 
 @DPATCH@
 diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.am scim-1.4.4/extras/gtk2_immodule/Makefile.am
---- scim-1.4.4~/extras/gtk2_immodule/Makefile.am	2005-07-10 08:45:36.000000000 -0500
-+++ scim-1.4.4/extras/gtk2_immodule/Makefile.am	2006-09-10 23:22:07.000000000 -0500
+--- scim-1.4.4~/extras/gtk2_immodule/Makefile.am	2007-04-14 21:42:10.000000000 -0500
++++ scim-1.4.4/extras/gtk2_immodule/Makefile.am	2007-04-14 21:46:17.000000000 -0500
 @@ -32,7 +32,7 @@
  
  noinst_HEADERS = gtkimcontextscim.h
  
 -moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
-+moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules
++moduledir = @GTK_LIBDIR@/gtk-2.0/2.10.0/immodules
  
  module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
  

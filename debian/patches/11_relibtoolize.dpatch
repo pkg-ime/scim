@@ -37453,7 +37453,7 @@ diff -urNad scim-1.4.4~/extras/gtk2_immodule/Makefile.in scim-1.4.4/extras/gtk2_
  @SCIM_LD_VERSION_SCRIPT_TRUE@LD_VERSION_SCRIPT_OPTION = "-Wl,--version-script=$(srcdir)/im-scim.version-script"
  noinst_HEADERS = gtkimcontextscim.h
 -moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
-+moduledir = @GTK_LIBDIR@/gtk-2.0/2.4.0/immodules
++moduledir = @GTK_LIBDIR@/gtk-2.0/2.10.0/immodules
  module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
  im_scim_la_SOURCES = gtkimcontextscim.cpp imscim.cpp
  im_scim_la_CXXFLAGS = @GTK2_CFLAGS@
