@@ -28,3 +28,5 @@ usr/share/control-center-2.0/capplets/scim-setup.desktop
 usr/share/locale/*/LC_MESSAGES/scim.mo
 usr/share/pixmaps/scim-setup.png
 usr/share/scim/icons/*.png
+
+usr/share/bug/scim/script

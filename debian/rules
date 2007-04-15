@@ -1,158 +1,129 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# GNU copyright 1997 to 1999 by Joey Hess.
 #
-# Modified to make a template file for a multi-binary package with separated
-# build-arch and build-indep targets  by Bill Allombert 2001
+# debian/rules for scim package
+# Copyright Ming Hua <minghua@rice.edu>, 2006
 #
-# Modified for package scim by Ming Hua 2004.  Some modification comes
-# from Anthony Fok.
+# This file is distributed under the same license as SCIM.
 
-# Uncomment this to turn on verbose mode.
+# uncomment this to turn on verbose mode
 #export DH_VERBOSE=1
 
-# This has to be exported to make some magic below work.
-export DH_OPTIONS
+# set the platform for configure script, especially useful for cross-compiling
+DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifeq ($(DEB_HOST_GNU_TYPE), $(DEB_BUILD_GNU_TYPE))
+	CONFFLAGS += --build=$(DEB_BUILD_GNU_TYPE)
+else
+	CONFFLAGS += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
+endif
+# for more information, see /usr/share/doc/autotools-dev/README.Debian.gz
 
-# These are used for cross-compiling and for saving the configure script
-# from having to guess our platform (since we know it already)
-DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-
-# Setting compiling flags
-CFLAGS = -W -g
-CXXFLAGS = -W -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+# set optimization level
+ifeq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O
+	CXXFLAGS += -O
+else
 	CFLAGS += -O0
 	CXXFLAGS += -O0
-else
-	CFLAGS += -O2
-	CXXFLAGS += -O2
 endif
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	INSTALL_PROGRAM += -s
-endif
-
-config.status: patch-stamp configure
-	dh_testdir
-
-	ln -s /usr/share/misc/config.guess config.guess
-	ln -s /usr/share/misc/config.sub config.sub
-	rm -f config.cache
-
-	# Add here commands to configure the package.
-	CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" ./configure \
-		--host=$(DEB_HOST_GNU_TYPE) \
-		--build=$(DEB_BUILD_GNU_TYPE) \
-		--prefix=/usr \
-		--mandir=\$${prefix}/share/man \
-		--infodir=\$${prefix}/share/info \
-		--sysconfdir=/etc
-
-build: build-stamp
-build-stamp:  config.status
-	# Add here commands to compile the package.
-	$(MAKE) 
-
-	touch build-stamp
 
 clean: clean-patched unpatch
+
 clean-patched:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp install-stamp
+	rm -f configure-stamp build-stamp
+	# only run "make distclean" if a Makefile exists
+	[ ! -f Makefile ] || $(MAKE) distclean
+	# remove existent config.{guess,sub} as we use the ones from
+	# autotools-dev package
 	rm -f config.guess config.sub
-
-	# Add here commands to clean up after the build process.
-	-$(MAKE) distclean
-
-	dh_clean 
+	dh_clean
 
 patch: patch-stamp
 patch-stamp:
+	dh_testdir
 	dpatch apply-all
-	touch patch-stamp
+	# put information about applied patches in the stamp file
+	dpatch cat-all -nd >$@
 
 unpatch:
-	dpatch deapply-all
-	rm -rf patch-stamp debian/patched
-
-install: install-stamp
-install-stamp: build-stamp
 	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
+	dpatch deapply-all
+	rm -rf debian/patched
+	rm -f patch-stamp
 
-	# Use the upstream makefile to install everything into
-	# debian/tmp
+configure-stamp: patch-stamp
+	dh_testdir
+	# link config.{guess,sub} from autotools-dev package
+	ln -s /usr/share/misc/config.guess config.guess
+	ln -s /usr/share/misc/config.sub config.sub
+	rm -f config.cache
+	# run configure with all necessary definitions and options
+	./configure \
+		CFLAGS="$(CFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS)" \
+		$(CONFFLAGS) \
+		--prefix=/usr \
+		--mandir=/usr/share/man \
+		--sysconfdir=/etc
+	touch $@
+
+build: build-stamp
+build-stamp: configure-stamp
+	dh_testdir
+	dh_clean
+	$(MAKE)
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
-
-	install -D -o root -g root -m 644 \
-		$(CURDIR)/debian/im-switch/scim \
-		$(CURDIR)/debian/tmp/etc/X11/xinit/xinput.d/scim; \
-	install -D -o root -g root -m 644 \
-		$(CURDIR)/debian/im-switch/scim-immodule \
-		$(CURDIR)/debian/tmp/etc/X11/xinit/xinput.d/scim-immodule; \
-
-	# Clean up unnecessary static libraries for modules
+	# install im-switch support
+	install -m 644 -D \
+		debian/im-switch/scim debian/tmp/etc/X11/xinit/xinput.d/scim
+	install -m 644 -D \
+		debian/im-switch/scim-immodule \
+		debian/tmp/etc/X11/xinit/xinput.d/scim-immodule
+	# install reportbug script
+	install -m 755 -D \
+		debian/scim.script debian/tmp/usr/share/bug/scim/script
+	# clean up unnecessary static library files for modules
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.la
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.a
 	rm debian/tmp/usr/lib/gtk-2.0/2.4.0/immodules/im-scim.a
 	rm debian/tmp/usr/lib/gtk-2.0/2.4.0/immodules/im-scim.la
-
-	# Prepare files for different packages to separate directories
+	# distribute files to different binary packages
 	dh_install --sourcedir=debian/tmp --fail-missing
-
-	# Install reportbug script for scim binary package
-	install -m 755 -D \
-		debian/scim.script debian/scim/usr/share/bug/scim/script
-
-	touch install-stamp
-
-# Must not depend on anything. This is to be called by
-# binary-arch/binary-indep
-# in another 'make' thread.
-binary-common:
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs ChangeLog
-	dh_installdocs -X Makefile
-	dh_installexamples
-#	dh_installmenu
-#	dh_installdebconf	
-#	dh_installlogrotate	
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installmime
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress 
-	dh_fixperms
-#	dh_perl
-#	dh_python
-	dh_makeshlibs -X usr/lib/gtk-2.0/2.4.0/immodules -X usr/lib/scim-1.0/1.4.0
-	dh_installdeb
-	dh_shlibdeps -L libscim8c2a -l debian/libscim8c2a/usr/lib
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-# Build architecture independant packages using the common target.
-binary-indep: build install
-	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
-
-# Build architecture dependant packages using the common target.
-binary-arch: build install
-	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
+	touch $@
 
 binary: binary-arch binary-indep
 
+binary-arch: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -a ChangeLog
+	dh_installdocs -a -X Makefile
+	dh_installman -a
+	dh_strip -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_makeshlibs -p libscim8c2a
+	dh_installdeb -a
+	dh_shlibdeps -a -l debian/libscim8c2a/usr/lib -L libscim8c2a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary-indep: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -i ChangeLog
+	dh_installdocs -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
 .SUFFIXES:
-.PHONY: build install clean clean-patched patch unpatch binary binary-indep binary-arch
+.PHONY: clean build install binary binary-arch binary-indep clean-patched patch unpatch
+
+# vim:textwidth=0:
