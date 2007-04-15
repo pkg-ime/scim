@@ -2,8 +2,10 @@ scim (1.4.4-5+SVN) UNRELEASED; urgency=low
 
   * Update debian/watch file to format version 3 and use qa.debian.org
     redirector for sourceforge.net.
+  * Drop libxt-dev in build dependency as it's not necessary anymore after
+    relibtoolization.
 
- -- Ming Hua <minghua@rice.edu>  Sat, 25 Nov 2006 21:44:13 -0600
+ -- Ming Hua <minghua@rice.edu>  Sat, 25 Nov 2006 21:53:02 -0600
 
 scim (1.4.4-7) unstable; urgency=high
 
