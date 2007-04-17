@@ -84,7 +84,7 @@ Description: development library for SCIM platform
 
 Package: scim-gtk2-immodule
 Architecture: any
-Depends: scim, scim-modules-socket (= ${Source-Version}), libgtk2.0-bin, ${shlibs:Depends}, ${misc:Depends}
+Depends: scim, scim-modules-socket (= ${Source-Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: GTK+2 input method module with SCIM as backend
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
