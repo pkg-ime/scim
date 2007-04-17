@@ -1,4 +1,6 @@
-scim (1.4.4-7+SVN) UNRELEASED; urgency=low
+scim (1.4.4-8) unstable; urgency=low
+
+  The "etch is released, welcome lenny" release.
 
   * Rewrite debian/rules.
     - Use the platform detection code recommended by autotools-dev.
