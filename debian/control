@@ -35,7 +35,7 @@ Description: smart common input method platform
  .
  SCIM is a well accepted platform and features various input method engines
  for many languages.  In Debian you can find the following separately packaged
- IMs useful: scim-table-{additional,ja,po,zh}, scim-pinyin, scim-uim,
+ IMs useful: scim-tables-{additional,ja,ko,zh}, scim-pinyin, scim-uim,
  scim-m17n, scim-chewing, scim-anthy, scim-canna, scim-prime, and scim-skk.
  GTK+ users would also find package scim-gtk2-immodule useful for GTK+ IM
  module support.
