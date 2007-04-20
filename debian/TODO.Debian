@@ -1,6 +1,9 @@
-1.4.4-2
--------
-Check rules to meet requirements of the new dpkg-dev.
+Short Term
+----------
+Use ${source:Version} and ${binary:Version} instead of deprecated
+${Source-Version}.
+
+Add XS-Vcs-* headers.
 
 Add lintian override for the soname-and-library-name-mismatch error.
 
@@ -9,7 +12,6 @@ Add scim-setup.desktop handling in postinst and postrm.
 
 Long Term
 ---------
-Write a patch for configure process so that it doesn't check X11/Intrinsic.h
-for X availablity, and get rid of the libxt-dev build-dependency.
-
 Investigate "SONAME in dynamic loaded module" issue.
+
+Write man pages for scim-setup and scim-config-agent.
