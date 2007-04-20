@@ -7,4 +7,4 @@
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
 10_gtk-immodule-install-dir.dpatch
-11_relibtoolize.dpatch
+90_relibtoolize.dpatch
