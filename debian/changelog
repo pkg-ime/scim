@@ -1,4 +1,6 @@
-scim (1.4.6-0+SVN) UNRELEASED; urgency=low
+scim (1.4.6-1) unstable; urgency=low
+
+  The "Oh, shiny!" release.
 
   * New upstream release.  (Closes: #399736)
     - Include <climits> header in src/scim_iconv.cpp, fixing FTBFS with GCC
@@ -18,7 +20,7 @@ scim (1.4.6-0+SVN) UNRELEASED; urgency=low
     instead of deprecated ${Source-Version}.  Add dpkg-dev (>= 1.13.19) to
     Build-Depends to support this format.
 
- -- Ming Hua <minghua@rice.edu>  Mon, 23 Apr 2007 23:05:07 -0500
+ -- Ming Hua <minghua@rice.edu>  Tue, 24 Apr 2007 08:54:22 -0500
 
 scim (1.4.4-8) unstable; urgency=low
 
