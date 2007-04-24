@@ -87,8 +87,8 @@ build-stamp: configure-stamp
 	# clean up unnecessary static library files for modules
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.la
 	rm debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.a
-	rm debian/tmp/usr/lib/gtk-2.0/2.10.0/immodules/im-scim.a
-	rm debian/tmp/usr/lib/gtk-2.0/2.10.0/immodules/im-scim.la
+	rm debian/tmp/usr/lib/gtk-2.0/*/immodules/im-scim.a
+	rm debian/tmp/usr/lib/gtk-2.0/*/immodules/im-scim.la
 	# distribute files to different binary packages
 	dh_install --sourcedir=debian/tmp --fail-missing
 	touch $@
