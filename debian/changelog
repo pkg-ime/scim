@@ -10,7 +10,8 @@ scim (1.4.6-0+SVN) UNRELEASED; urgency=low
   * For the install directory of GTK IM module, use GTK binary version from
     pkg-config results instead of hardcoded value.  Thanks to Loïc Minier for
     the patch.  (Closes: #420497)
-  * Regenerate 90_relibtoolize.dpatch.
+  * Rename 11_relibtoolize.dpatch to 90_relibtoolize.dpatch and regenerate it.
+  * Correct a typo in the package description of scim.
 
  -- Ming Hua <minghua@rice.edu>  Mon, 23 Apr 2007 18:35:30 -0500
 
