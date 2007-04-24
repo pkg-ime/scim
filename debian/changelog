@@ -13,8 +13,11 @@ scim (1.4.6-0+SVN) UNRELEASED; urgency=low
   * Rename 11_relibtoolize.dpatch to 90_relibtoolize.dpatch and regenerate it.
   * Correct a typo in the package description of scim.
   * Add XS-Vcs-Svn and XS-Vcs-Browser fields.
+  * Use ${source:Version} and ${binary:Version} for versioned dependencies
+    instead of deprecated ${Source-Version}.  Add dpkg-dev (>= 1.13.19) to
+    Build-Depends to support this format.
 
- -- Ming Hua <minghua@rice.edu>  Mon, 23 Apr 2007 20:44:00 -0500
+ -- Ming Hua <minghua@rice.edu>  Mon, 23 Apr 2007 21:30:01 -0500
 
 scim (1.4.4-8) unstable; urgency=low
 

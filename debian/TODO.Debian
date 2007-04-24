@@ -1,8 +1,5 @@
 Short Term
 ----------
-Use ${source:Version} and ${binary:Version} instead of deprecated
-${Source-Version}.
-
 Add lintian override for the soname-and-library-name-mismatch error.
 
 Add scim-setup.desktop handling in postinst and postrm.
