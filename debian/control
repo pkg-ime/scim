@@ -5,6 +5,8 @@ Maintainer: Ming Hua <minghua@rice.edu>
 Uploaders: Osamu Aoki <osamu@debian.org>
 Build-Depends: debhelper (>= 4.0.0), dpatch, autotools-dev, intltool, x11proto-core-dev, libx11-dev, libgtk2.0-dev (>= 2.10.1-1)
 Standards-Version: 3.7.2
+XS-Vcs-Svn: svn://svn.debian.org/pkg-ime/scim/trunk/
+XS-Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim/trunk/
 
 Package: scim
 Architecture: any
