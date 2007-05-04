@@ -102,7 +102,7 @@ binary-arch: build-stamp
 	dh_installdocs -a -X Makefile
 	dh_installman -a
 	LD_LIBRARY_PATH=debian/libscim8c2a/usr/lib:$(LD_LIBRARY_PATH) \
-		dh_gtkmodules
+		dh_gtkmodules -p scim-gtk2-immodule
 	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
