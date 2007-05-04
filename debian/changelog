@@ -10,6 +10,9 @@ scim (1.4.6-1) unstable; urgency=low
       default now, so that users can quit scim from the graphical interface.
       (Closes: #417950)
     - ABI changed, bump shlibs version to libscim8c2a (>= 1.4.6).
+    - Add debian/libscim-dev.NEWS file to alert the changes of module
+      installation path (will be installed as the NEWS.Debian file for
+      libscim-dev package).  Also rename debian/NEWS file to debian/scim.NEWS.
   * For the install directory of GTK IM module, use GTK binary version from
     pkg-config results instead of hardcoded value.  Thanks to Loïc Minier for
     the patch.  (Closes: #420497)
@@ -22,7 +25,7 @@ scim (1.4.6-1) unstable; urgency=low
   * Add "Enhances: scim" relationship for scim-gtk2-immodules and
     scim-modules-socket.
 
- -- Ming Hua <minghua@rice.edu>  Thu, 03 May 2007 16:55:38 -0500
+ -- Ming Hua <minghua@rice.edu>  Fri, 04 May 2007 01:01:47 -0500
 
 scim (1.4.4-8) unstable; urgency=low
 
