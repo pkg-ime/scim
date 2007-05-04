@@ -44,6 +44,9 @@ patch: patch-stamp
 patch-stamp:
 	dh_testdir
 	dpatch apply-all
+	# fix timestamp skews, note this is still quite hackish and depends on
+	# which files the 90_relibtoolize patch touches
+	touch -r Makefile.in aclocal.m4
 	# put information about applied patches in the stamp file
 	dpatch cat-all -nd >$@
 

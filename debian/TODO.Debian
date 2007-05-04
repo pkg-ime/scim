@@ -4,6 +4,8 @@ Add lintian override for the soname-and-library-name-mismatch error.
 
 Add scim-setup.desktop handling in postinst and postrm.
 
+Use AM_MAINTAINER_MODE in configure.ac to avoid timestamp skews.
+
 
 Long Term
 ---------
