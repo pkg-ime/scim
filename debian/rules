@@ -59,8 +59,8 @@ unpatch:
 config.status: patch-stamp
 	dh_testdir
 	# link config.{guess,sub} from autotools-dev package
-	ln -s /usr/share/misc/config.guess config.guess
-	ln -s /usr/share/misc/config.sub config.sub
+	ln -sf /usr/share/misc/config.guess config.guess
+	ln -sf /usr/share/misc/config.sub config.sub
 	rm -f config.cache
 	# run configure with all necessary definitions and options
 	./configure \
