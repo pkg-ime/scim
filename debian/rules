@@ -18,6 +18,9 @@ else
 endif
 # for more information, see /usr/share/doc/autotools-dev/README.Debian.gz
 
+# set compiler flags, enable warning and debug
+CFLAGS += -W -g
+CXXFLAGS += -W -g
 # set optimization level
 ifeq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O
