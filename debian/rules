@@ -6,7 +6,7 @@
 # This file is distributed under the same license as SCIM.
 
 # uncomment this to turn on verbose mode
-#export DH_VERBOSE=1
+#export DH_VERBOSE = 1
 
 # set the platform for configure script, especially useful for cross-compiling
 DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
