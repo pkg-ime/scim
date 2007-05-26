@@ -1,3 +1,12 @@
+scim (1.4.6-2) UNRELEASED; urgency=low
+
+  * Clarify build dependency.
+    - Remove intltool as upstream tarball ships its own 0.33 version.
+    - Add libpango1.0-dev, libglib2.0-dev, and pkg-config explicitly (used to
+      be pulled in by libgtk2.0-dev).
+
+ -- Ming Hua <minghua@rice.edu>  Sat, 26 May 2007 06:51:00 -0500
+
 scim (1.4.6-1) unstable; urgency=low
 
   The "Oh, shiny!" release.
