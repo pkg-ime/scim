@@ -56,7 +56,7 @@ unpatch:
 	rm -rf debian/patched
 	rm -f patch-stamp
 
-config.status: patch
+config.status: patch-stamp
 	dh_testdir
 	# link config.{guess,sub} from autotools-dev package
 	ln -s /usr/share/misc/config.guess config.guess
