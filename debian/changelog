@@ -9,8 +9,10 @@ scim (1.4.6-2) UNRELEASED; urgency=low
   * Add "-W -g" compiler flags back.  The warnings are somehow useful when
     reading the build logs, and the debug information will be useful for
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
+  * Don't set LD_LIBRARY_PATH when calling dh_gtkmodules in debian/rules, it's
+    not needed.
 
- -- Ming Hua <minghua@rice.edu>  Sat, 26 May 2007 06:51:00 -0500
+ -- Ming Hua <minghua@rice.edu>  Sat, 02 Jun 2007 10:49:46 -0500
 
 scim (1.4.6-1) unstable; urgency=low
 

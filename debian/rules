@@ -106,8 +106,7 @@ binary-arch: build
 	dh_installchangelogs -a ChangeLog
 	dh_installdocs -a -X Makefile
 	dh_installman -a
-	LD_LIBRARY_PATH=debian/libscim8c2a/usr/lib:$(LD_LIBRARY_PATH) \
-		dh_gtkmodules -p scim-gtk2-immodule
+	dh_gtkmodules -p scim-gtk2-immodule
 	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
