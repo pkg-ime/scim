@@ -6,6 +6,7 @@ scim (1.4.6-2) UNRELEASED; urgency=low
       be pulled in by libgtk2.0-dev).
   * Add libx11-dev as a dependency of libscim-dev explicitly, it used to be
     pulled in by libgtk2.0-dev.
+  * Add scim-thai to scim's "Suggests:" list.
   * Add "-W -g" compiler flags back.  The warnings are somehow useful when
     reading the build logs, and the debug information will be useful for
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
