@@ -6,5 +6,6 @@
 # - Note the patches are applied in the order of their numbers.  So if
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
+10_GCC-4.3-FTBFS.dpatch
 10_gtk-immodule-install-dir.dpatch
 90_relibtoolize.dpatch

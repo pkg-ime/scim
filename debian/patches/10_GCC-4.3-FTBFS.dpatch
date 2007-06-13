@@ -1,0 +1,48 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 10_GCC-4.3-FTBFS.dpatch by Ming Hua <minghua@rice.edu>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+##
+## DP: GCC 4.3 removed quite some dependencies between the C++ headers [1],
+## DP: and as a consequence many bugs of missing proper "#include" headers in
+## DP: C++ code are exposed. 
+## DP:
+## DP: This patch adds these missing "#include" headers.  It is tested against
+## DP: gcc-snapshot 20070604-1.
+## DP:
+## DP: 1. http://gcc.gnu.org/PR28080
+
+@DPATCH@
+diff -urNad scim-1.4.6~/extras/gtk2_immodule/gtkimcontextscim.cpp scim-1.4.6/extras/gtk2_immodule/gtkimcontextscim.cpp
+--- scim-1.4.6~/extras/gtk2_immodule/gtkimcontextscim.cpp	2007-04-16 00:42:54.000000000 -0500
++++ scim-1.4.6/extras/gtk2_immodule/gtkimcontextscim.cpp	2007-06-07 15:16:35.000000000 -0500
+@@ -40,6 +40,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <sys/time.h>
+diff -urNad scim-1.4.6~/src/scim_event.cpp scim-1.4.6/src/scim_event.cpp
+--- scim-1.4.6~/src/scim_event.cpp	2005-07-13 03:54:55.000000000 -0500
++++ scim-1.4.6/src/scim_event.cpp	2007-06-07 15:16:35.000000000 -0500
+@@ -26,6 +26,7 @@
+ #define Uses_SCIM_GLOBAL_CONFIG
+ #define Uses_SCIM_CONFIG_PATH
+ #define Uses_C_STDIO
++#define Uses_C_STRING
+ #include "scim_private.h"
+ #include "scim.h"
+ #include "scim_stl_map.h"
+diff -urNad scim-1.4.6~/src/scim_transaction.cpp scim-1.4.6/src/scim_transaction.cpp
+--- scim-1.4.6~/src/scim_transaction.cpp	2006-06-07 04:27:57.000000000 -0500
++++ scim-1.4.6/src/scim_transaction.cpp	2007-06-07 15:16:35.000000000 -0500
+@@ -30,6 +30,7 @@
+ #define Uses_SCIM_TRANSACTION
+ #define Uses_STL_ALGORITHM
+ #define Uses_C_STDLIB
++#define Uses_C_STRING
+ 
+ #include "scim_private.h"
+ #include "scim.h"

@@ -7,13 +7,15 @@ scim (1.4.6-2) UNRELEASED; urgency=low
   * Add libx11-dev as a dependency of libscim-dev explicitly, it used to be
     pulled in by libgtk2.0-dev.
   * Add scim-thai to scim's "Suggests:" list.
+  * Add 10_GCC-4.3-FTBFS dpatch for more missing "#include" headers, to make
+    scim buildable with (the constantly evolving) GCC 4.3.  (Closes: #417686)
   * Add "-W -g" compiler flags back.  The warnings are somehow useful when
     reading the build logs, and the debug information will be useful for
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
   * Don't set LD_LIBRARY_PATH when calling dh_gtkmodules in debian/rules, it's
     not needed.
 
- -- Ming Hua <minghua@rice.edu>  Sat, 02 Jun 2007 10:49:46 -0500
+ -- Ming Hua <minghua@rice.edu>  Thu, 07 Jun 2007 15:22:25 -0500
 
 scim (1.4.6-1) unstable; urgency=low
 
