@@ -49,7 +49,7 @@ patch-stamp:
 	dpatch apply-all
 	# fix timestamp skews, note this is still quite hackish and depends on
 	# which files the 90_relibtoolize patch touches
-	touch -r Makefile.in aclocal.m4
+	touch -r config.h.in aclocal.m4 configure.ac
 	# put information about applied patches in the stamp file
 	dpatch cat-all -nd >$@
 

@@ -1,5 +1,13 @@
-scim (1.4.6-2) UNRELEASED; urgency=low
+scim (1.4.7-1) UNRELEASED; urgency=low
 
+  * New upstream release.
+    - Include missing header, this time <cstring>, for a few files, to make
+      scim buildable with (the constantly evolving) GCC 4.3.
+      (Closes: #417686, again)
+    - Change 10_gtk-immodule-install-dir dpatch to patch configure.ac instead
+      of extras/gtk2_immodule/Makefile.am, to adapt to the upstream change.
+    - Regenerate 90_relibtoolize dpatch.  Also adjust the timestamp touching
+      in debian/rules accordingly.
   * Clarify build dependency.
     - Remove intltool as upstream tarball ships its own 0.33 version.
     - Add libpango1.0-dev, libglib2.0-dev, and pkg-config explicitly (used to
@@ -7,13 +15,11 @@ scim (1.4.6-2) UNRELEASED; urgency=low
   * Add libx11-dev as a dependency of libscim-dev explicitly, it used to be
     pulled in by libgtk2.0-dev.
   * Add scim-thai to scim's "Suggests:" list.
-  * Add 10_GCC-4.3-FTBFS dpatch for more missing "#include" headers, to make
-    scim buildable with (the constantly evolving) GCC 4.3.  (Closes: #417686)
   * Add "-W -g" compiler flags back.  The warnings are somehow useful when
     reading the build logs, and the debug information will be useful for
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
 
- -- Ming Hua <minghua@rice.edu>  Thu, 07 Jun 2007 15:22:25 -0500
+ -- Ming Hua <minghua@rice.edu>  Tue, 26 Jun 2007 19:52:25 -0500
 
 scim (1.4.6-1) unstable; urgency=low
 

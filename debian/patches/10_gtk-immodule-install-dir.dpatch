@@ -18,21 +18,21 @@
 ## DP: anymore.  The debhelper program dh_gtkmodules should be used
 ## DP: instead to update the IM module information.
 ## DP:
-## DP: NOTE:  This patch only changes extras/gtk_immodule/Makefile.am,
-## DP: and the change necessary for extras/gtk_immodule/Makefile.in is
-## DP: incorporated in 90_relibtoolize.dpatch.  If the relibtoolize
-## DP: patch is removed, this patch should change Makefile.in as well.
+## DP: NOTE:  This patch only changes configure.ac and the change
+## DP: necessary for configure is incorporated in
+## DP: 90_relibtoolize.dpatch.  If the relibtoolize patch is removed,
+## DP: this patch should change configure as well.
 
 @DPATCH@
-diff -urNad scim-1.4.6~/extras/gtk2_immodule/Makefile.am scim-1.4.6/extras/gtk2_immodule/Makefile.am
---- scim-1.4.6~/extras/gtk2_immodule/Makefile.am	2007-04-10 03:07:55.000000000 -0500
-+++ scim-1.4.6/extras/gtk2_immodule/Makefile.am	2007-04-23 13:42:21.000000000 -0500
-@@ -32,7 +32,7 @@
- 
- noinst_HEADERS = gtkimcontextscim.h
- 
--moduledir = @GTK_LIBDIR@/gtk-2.0/immodules
-+moduledir = @GTK_LIBDIR@/gtk-2.0/@GTK_BINARY_VERSION@/immodules
- 
- module_LTLIBRARIES = $(CONFIG_GTK2_IMMODULE)
- 
+diff -urNad scim-1.4.7~/configure.ac scim-1.4.7/configure.ac
+--- scim-1.4.7~/configure.ac	2007-06-26 09:31:57.000000000 -0500
++++ scim-1.4.7/configure.ac	2007-06-26 18:00:43.000000000 -0500
+@@ -235,7 +235,7 @@
+   if test -z "$GTK_LIBDIR)"; then
+     GTK_LIBDIR="$libdir"
+   fi
+-  GTK_IM_MODULEDIR=$GTK_LIBDIR/gtk-2.0/immodules
++  GTK_IM_MODULEDIR=$GTK_LIBDIR/gtk-2.0/$GTK_BINARY_VERSION/immodules
+   AC_SUBST(GTK_LIBDIR)
+   AC_SUBST(GTK_IM_MODULEDIR)
+   AC_SUBST(GTK_VERSION)
