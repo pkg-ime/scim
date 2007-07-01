@@ -21,8 +21,9 @@ scim (1.4.7-1) UNRELEASED; urgency=low
   * Add "-W -g" compiler flags back.  The warnings are somehow useful when
     reading the build logs, and the debug information will be useful for
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
+  * Change maintainer's email address.
 
- -- Ming Hua <minghua@rice.edu>  Tue, 26 Jun 2007 19:52:25 -0500
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 30 Jun 2007 21:31:52 -0500
 
 scim (1.4.6-1) unstable; urgency=low
 
