@@ -1,4 +1,6 @@
-scim (1.4.7-1) UNRELEASED; urgency=low
+scim (1.4.7-1) unstable; urgency=low
+
+  The "keeping up with upstream" release.
 
   * New upstream release.
     - Include missing header, this time <cstring>, for a few files, to make
@@ -23,7 +25,7 @@ scim (1.4.7-1) UNRELEASED; urgency=low
     manually built packages with DEB_BUILD_OPTIONS=nostrip.
   * Change maintainer's email address.
 
- -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 30 Jun 2007 21:31:52 -0500
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 30 Jun 2007 21:41:52 -0500
 
 scim (1.4.6-1) unstable; urgency=low
 
