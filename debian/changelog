@@ -6,7 +6,7 @@ scim (1.4.7-1) UNRELEASED; urgency=low
       (Closes: #417686, again)
     - Remove an infinite loop with 0.1 second timeout in the X11 frontend to
       avoid waking up CPU constantly, therefore preserve power consumption and
-      extend laptop battery life.  (Closes LP: #122445)
+      extend laptop battery life.  (Fixes LP: #122445)
     - Change 10_gtk-immodule-install-dir dpatch to patch configure.ac instead
       of extras/gtk2_immodule/Makefile.am, to adapt to the upstream change.
     - Regenerate 90_relibtoolize dpatch.  Also adjust the timestamp touching
