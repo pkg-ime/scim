@@ -1,5 +1,8 @@
 scim (1.4.7-2) UNRELEASED; urgency=low
 
+  * Enable SCIM's Qt 3 IM module setting in the im-switch configuration file
+    /etc/X11/xinit/Xinput.d/scim-immodule.  The module is provided by the
+    scim-qtimm package.
   * Don't install desktop entry scim-setup.desktop in deprecated location
     /usr/share/control-center-2.0/capplets/ anymore.
     - Add 10_remove-deprecated-desktop-entry dpatch to remove relevant part in
