@@ -7,8 +7,10 @@ scim (1.4.7-2) UNRELEASED; urgency=low
     - Regenerate 90_relibtoolize dpatch.
     - Remove the "usr/share/control-center-2.0/capplets/scim-setup.desktop"
       line in debian/scim.install.
+  * Add an entry in debian/scim.NEWS to explain the /FrontEnd/X11/Dynamic
+    setting change, the problem it can cause, and the workarounds.
 
- -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sun, 22 Jul 2007 02:23:26 -0500
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 13 Oct 2007 20:33:44 -0500
 
 scim (1.4.7-1) unstable; urgency=low
 
