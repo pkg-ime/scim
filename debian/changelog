@@ -10,6 +10,8 @@ scim (1.4.7-2) UNRELEASED; urgency=low
     - Regenerate 90_relibtoolize dpatch.
     - Remove the "usr/share/control-center-2.0/capplets/scim-setup.desktop"
       line in debian/scim.install.
+  * Update scim package's README.Qt notes to reflect the changes related to
+    Qt 3 IM module since etch release.
   * Add an entry in debian/scim.NEWS to explain the /FrontEnd/X11/Dynamic
     setting change, the problem it can cause, and the workarounds.
   * Print the value of environment variable $QT_IM_MODULE in reportbug script.
