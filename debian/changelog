@@ -12,8 +12,9 @@ scim (1.4.7-2) UNRELEASED; urgency=low
       line in debian/scim.install.
   * Update scim package's README.Qt notes to reflect the changes related to
     Qt 3 IM module since etch release.
-  * Add an entry in debian/scim.NEWS to explain the /FrontEnd/X11/Dynamic
-    setting change, the problem it can cause, and the workarounds.
+  * Add an entry in scim package's NEWS.Debiangz notes to explain the
+    /FrontEnd/X11/Dynamic setting change, the problem it can cause, and the
+    workarounds.
   * Print the value of environment variable $QT_IM_MODULE in reportbug script.
 
  -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 13 Oct 2007 20:33:44 -0500
