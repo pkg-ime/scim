@@ -1,4 +1,6 @@
-scim (1.4.7-2) UNRELEASED; urgency=low
+scim (1.4.7-2) unstable; urgency=low
+
+  The "late documentation is still better than no documentation" release.
 
   * Enable SCIM's Qt 3 IM module setting in the im-switch configuration file
     /etc/X11/xinit/Xinput.d/scim-immodule.  The module is provided by the
@@ -17,7 +19,7 @@ scim (1.4.7-2) UNRELEASED; urgency=low
     workarounds.
   * Print the value of environment variable $QT_IM_MODULE in reportbug script.
 
- -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 13 Oct 2007 20:33:44 -0500
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Sat, 13 Oct 2007 22:17:59 -0500
 
 scim (1.4.7-1) unstable; urgency=low
 
