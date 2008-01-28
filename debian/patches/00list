@@ -8,4 +8,5 @@
 #   correctly.
 10_gtk-immodule-install-dir.dpatch
 10_remove-deprecated-desktop-entry.dpatch
+50_validate-desktop-entry.dpatch
 90_relibtoolize.dpatch

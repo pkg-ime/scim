@@ -12,6 +12,11 @@ scim (1.4.7-3) UNRELEASED; urgency=low
   * Define $XIM_PROGRAM_SETS_ITSELF_AS_DAEMON variable in both "scim" and
     "scim-immodule" im-switch settings, to avoid leaving a zombie process when
     im-switch is used to start scim.  (Closes: #431294)
+  * Add 50_validate-desktop-entry dpatch, to fix a few issues in
+    scim-setup.desktop revealed by desktop-file-validate tool.
+    - Use absolute path for the icon.
+    - Remove deprecated "Applications" category.
+    - Remove deprecated key "Encoding".
   * Change XS-Vcs-* fields in debian/control to Vcs-*, now that they are
     supported by dpkg.  Bump the dpkg-dev version in build dependency to
     1.14.6, to guarantee that we have a dpkg that supports this feature.
