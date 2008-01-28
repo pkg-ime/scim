@@ -22,6 +22,7 @@ scim (1.4.7-3) UNRELEASED; urgency=low
     1.14.6, to guarantee that we have a dpkg that supports this feature.
   * Use the official "Homepage" field in debian/control instead of putting the
     upstream homepage in package's long description.
+  * Update to policy version 3.7.3.
 
  -- Ming Hua <minghua-guest@users.alioth.debian.org>  Fri, 25 Jan 2008 22:05:20 -0600
 
