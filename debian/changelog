@@ -15,6 +15,8 @@ scim (1.4.7-3) UNRELEASED; urgency=low
   * Change XS-Vcs-* fields in debian/control to Vcs-*, now that they are
     supported by dpkg.  Bump the dpkg-dev version in build dependency to
     1.14.6, to guarantee that we have a dpkg that supports this feature.
+  * Use the official "Homepage" field in debian/control instead of putting the
+    upstream homepage in package's long description.
 
  -- Ming Hua <minghua-guest@users.alioth.debian.org>  Fri, 25 Jan 2008 22:05:20 -0600
 
