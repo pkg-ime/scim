@@ -1,3 +1,17 @@
+scim (1.4.7-3) UNRELEASED; urgency=low
+
+  * Update debian/copyright.
+    - Update information about current package maintainers.
+    - Specify upstream release tarball download URL.
+    - Clarify the copyright and licensing information of the files in
+      modules/FrontEnd/IMdkit/ which are under MIT/BSD like licenses.  Thanks
+      ZhengPeng Hou for reporting this issue.  (Closes: #438639)
+    - Clarify copyright and licensing of Debian packaging.
+    - Refer to /usr/share/common-licenses/LGPL-2.1 for the text of LGPL,
+      instead of the symbolic link.
+
+ -- Ming Hua <minghua-guest@users.alioth.debian.org>  Fri, 25 Jan 2008 22:05:20 -0600
+
 scim (1.4.7-2) unstable; urgency=low
 
   The "late documentation is still better than no documentation" release.
