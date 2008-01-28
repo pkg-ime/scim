@@ -9,6 +9,9 @@ scim (1.4.7-3) UNRELEASED; urgency=low
     - Clarify copyright and licensing of Debian packaging.
     - Refer to /usr/share/common-licenses/LGPL-2.1 for the text of LGPL,
       instead of the symbolic link.
+  * Define $XIM_PROGRAM_SETS_ITSELF_AS_DAEMON variable in both "scim" and
+    "scim-immodule" im-switch settings, to avoid leaving a zombie process when
+    im-switch is used to start scim.  (Closes: #431294)
 
  -- Ming Hua <minghua-guest@users.alioth.debian.org>  Fri, 25 Jan 2008 22:05:20 -0600
 
