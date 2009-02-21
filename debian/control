@@ -3,15 +3,15 @@ Section: utils
 Priority: optional
 Maintainer: Ming Hua <minghua-guest@users.alioth.debian.org>
 Uploaders: Osamu Aoki <osamu@debian.org>, Rolf Leggewie <foss@rolf.leggewie.biz>
-Build-Depends: dpkg-dev (>= 1.14.6), debhelper (>= 4.0.0), dpatch, autotools-dev, pkg-config, x11proto-core-dev, libx11-dev, libpango1.0-dev, libglib2.0-dev, libgtk2.0-dev (>= 2.10.1-1)
-Standards-Version: 3.7.3
+Build-Depends: dpkg-dev (>= 1.14.6), debhelper (>= 4.0.0), dpatch, autotools-dev, pkg-config, x11proto-core-dev, libx11-dev, libpango1.0-dev, libglib2.0-dev, libgtk2.0-dev (>= 2.10.1)
+Standards-Version: 3.8.0
 Homepage: http://www.scim-im.org/
 Vcs-Svn: svn://svn.debian.org/pkg-ime/scim/trunk/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim/trunk/
 
 Package: scim
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: scim-gtk2-immodule (= ${binary:Version}), im-switch
 Suggests: scim-uim, scim-pinyin, scim-hangul, scim-chewing, scim-m17n, scim-prime, scim-anthy, scim-skk, scim-canna, scim-tables-additional, scim-tables-ja, scim-tables-ko, scim-tables-zh, scim-thai
 Conflicts: scim-tables-zh (<< 0.4.2), scim-tables-ja (<< 0.4.2), scim-tables-ko (<< 0.4.2), scim-tables-additional (<< 0.4.2), scim-gtk2-immodule (<< 1.2.0), scim-server-socket (<< 1.2.0), scim-frontend-socket (<< 1.2.0), scim-config-socket (<< 1.2.0), scim-config-gconf (<< 1.2.0), scim-chinese (<< 0.5.0), scim-uim (<= 0.1.3-2), scim-m17n (<= 0.1.3-1), scim-hangul (<= 0.1.2-1), scim-chewing (<= 0.2.0-2.1)
@@ -49,7 +49,7 @@ Description: smart common input method platform
 Package: libscim8c2a
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: scim (<< 1.2.0), libscim8
 Replaces: scim (<< 1.2.0), libscim8
 Description: library for SCIM platform
@@ -62,7 +62,7 @@ Description: library for SCIM platform
 Package: libscim-dev
 Section: libdevel
 Architecture: any
-Depends: libscim8c2a (= ${binary:Version}), libx11-dev, libgtk2.0-dev, libpango1.0-dev
+Depends: libscim8c2a (= ${binary:Version}), libx11-dev, libgtk2.0-dev, libpango1.0-dev, ${misc:Depends}
 Conflicts: scim-dev (<< 1.2.0)
 Replaces: scim-dev (<< 1.2.0)
 Description: development library for SCIM platform
@@ -102,7 +102,7 @@ Description: GTK+2 input method module with SCIM as backend
 
 Package: scim-modules-socket
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Conflicts: scim-config-socket, scim-frontend-socket, scim-server-socket
 Replaces: scim-config-socket, scim-frontend-socket, scim-server-socket
 Provides: scim-config-socket, scim-frontend-socket, scim-server-socket
@@ -121,7 +121,7 @@ Description: socket modules for SCIM platform
 Package: scim-dev
 Section: devel
 Architecture: all
-Depends: libscim-dev (>= ${source:Version}), scim-dev-doc (= ${source:Version})
+Depends: libscim-dev (>= ${source:Version}), scim-dev-doc (= ${source:Version}), ${misc:Depends}
 Description: development files for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
@@ -132,6 +132,7 @@ Description: development files for SCIM platform
 
 Package: scim-dev-doc
 Section: doc
+Depends: ${misc:Depends}
 Architecture: all
 Description: development documentation for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.

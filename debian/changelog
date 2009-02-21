@@ -2,6 +2,7 @@ scim (1.4.8-1) unstable; urgency=low
 
   * new upstream release
   * fix spelling mistake in im-switch files.  (Closes: #494189)
+  * update to standard 3.8.0 and make lintian clean
 
  -- Rolf Leggewie <foss@rolf.leggewie.biz>  Sat, 14 Feb 2009 21:04:56 +0100
 
