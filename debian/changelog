@@ -1,3 +1,9 @@
+scim (1.4.8-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Sat, 14 Feb 2009 21:04:56 +0100
+
 scim (1.4.7-3) unstable; urgency=low
 
   The "give credit where credit is due" release.
