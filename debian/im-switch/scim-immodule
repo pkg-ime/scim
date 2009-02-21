@@ -15,4 +15,4 @@ XIM_ARGS="-d"
 XIM_PROGRAM_SETS_ITSELF_AS_DAEMON=yes
 GTK_IM_MODULE=scim
 QT_IM_MODULE=scim
-DEPENDS="scim,scim-gtk2-immodule,scim-qtimm,scim-anthy|scim-canna|scim-chewing|scim-pinyin|scim-hangle|scim-prime|scim-skk|scim-tables-additional|scim-m17n|scim-uim|scim-tables-ja|scim-tables-ko|scim-tables-zh"
+DEPENDS="scim,scim-gtk2-immodule,scim-qtimm,scim-anthy|scim-canna|scim-chewing|scim-pinyin|scim-hangul|scim-prime|scim-skk|scim-tables-additional|scim-m17n|scim-uim|scim-tables-ja|scim-tables-ko|scim-tables-zh"
