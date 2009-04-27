@@ -23,6 +23,7 @@ usr/lib/scim-1.0/1.4.0/SetupUI/aaa-imengine-setup.so
 usr/lib/scim-1.0/1.4.0/SetupUI/panel-gtk-setup.so
 
 usr/share/applications/scim-setup.desktop
+usr/share/control-center-2.0/capplets/scim-setup.desktop
 
 usr/share/locale/*/LC_MESSAGES/scim.mo
 usr/share/pixmaps/scim-setup.png

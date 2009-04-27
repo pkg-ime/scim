@@ -6,7 +6,11 @@ scim (1.4.9-1) unstable; urgency=low
   * update to standard 3.8.0 and make lintian clean
   * drop 90_relibtoolize.dpatch, looks like the retooling was done upstream
 
- -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:22:14 +0800
+  [ LI Daobing ]
+  * debian/scim.install: add
+    usr/share/control-center-2.0/capplets/scim-setup.desktop.
+
+ -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:36:45 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
