@@ -111,7 +111,7 @@ binary-arch: build
 	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
-	dh_makeshlibs -p libscim8c2a -V "libscim8c2a (>= 1.4.6)"
+	dh_makeshlibs -p libscim8c2a -V "libscim8c2a (>= 1.4.9)"
 	dh_installdeb -a
 	dh_shlibdeps -a -l debian/libscim8c2a/usr/lib -L libscim8c2a
 	dh_gencontrol -a
