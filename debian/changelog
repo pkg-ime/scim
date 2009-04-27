@@ -9,9 +9,13 @@ scim (1.4.9-1) unstable; urgency=low
   [ LI Daobing ]
   * debian/scim.install: add
     usr/share/control-center-2.0/capplets/scim-setup.desktop.
-  * debian/control: add me to uploaders. 
+  * debian/control: 
+    - add me to uploaders. 
+    - bump debhelper version to >= 7.
+  * debian/compat:
+    - bump debhelper version to 7.
 
- -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:39:54 +0800
+ -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:41:53 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
