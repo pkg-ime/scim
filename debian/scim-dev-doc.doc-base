@@ -8,7 +8,7 @@ Abstract: SCIM (Smart Common Input Method) is an input method (IM)
  .
  This developer manual includes doxygen-generated HTML documentation for
  the C++ API of SCIM.
-Section: Apps/Text
+Section: Text
 
 Format: HTML
 Index: /usr/share/doc/scim-dev-doc/html/index.html
