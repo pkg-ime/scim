@@ -128,7 +128,7 @@ Depends: libscim-dev (>= ${source:Version}), scim-dev-doc (= ${source:Version}),
 Description: development files for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
- This package is a meta package to provide development libraries and
+ This package is a metapackage to provide development libraries and
  documentations for SCIM platform.
  .
  For more information about SCIM, please see the description of scim package.
