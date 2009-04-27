@@ -12,10 +12,11 @@ scim (1.4.9-1) unstable; urgency=low
   * debian/control: 
     - add me to uploaders. 
     - bump debhelper version to >= 7.
+    - fix typo in description: GTK -> GTK+.
   * debian/compat:
     - bump debhelper version to 7.
 
- -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:41:53 +0800
+ -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:59:27 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
