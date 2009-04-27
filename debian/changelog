@@ -17,9 +17,11 @@ scim (1.4.9-1) unstable; urgency=low
   * debian/compat:
     - bump debhelper version to 7.
   * debian/scim-dev-doc.doc-base: change section to Text. 
-  * debian/rules: bump shlib version to 1.4.9.
+  * debian/rules: 
+    - bump shlib version to 1.4.9.
+    - change "rm" to "rm -f".
 
- -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 21:26:38 +0800
+ -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 21:41:43 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
