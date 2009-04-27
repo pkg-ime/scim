@@ -1,11 +1,12 @@
-scim (1.4.8-1) unstable; urgency=low
+scim (1.4.9-1) unstable; urgency=low
 
+  [ Rolf Leggewie ]
   * new upstream release
   * fix spelling mistake in im-switch files.  (Closes: #494189)
   * update to standard 3.8.0 and make lintian clean
   * drop 90_relibtoolize.dpatch, looks like the retooling was done upstream
 
- -- Rolf Leggewie <foss@rolf.leggewie.biz>  Tue, 24 Feb 2009 23:02:18 +0900
+ -- LI Daobing <lidaobing@debian.org>  Mon, 27 Apr 2009 20:22:14 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
