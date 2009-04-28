@@ -90,6 +90,10 @@ build-stamp: config.status
 	install -m 755 -D \
 		debian/scim.script debian/tmp/usr/share/bug/scim/script
 	# clean up unnecessary static library files for modules
+	mkdir -p debian/tmp/usr/lib/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
+	mv debian/tmp/usr/lib/gtk-2.0/immodules \
+		debian/tmp/usr/lib/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
+	rm -rf debian/tmp/usr/share/control-center-2.0
 	rm -f debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.la
 	rm -f debian/tmp/usr/lib/scim-1.0/1.4.0/*/*.a
 	rm -f debian/tmp/usr/lib/gtk-2.0/*/immodules/im-scim.a

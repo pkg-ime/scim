@@ -20,11 +20,13 @@ scim (1.4.9-1) unstable; urgency=low
   * debian/rules: 
     - bump shlib version to 1.4.9.
     - change "rm" to "rm -f".
+    - remove deprecated desktop entry
+    - fix gtk immodule install dir
   * debian/patches/00list:
     - disable 10_remove-deprecated-desktop-entry.dpatch and
       10_gtk-immodule-install-dir.dpatch.
 
- -- LI Daobing <lidaobing@debian.org>  Tue, 28 Apr 2009 20:36:18 +0800
+ -- LI Daobing <lidaobing@debian.org>  Tue, 28 Apr 2009 20:49:00 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
