@@ -7,8 +7,6 @@ scim (1.4.9-1) unstable; urgency=low
   * drop 90_relibtoolize.dpatch, looks like the retooling was done upstream
 
   [ LI Daobing ]
-  * debian/scim.install: add
-    usr/share/control-center-2.0/capplets/scim-setup.desktop.
   * debian/control: 
     - add me to uploaders. 
     - bump debhelper version to >= 7.
@@ -26,7 +24,7 @@ scim (1.4.9-1) unstable; urgency=low
     - disable 10_remove-deprecated-desktop-entry.dpatch and
       10_gtk-immodule-install-dir.dpatch.
 
- -- LI Daobing <lidaobing@debian.org>  Tue, 28 Apr 2009 20:49:00 +0800
+ -- LI Daobing <lidaobing@debian.org>  Tue, 28 Apr 2009 20:58:08 +0800
 
 scim (1.4.7-3) unstable; urgency=low
 
