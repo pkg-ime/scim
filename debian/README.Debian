@@ -180,7 +180,7 @@ installed, it should start SCIM automatically unless you have higher priority
 package for IM.
 
 To see what is your IM,
-  $ im-swich -l
+  $ im-switch -l
 will list complete situation.  If you just want to set one user account 
 to use SCIM, just type:
   $ im-switch -s scim
