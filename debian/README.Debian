@@ -43,7 +43,7 @@ more details, please read README.GTK.
 
 There are two other programs need mentioning: skim and scim-qtimm.  Both are
 for Qt/KDE integration of SCIM, but they are not packaged in Debian (yet).
-Especially scim-qtimm requires an unofficial patch for Qt 3, so it's prabably
+Especially scim-qtimm requires an unofficial patch for Qt 3, so it's probably
 quite hard to get it into Debian.  William J Beksi is working on packaging
 skim, and please refer to ITP bug #309857 for progress.  Although these
 programs are not available in Debian, Qt/KDE applications can also use XIM
@@ -72,7 +72,7 @@ to your ~/.scim/global file unless you use en_US.UTF-8 locale (which is
 supported by default).  The <your_locale> string should be in ll_CC.UTF-8
 form, where ll being the language, and CC being the country.  You can always
 use the "locale" command to check your locale setting.  You can also add
-mutiple locales there, just separate them by comma without space, like
+multiple locales there, just separate them by comma without space, like
     /SupportedUnicodeLocales = en_US.UTF-8,en_GB.UTF_8,fr_FR.UTF-8
 
 If you have never used SCIM before, your ~/.scim/global may be not existent.
@@ -121,7 +121,7 @@ automatically start if you choose this module.  So using GTK IM mode is
 simpler, just start a GTK+/GNOME program, right-click and choose "Input
 Methods -> SCIM Input Method" in the pop-up menu, and SCIM should
 automatically start if it's not started yet.  Now pressing Ctrl-space should
-also activate SCIM and you can start inputing.  An alternative way to start
+also activate SCIM and you can start typing.  An alternative way to start
 GTK+ applications using SCIM at the GTK IM module is by using GTK_IM_MODULE
 environment variable, such as:
     $ GTK_IM_MODULE="scim"
@@ -137,7 +137,7 @@ Autostart SCIM
 --------------
 
 It's quite inconvenient to set environment variables and manually start SCIM
-each time you login, so you want to start SCIM automatically when your X
+each time you log in, so you want to start SCIM automatically when your X
 session starts.  This is not hard, you just need to put the commands of
 setting variables and start SCIM into a configuration file X reads when it
 starts.  For example, the following lines in ~/.gnomerc should work if you
@@ -168,7 +168,7 @@ Helper Packages
 The im-switch package will help user to set up their input methods.
 
 The im-switch package provides the framework for input method packages to
-provide their own customization scirpts.  It uses hook script in
+provide their own customization scripts.  It uses hook script in
 /etc/X11/Xsession.d/ to read these customization scripts and set environment
 for input methods.  But this package's configuration is choosing among SCIM,
 UIM, ... etc only.  The detail choices within SCIM modules are done by
@@ -213,7 +213,7 @@ UTF-8 locales such as ja_JP.UTF-8 enables to edit any text of any
 languages, i.e., multilingualization (m17n) environment. Thus UTF-8
 locale are recommended to be used with SCIM.  In order to edit files
 encoded in other locales such as ja_JP.eucJP, pl_PL.ISO-8859-2, ...,
-you need to set up editor to handle them too.  Please reffer to
+you need to set up editor to handle them too.  Please refer to
 
 The im-switch package does not change ~/.scim/global or /etc/scim/global
 to enable all available UTF-8 locales for SCIM since you may want to start
@@ -223,7 +223,7 @@ some locales without SCIM.  You still need to manually enable your locale
 Select UTF-8 locale using GDM/KDM menu.
 
 (You can also add customization scripts in /etc/X11/Xsession.d/ directly, 
-of course, but the maintainer would discourge this.)
+of course, but the maintainer would discourage this.)
 
 -------------------
 Further information
@@ -249,7 +249,7 @@ Report Bugs
 SCIM is still not perfect, and there are always some corner case usability
 issues.  So please report bugs (install the reportbug package and use the
 reportbug program, it's not hard to report a bug)!  SCIM involves many
-languages and input methods, only with every user's testing and help, can we
+languages and input methods, only with every user's testing and help can we
 keep improving it and provide better input method support in Debian.  Thanks!
 
  -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 08:15:48 -0600
