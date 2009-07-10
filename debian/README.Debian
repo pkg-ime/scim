@@ -42,13 +42,8 @@ GTK+/GNOME applications.  Those applications can use XIM mode just fine.  For
 more details, please read README.GTK.
 
 There are two other programs need mentioning: skim and scim-qtimm.  Both are
-for Qt/KDE integration of SCIM, but they are not packaged in Debian (yet).
-Especially scim-qtimm requires an unofficial patch for Qt 3, so it's probably
-quite hard to get it into Debian.  William J Beksi is working on packaging
-skim, and please refer to ITP bug #309857 for progress.  Although these
-programs are not available in Debian, Qt/KDE applications can also use XIM
-mode just fine.  Read README.Qt if you want to use SCIM in Qt/KDE
-applications.
+for Qt/KDE integration of SCIM.  Qt/KDE applications can also use XIM mode just 
+fine.  Read README.Qt if you want to use SCIM in Qt/KDE applications.
 
 In summary, you should install package scim and one of the IM module package
 to start.  You may install scim-gtk2-immodule if you use GTK+ applications and
