@@ -16,7 +16,7 @@ option of XIM mode, but it should work just fine.
 
 When using XIM mode in Qt 3, You need to pay extra attention on two things:
 
-1. Both Qt and SCIM has their own settings for XIM style, so you need to make
+1. Both Qt and SCIM have their own settings for XIM style, so you need to make
 sure they match.  There are two commonly used XIM styles, usually called "on
 the spot" and "over the spot".  To change the style in SCIM, run scim-setup
 (or choose "SCIM Input Method Setup" from your menu), and go to the "FrontEnd

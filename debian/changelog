@@ -1,8 +1,8 @@
 scim (1.4.9-2) unstable; urgency=low
 
-  * fix spelling mistake in README.Debian
+  * fix some spelling mistakes and bitrot in README files
 
- -- Rolf Leggewie <foss@rolf.leggewie.biz>  Thu, 18 Jun 2009 23:40:37 +0900
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 10 Jul 2009 14:25:20 +0200
 
 scim (1.4.9-1) unstable; urgency=low
 
