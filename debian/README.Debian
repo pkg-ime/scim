@@ -169,7 +169,7 @@ The im-switch package will help user to set up their input methods.
 
 The im-switch package provides the framework for input method packages to
 provide their own customization scirpts.  It uses hook script in
-/etc/X11/Xsession.d/ to read these customization scripts and set enviroment
+/etc/X11/Xsession.d/ to read these customization scripts and set environment
 for input methods.  But this package's configuration is choosing among SCIM,
 UIM, ... etc only.  The detail choices within SCIM modules are done by
 installing relevant packages and configuring through SCIM GUI configuration
@@ -192,7 +192,7 @@ If you do the same from root use, you set system wide default.
   # im-switch -c
 
 The activation of SCIM is default only for Chinese, Japanese and Korean (CJK)
-enviroment.  Above command set up SCIM only for one locale.  If you wish to
+environment.  Above command set up SCIM only for one locale.  If you wish to
 enable SCIM system wide for all locales, configure SCIM from root as:
   # im-switch -z zh_CN -s scim
   # im-switch -z zh_TW -s scim
