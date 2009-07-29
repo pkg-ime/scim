@@ -8,7 +8,6 @@ scim (1.4.9-2) unstable; urgency=low
     - let scim-bridge pull in clients packages by default
     - let libscim8c2a conflict with older versions of scim-gtk2-immodule
       to offer Ubuntu a safe way out of earlier packaging mistakes
-    - update to Standard 3.8.2.  No further changes necessary.
   * debian/scim.postinst: improve handling of update-alternatives
   * debian/patches: 
     - push back and update a number of patches from Ubuntu
