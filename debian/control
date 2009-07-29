@@ -53,7 +53,7 @@ Package: libscim8c2a
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: scim (<< 1.2.0), libscim8
+Conflicts: scim (<< 1.2.0), libscim8, scim-gtk2-immodule (<< 1.4.9-2)
 Replaces: scim (<< 1.2.0), libscim8
 Description: library for SCIM platform
  SCIM (Smart Common Input Method) is an input method (IM) platform.
