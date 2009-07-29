@@ -5,6 +5,7 @@ scim (1.4.9-2) unstable; urgency=low
   * debian/README*: fix some spelling mistakes and bitrot
   * debian/rules: remove obsolete Chinese manual (Closes: #427520)
   * debian/control: let scim-bridge pull in clients packages by default
+  * debian/scim.postinst: improve handling of update-alternatives
 
  -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 10 Jul 2009 14:25:20 +0200
 
