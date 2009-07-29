@@ -6,6 +6,14 @@
 # - Note the patches are applied in the order of their numbers.  So if
 #   you insert a new patch, make sure all the patches after it applies
 #   correctly.
+
 #10_gtk-immodule-install-dir.dpatch
 #10_remove-deprecated-desktop-entry.dpatch
+20_scim_config.dpatch
+30_scim_x11_frontend-ic-focus-LTC27940-215953
+40_scim_user_home_overrides.dpatch
 50_validate-desktop-entry.dpatch
+51_scim-1.4.7-fix-capslock.dpatch
+52_scim-1.4.7-imdkit-read-property-properly.dpatch
+53_scim-1.4.7-trayicon.dpatch
+54_scim-1.4.7-xim-wrong-format.dpatch
