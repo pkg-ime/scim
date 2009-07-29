@@ -10,7 +10,9 @@ scim (1.4.9-2) unstable; urgency=low
       to offer Ubuntu a safe way out of earlier packaging mistakes
     - update to Standard 3.8.2.  No further changes necessary.
   * debian/scim.postinst: improve handling of update-alternatives
-  * debian/patches: push back and update a number of patches from Ubuntu
+  * debian/patches: 
+    - push back and update a number of patches from Ubuntu
+    - drop AltGr as trigger key from 20_scim_config.dpatch
 
  -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 10 Jul 2009 14:25:20 +0200
 
