@@ -1,6 +1,7 @@
 scim (1.4.9-2) unstable; urgency=low
 
-  * fix some spelling mistakes and bitrot in README files
+  * debian/README*: fix some spelling mistakes and bitrot
+  * debian/rules: remove obsolete Chinese manual (Closes: #427520)
 
  -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 10 Jul 2009 14:25:20 +0200
 

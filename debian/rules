@@ -2,6 +2,7 @@
 #
 # debian/rules for scim package
 # Copyright Ming Hua <minghua@rice.edu>, 2006
+# Copyright Rolf Leggewie <foss@rolf.leggewie.biz>, 2009
 #
 # This file is distributed under the same license as SCIM.
 
@@ -36,6 +37,8 @@ clean-patched:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
+	# http://bugs.debian.org/427520
+	rm -f docs/manual/zh_CN/user-manual.*
 	# only run "make distclean" if a Makefile exists
 	[ ! -f Makefile ] || $(MAKE) distclean
 	# remove existent config.{guess,sub} as we use the ones from
