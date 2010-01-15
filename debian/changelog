@@ -2,6 +2,7 @@ scim (1.4.9-2) unstable; urgency=low
 
   The "contributions from Ubuntu" release
 
+  [ Rolf Leggewie ]
   * debian/README*: fix some spelling mistakes and bitrot
   * debian/rules: remove obsolete Chinese manual (Closes: #427520)
   * debian/control: 
@@ -12,8 +13,12 @@ scim (1.4.9-2) unstable; urgency=low
   * debian/patches: 
     - push back and update a number of patches from Ubuntu
     - drop AltGr as trigger key from 20_scim_config.dpatch
+  * add a lintian override for libscim8c2a package
 
- -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 10 Jul 2009 14:25:20 +0200
+  [ Jari Aalto ]
+  * 60_gcc-4.4-const-char.dpatch: fix compile with gcc 4.4 (Closes: #560486)
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Fri, 15 Jan 2010 15:03:37 +0100
 
 scim (1.4.9-1) unstable; urgency=low
 

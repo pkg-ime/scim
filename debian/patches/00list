@@ -17,3 +17,4 @@
 52_scim-1.4.7-imdkit-read-property-properly.dpatch
 53_scim-1.4.7-trayicon.dpatch
 54_scim-1.4.7-xim-wrong-format.dpatch
+60_gcc-4.4-const-char.dpatch

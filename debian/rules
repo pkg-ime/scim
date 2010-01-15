@@ -103,6 +103,9 @@ build-stamp: config.status
 	rm -f debian/tmp/usr/lib/gtk-2.0/*/immodules/im-scim.la
 	# distribute files to different binary packages
 	dh_install --sourcedir=debian/tmp --fail-missing
+#	# Lintian overrides.
+#	install -m 644 -D \
+#		debian/libscim8c2a.overrides debian/tmp/libscim8c2a/usr/share/lintian/overrides/libscim8c2a
 	touch $@
 
 binary: binary-arch binary-indep
@@ -115,6 +118,7 @@ binary-arch: build
 	dh_installman -a
 	LD_LIBRARY_PATH=debian/libscim8c2a/usr/lib:$(LD_LIBRARY_PATH) \
 		dh_gtkmodules -p scim-gtk2-immodule
+	dh_lintian
 	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a

@@ -1,0 +1,23 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## /tmp/gcc.patch.dpatch by  <jari.aalto@cante.net>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: daa
+## DP: Author: Jari Aalto <jari.aalto@cante.net>
+## DP: src/ltdl.cpp: Fix Gcc 4.4 error: invalid conversion from const char* to char*
+
+@DPATCH@
+
+diff --git a/src/ltdl.cpp b/src/ltdl.cpp
+index e96dda2..b6dc97d 100644
+--- a/src/ltdl.cpp
++++ b/src/ltdl.cpp
+@@ -3361,7 +3361,7 @@ lt_dlopenext (
+ {
+   lt_dlhandle	handle		= 0;
+   char *	tmp		= 0;
+-  char *	ext		= 0;
++  const char *	ext		= 0;
+   size_t	len;
+   int		errors		= 0;
+ 
