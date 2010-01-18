@@ -9,8 +9,8 @@ Uploaders:
 Build-Depends: dpkg-dev (>= 1.14.6), debhelper (>= 7), dpatch, autotools-dev, pkg-config, x11proto-core-dev, libx11-dev, libpango1.0-dev, libglib2.0-dev, libgtk2.0-dev (>= 2.10.1)
 Standards-Version: 3.8.1
 Homepage: http://www.scim-im.org/
-Vcs-Svn: svn://svn.debian.org/pkg-ime/scim/trunk/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-ime/scim/trunk/
+Vcs-git: git://git.debian.org/git/collab-maint/scim.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/scim.git
 
 Package: scim
 Architecture: any
