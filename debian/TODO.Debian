@@ -1,0 +1,14 @@
+Short Term
+----------
+Add lintian override for the soname-and-library-name-mismatch error.
+
+Add scim-setup.desktop handling in postinst and postrm.
+
+Use AM_MAINTAINER_MODE in configure.ac to avoid timestamp skews.
+
+
+Long Term
+---------
+Investigate "SONAME in dynamic loaded module" issue.
+
+Write man pages for scim-setup and scim-config-agent.

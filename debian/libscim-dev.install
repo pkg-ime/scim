@@ -1,0 +1,17 @@
+usr/lib/libscim-1.0.so
+usr/lib/libscim-1.0.a
+usr/lib/libscim-1.0.la
+usr/lib/pkgconfig/scim.pc
+usr/include/scim-1.0/*.h
+
+usr/lib/libscim-gtkutils-1.0.so
+usr/lib/libscim-gtkutils-1.0.a
+usr/lib/libscim-gtkutils-1.0.la
+usr/lib/pkgconfig/scim-gtkutils.pc
+usr/include/scim-1.0/gtk/*.h
+
+usr/lib/libscim-x11utils-1.0.so
+usr/lib/libscim-x11utils-1.0.a
+usr/lib/libscim-x11utils-1.0.la
+usr/lib/pkgconfig/scim-x11utils.pc
+usr/include/scim-1.0/x11/*.h
