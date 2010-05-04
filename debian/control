@@ -1,11 +1,11 @@
 Source: scim
 Section: utils
 Priority: optional
-Maintainer: Ming Hua <minghua-guest@users.alioth.debian.org>
+Maintainer: Rolf Leggewie <foss@rolf.leggewie.biz>
 Uploaders: 
  Osamu Aoki <osamu@debian.org>, 
- Rolf Leggewie <foss@rolf.leggewie.biz>,
- LI Daobing <lidaobing@debian.org>
+ LI Daobing <lidaobing@debian.org>,
+ Ming Hua <minghua-guest@users.alioth.debian.org>
 Build-Depends: dpkg-dev (>= 1.14.6), debhelper (>= 7), dpatch, autotools-dev, pkg-config, x11proto-core-dev, libx11-dev, libpango1.0-dev, libglib2.0-dev, libgtk2.0-dev (>= 2.10.1)
 Standards-Version: 3.8.1
 Homepage: http://www.scim-im.org/
