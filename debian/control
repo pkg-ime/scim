@@ -1,6 +1,7 @@
 Source: scim
 Section: utils
 Priority: optional
+DM-Upload-Allowed: yes
 Maintainer: Rolf Leggewie <foss@rolf.leggewie.biz>
 Uploaders: 
  Osamu Aoki <osamu@debian.org>, 
