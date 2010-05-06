@@ -18,3 +18,4 @@
 53_scim-1.4.7-trayicon.dpatch
 54_scim-1.4.7-xim-wrong-format.dpatch
 60_gcc-4.4-const-char.dpatch
+70_fix-disappeared-status-icon.dpatch

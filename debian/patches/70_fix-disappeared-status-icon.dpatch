@@ -1,0 +1,38 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 70_fix-disappeared-status-icon.dpatch by Mingxi Wu <fengshenx@gmail.com>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: https://bugs.launchpad.net/bugs/475800
+
+@DPATCH@
+diff -urNad scim-1.4.9~/extras/panel/scim_panel_gtk.cpp scim-1.4.9/extras/panel/scim_panel_gtk.cpp
+--- scim-1.4.9~/extras/panel/scim_panel_gtk.cpp	2008-11-02 06:43:13.000000000 +0000
++++ scim-1.4.9/extras/panel/scim_panel_gtk.cpp	2010-03-09 13:27:51.000000000 +0000
+@@ -1072,11 +1072,13 @@
+ #ifdef GDK_WINDOWING_X11
+     // Add an event filter function to observe X root window's properties.
+     GdkWindow *root_window = gdk_get_default_root_window ();
++    GdkEventMask event_mask;
+ #if GDK_MULTIHEAD_SAFE
+     if (_current_screen)
+         root_window = gdk_screen_get_root_window (_current_screen);
+ #endif
+-    gdk_window_set_events (root_window, (GdkEventMask)GDK_PROPERTY_NOTIFY);
++    event_mask = (GdkEventMask) (gdk_window_get_events (root_window) | GDK_PROPERTY_NOTIFY);
++    gdk_window_set_events (root_window, event_mask);
+     gdk_window_add_filter (root_window, ui_event_filter, NULL);
+ #endif
+ 
+@@ -1323,9 +1325,11 @@
+ 
+ #ifdef GDK_WINDOWING_X11
+         GdkWindow *root_window = gdk_get_default_root_window ();
++        GdkEventMask event_mask;
+         if (_current_screen)
+             root_window = gdk_screen_get_root_window (_current_screen);
+-        gdk_window_set_events (root_window, (GdkEventMask)GDK_PROPERTY_NOTIFY);
++        event_mask = (GdkEventMask) (gdk_window_get_events (root_window) | GDK_PROPERTY_NOTIFY);
++        gdk_window_set_events (root_window, event_mask);
+         gdk_window_add_filter (root_window, ui_event_filter, NULL);
+ #endif
+ 
