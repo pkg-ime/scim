@@ -1,14 +1,8 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 51_scim-1.4.7-fix-capslock.dpatch by Ikuya Awashiro <ikuya@fruitsbasket.info>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: Ignore caps lock to enable switcing input methods with it on
-## DP: https://bugzilla.redhat.com/show_bug.cgi?id=431222
-
-@DPATCH@
-diff -urNad scim-1.4.9~/utils/scimkeyselection.cpp scim-1.4.9/utils/scimkeyselection.cpp
---- scim-1.4.9~/utils/scimkeyselection.cpp	2008-11-02 06:42:49.000000000 +0000
-+++ scim-1.4.9/utils/scimkeyselection.cpp	2009-07-20 11:47:28.000000000 +0000
+Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
+Description: Ignore caps lock to enable switcing input methods with it on
+https://bugzilla.redhat.com/show_bug.cgi?id=431222
+--- a/utils/scimkeyselection.cpp
++++ b/utils/scimkeyselection.cpp
 @@ -267,6 +267,11 @@
      gtk_widget_show (keyselection->toggle_hyper);
      gtk_box_pack_start (GTK_BOX (hbox), keyselection->toggle_hyper, TRUE, TRUE, 2);
@@ -40,9 +34,8 @@ diff -urNad scim-1.4.9~/utils/scimkeyselection.cpp scim-1.4.9/utils/scimkeyselec
          GTK_TOGGLE_BUTTON (keyselection->toggle_release),
          event.is_key_release ());
  
-diff -urNad scim-1.4.9~/utils/scimkeyselection.h scim-1.4.9/utils/scimkeyselection.h
---- scim-1.4.9~/utils/scimkeyselection.h	2008-11-02 06:42:49.000000000 +0000
-+++ scim-1.4.9/utils/scimkeyselection.h	2009-07-20 11:47:28.000000000 +0000
+--- a/utils/scimkeyselection.h
++++ b/utils/scimkeyselection.h
 @@ -36,6 +36,7 @@
      GtkWidget *toggle_meta;
      GtkWidget *toggle_super;

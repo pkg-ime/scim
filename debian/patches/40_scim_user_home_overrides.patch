@@ -1,0 +1,29 @@
+Author: Colin Watson <cjwatson@ubuntu.com>
+Description: Allow home directory and user name detection to be overridden using
+SCIM_HOME and SCIM_USER environment variables respectively.
+--- a/src/scim_utility.cpp
++++ b/src/scim_utility.cpp
+@@ -547,6 +547,11 @@
+ 
+     struct passwd *pw;
+ 
++    home_dir = getenv ("SCIM_HOME");
++    if (home_dir && *home_dir) {
++        return String (home_dir);
++    }
++
+     setpwent ();
+     pw = getpwuid (getuid ());
+     endpwent ();
+@@ -568,6 +573,11 @@
+     struct passwd *pw;
+     const char *user_name;
+ 
++    user_name = getenv ("SCIM_USER");
++    if (user_name && *user_name) {
++        return String (user_name);
++    }
++
+     setpwent ();
+     pw = getpwuid (getuid ());
+     endpwent ();

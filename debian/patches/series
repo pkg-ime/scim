@@ -1,0 +1,10 @@
+20_scim_config.patch
+30_scim_x11_frontend-ic-focus-LTC27940-215953.patch
+40_scim_user_home_overrides.patch
+50_validate-desktop-entry.patch
+51_scim-1.4.7-fix-capslock.patch
+52_scim-1.4.7-imdkit-read-property-properly.patch
+53_scim-1.4.7-trayicon.patch
+54_scim-1.4.7-xim-wrong-format.patch
+60_gcc-4.4-const-char.patch
+70_fix-disappeared-status-icon.patch

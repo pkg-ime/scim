@@ -1,0 +1,16 @@
+Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
+Description: This patch should enable input in Java swing apps.  It originated from the Fedora Project.
+Fedora stopped applying the patch a while ago, saying it wasn't needed anymore.  User comments
+indicate this is not the case.  See LP #178742.
+--- a/modules/FrontEnd/scim_x11_frontend.cpp
++++ b/modules/FrontEnd/scim_x11_frontend.cpp
+@@ -1086,7 +1086,8 @@
+     // If the ic is not focused, then return.
+     if (!is_focused_ic (ic)) {
+         SCIM_DEBUG_FRONTEND(1) << "IC " << call_data->icid << " is not focused, focus it first.\n";
+-        ims_set_ic_focus_handler (ims, (IMChangeFocusStruct *) call_data);
++        // ims_set_ic_focus_handler (ims, (IMChangeFocusStruct *) call_data);
++        return 1;
+     }
+ 
+     XKeyEvent *event = (XKeyEvent*) &(call_data->event);

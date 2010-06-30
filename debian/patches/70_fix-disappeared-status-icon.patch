@@ -1,14 +1,8 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 70_fix-disappeared-status-icon.dpatch by Mingxi Wu <fengshenx@gmail.com>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: https://bugs.launchpad.net/bugs/475800
-
-@DPATCH@
-diff -urNad scim-1.4.9~/extras/panel/scim_panel_gtk.cpp scim-1.4.9/extras/panel/scim_panel_gtk.cpp
---- scim-1.4.9~/extras/panel/scim_panel_gtk.cpp	2008-11-02 06:43:13.000000000 +0000
-+++ scim-1.4.9/extras/panel/scim_panel_gtk.cpp	2010-03-09 13:27:51.000000000 +0000
-@@ -1072,11 +1072,13 @@
+Author: Mingxi Wu <fengshenx@gmail.com>
+Description: https://bugs.launchpad.net/bugs/475800
+--- a/extras/panel/scim_panel_gtk.cpp
++++ b/extras/panel/scim_panel_gtk.cpp
+@@ -1079,11 +1079,13 @@
  #ifdef GDK_WINDOWING_X11
      // Add an event filter function to observe X root window's properties.
      GdkWindow *root_window = gdk_get_default_root_window ();
@@ -23,7 +17,7 @@ diff -urNad scim-1.4.9~/extras/panel/scim_panel_gtk.cpp scim-1.4.9/extras/panel/
      gdk_window_add_filter (root_window, ui_event_filter, NULL);
  #endif
  
-@@ -1323,9 +1325,11 @@
+@@ -1330,9 +1332,11 @@
  
  #ifdef GDK_WINDOWING_X11
          GdkWindow *root_window = gdk_get_default_root_window ();

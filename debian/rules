@@ -31,9 +31,7 @@ else
 	CXXFLAGS += -O0
 endif
 
-clean: clean-patched unpatch
-
-clean-patched:
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
@@ -46,23 +44,8 @@ clean-patched:
 	rm -f config.guess config.sub
 	dh_clean
 
-patch: patch-stamp
-patch-stamp:
-	dh_testdir
-	dpatch apply-all
-	# fix timestamp skews, note this is still quite hackish and depends on
-	# which files the 90_relibtoolize patch touches
-	touch -r config.h.in aclocal.m4 configure.ac
-	# put information about applied patches in the stamp file
-	dpatch cat-all -nd >$@
 
-unpatch:
-	dh_testdir
-	dpatch deapply-all
-	rm -rf debian/patched
-	rm -f patch-stamp
-
-config.status: patch-stamp
+config.status:
 	dh_testdir
 	# link config.{guess,sub} from autotools-dev package
 	ln -sf /usr/share/misc/config.guess config.guess
@@ -142,6 +125,6 @@ binary-indep: build
 	dh_builddeb -i
 
 .SUFFIXES:
-.PHONY: clean build binary binary-arch binary-indep clean-patched patch unpatch
+.PHONY: clean build binary binary-arch binary-indep
 
 # vim:textwidth=0:

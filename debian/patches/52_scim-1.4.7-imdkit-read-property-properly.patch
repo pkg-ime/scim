@@ -1,14 +1,8 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 52_scim-1.4.7-imdkit-read-property-properly.dpatch by Ikuya Awashiro <ikuya@fruitsbasket.info>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: Correctly read XIM_FORWARD_EVENT, triggered when rapidly typing keys
-## DP: https://bugzilla.redhat.com/show_bug.cgi?id=466657
-
-@DPATCH@
-diff -urNad scim-1.4.9~/modules/FrontEnd/IMdkit/Xi18n.h scim-1.4.9/modules/FrontEnd/IMdkit/Xi18n.h
---- scim-1.4.9~/modules/FrontEnd/IMdkit/Xi18n.h	2008-11-02 06:42:13.000000000 +0000
-+++ scim-1.4.9/modules/FrontEnd/IMdkit/Xi18n.h	2009-07-20 11:48:01.000000000 +0000
+Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
+Description: Correctly read XIM_FORWARD_EVENT, triggered when rapidly typing keys
+https://bugzilla.redhat.com/show_bug.cgi?id=466657
+--- a/modules/FrontEnd/IMdkit/Xi18n.h
++++ b/modules/FrontEnd/IMdkit/Xi18n.h
 @@ -149,6 +149,8 @@
       */
      int		sync;
@@ -18,9 +12,8 @@ diff -urNad scim-1.4.9~/modules/FrontEnd/IMdkit/Xi18n.h scim-1.4.9/modules/Front
      void *trans_rec;		/* contains transport specific data  */
      struct _Xi18nClient *next;
  } Xi18nClient;
-diff -urNad scim-1.4.9~/modules/FrontEnd/IMdkit/i18nUtil.c scim-1.4.9/modules/FrontEnd/IMdkit/i18nUtil.c
---- scim-1.4.9~/modules/FrontEnd/IMdkit/i18nUtil.c	2008-11-02 06:42:13.000000000 +0000
-+++ scim-1.4.9/modules/FrontEnd/IMdkit/i18nUtil.c	2009-07-20 11:48:01.000000000 +0000
+--- a/modules/FrontEnd/IMdkit/i18nUtil.c
++++ b/modules/FrontEnd/IMdkit/i18nUtil.c
 @@ -70,6 +70,7 @@
      client->sync = False;
      client->byte_order = '?'; 	/* initial value */
@@ -29,9 +22,8 @@ diff -urNad scim-1.4.9~/modules/FrontEnd/IMdkit/i18nUtil.c scim-1.4.9/modules/Fr
      client->next = i18n_core->address.clients;
      i18n_core->address.clients = client;
  
-diff -urNad scim-1.4.9~/modules/FrontEnd/IMdkit/i18nX.c scim-1.4.9/modules/FrontEnd/IMdkit/i18nX.c
---- scim-1.4.9~/modules/FrontEnd/IMdkit/i18nX.c	2008-11-02 06:42:12.000000000 +0000
-+++ scim-1.4.9/modules/FrontEnd/IMdkit/i18nX.c	2009-07-20 11:48:01.000000000 +0000
+--- a/modules/FrontEnd/IMdkit/i18nX.c
++++ b/modules/FrontEnd/IMdkit/i18nX.c
 @@ -29,6 +29,7 @@
   
  ******************************************************************/
