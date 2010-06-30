@@ -2,17 +2,25 @@
                Brief User's Guide for SCIM (version 1.4.4)
                ===========================================
 
-SCIM is an input method platform, and supports many different input methods
-(IMs) to make input of complicated characters in X environment possible.
+SCIM is an older and mature input method platform, and supports many different
+input methods (IMs) to make input of complicated characters in X environment
+possible.  
+
 There are SCIM plugin modules for many languages such as Japanese, Chinese,
 Korean, Arabic, and many Indic languages.
 
-Alternative documents in Japanese and English are available at:
+Most description for the new IBus at
+http://www.debian.org/doc/manuals/debian-reference/ch08.en.html#_the_keyboard_input
+is applicable to this older SCIM.  
+
+(Older documents in Japanese and English are available at:
  http://wiki.debian.org/JapaneseEnvironmentE (English)
  http://wiki.debian.org/JapaneseEnvironment  (Japanese)
  http://wiki.debian.org/UTF8vimE (English)
  http://wiki.debian.org/UTF8vim  (Japanese)
-These are focused to use im-switch and UTF-8 locales under etch.
+These are focused to use im-switch and UTF-8 locales under etch.  Use of
+im-config should provide easier configuration but im-switch can still be used
+under squeeze.)
 
 ---------------
 Debian Packages
@@ -157,7 +165,52 @@ There are other packages to help these configuration easier, see the next
 section. 
 
 ---------------
-Helper Packages
+Helper Packages im-config (newer)
+---------------
+
+The im-config package will help user to set up their input methods.
+
+The im-config package provides the framework for input method packages to
+provide their own customization scripts.  It uses hook script in
+/etc/X11/Xsession.d/ to read these customization scripts and set environment
+for input methods.  But this package's configuration is choosing among SCIM,
+UIM, ... etc only.  The detail choices within SCIM modules are done by
+installing relevant packages and configuring through SCIM GUI configuration
+tool. (This is the same situation between UIM modules.)
+
+If you start X in one of CJK environment while scim and im-config are
+installed, it should start SCIM automatically unless you have higher priority
+package (such as IBus) for IM.
+
+If you just want to set one user account to use SCIM, just type:
+  $ im-config
+(The menu lists only available IMs.)
+
+If you do the same from root use, you set system wide default.  
+  # im-config 
+(The menu lists only available IMs.)
+
+UTF-8 locales such as ja_JP.UTF-8 enables to edit any text of any 
+languages, i.e., multilingualization (m17n) environment. Thus UTF-8
+locale are recommended to be used with SCIM.  In order to edit files
+encoded in other locales such as ja_JP.eucJP, pl_PL.ISO-8859-2, ...,
+you need to set up editor to handle them too.  Please refer to
+
+The im-config package does not change ~/.scim/global or /etc/scim/global
+to enable all available UTF-8 locales for SCIM since you may want to start
+some locales without SCIM.  You still need to manually enable your locale 
+(see the "Locales" section above).
+
+Select UTF-8 locale using GDM/KDM menu.
+
+You can also manually edit/create startup script from
+  /etc/X11/xinit/xinputrc and ~/.xinputrc 
+
+Good templates for the contents of these files can be found in
+/usr/share/im-config/data/*.im .
+
+---------------
+Helper Packages im-switch (older)
 ---------------
 
 The im-switch package will help user to set up their input methods.
@@ -178,31 +231,27 @@ To see what is your IM,
   $ im-switch -l
 will list complete situation.  If you just want to set one user account 
 to use SCIM, just type:
-  $ im-switch -s scim
+  $ im-switch -s scim-immodule
 The same can be done with menu selection as:
   $ im-switch -c
 
 If you do the same from root use, you set system wide default.  
-  # im-switch -s scim
+  # im-switch -s scim-immodule
   # im-switch -c
 
 The activation of SCIM is default only for Chinese, Japanese and Korean (CJK)
 environment.  Above command set up SCIM only for one locale.  If you wish to
 enable SCIM system wide for all locales, configure SCIM from root as:
-  # im-switch -z zh_CN -s scim
-  # im-switch -z zh_TW -s scim
-  # im-switch -z zh_HK -s scim
-  # im-switch -z zh_SG -s scim
-  # im-switch -z ja_JP -s scim
-  # im-switch -z ko_KR -s scim
-  # im-switch -z all_ALL -s scim
+  # im-switch -z zh_CN -s scim-immodule
+  # im-switch -z zh_TW -s scim-immodule
+  # im-switch -z zh_HK -s scim-immodule
+  # im-switch -z zh_SG -s scim-immodule
+  # im-switch -z ja_JP -s scim-immodule
+  # im-switch -z ko_KR -s scim-immodule
+  # im-switch -z all_ALL -s scim-immodule
 
 Then you clear the user specific configurations with
   $ im-switch -a
-
-If you wish to load SCIM for the GTK applications through immodule mechanism
-despite the warning in the README.GTK, we offer a configuration file
-"scim-immodule" for it.  Use it at your risk.
 
 UTF-8 locales such as ja_JP.UTF-8 enables to edit any text of any 
 languages, i.e., multilingualization (m17n) environment. Thus UTF-8
@@ -248,6 +297,6 @@ languages and input methods, only with every user's testing and help can we
 keep improving it and provide better input method support in Debian.  Thanks!
 
  -- Ming Hua <minghua@rice.edu>  Sun, 15 Jan 2006 08:15:48 -0600
- -- Osamu Aoki <osamu@debian.org>  Sat, 20 May 2006 02:45:20 +0900
+ -- Osamu Aoki <osamu@debian.org>  Wed, 30 Jun 2010 22:46:13 +0900
 
 vim:textwidth=78:
