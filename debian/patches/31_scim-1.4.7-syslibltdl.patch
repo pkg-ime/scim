@@ -1,0 +1,56 @@
+Source: FC14
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -33,7 +33,7 @@
+ 			  -DSCIM_MODULE_PATH=\"@SCIM_MODULE_PATH@\"
+ 
+ 
+-noinst_HEADERS		= ltdl.h \
++noinst_HEADERS		= \
+ 			  scim_private.h \
+ 			  scim_compose_key_data.h \
+ 			  scim_keyboard_layout_data.h \
+@@ -84,11 +84,6 @@
+ 			  scim_utility.h
+ 
+ 
+-noinst_LTLIBRARIES	= libltdlc.la
+-
+-libltdlc_la_SOURCES	= ltdl.cpp
+-libltdlc_la_LIBADD	= $(LIBADD_DL)
+-
+ if SCIM_LD_VERSION_SCRIPT
+ LD_VERSION_SCRIPT_OPTION="-Wl,--version-script=$(srcdir)/libscim.version-script"
+ endif
+@@ -136,7 +131,7 @@
+ 			  @LTLIBINTL@ \
+ 			  -lstdc++
+ 
+-libscim@SCIM_EPOCH@_la_LIBADD	= libltdlc.la
++libscim@SCIM_EPOCH@_la_LIBADD	= -lltdl
+ 
+ 
+ bin_PROGRAMS		= scim scim-config-agent
+--- a/src/scim_module.cpp
++++ b/src/scim_module.cpp
+@@ -27,7 +27,9 @@
+ #define Uses_STL_ALGORITHM
+ #include "scim_private.h"
+ #include "scim.h"
+-#include "ltdl.h"
++extern "C" {
++  #include <ltdl.h>
++}
+ #include <dirent.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+--- a/configure.ac
++++ b/configure.ac
+@@ -71,7 +71,6 @@
+ # Init libtool
+ AC_LIBTOOL_DLOPEN
+ AC_PROG_LIBTOOL
+-AC_LIB_LTDL
+ AC_SUBST(LIBTOOL_DEPS)
+ 
+ # libtool option to control which symbols are exported

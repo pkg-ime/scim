@@ -39,7 +39,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
  #endif
  
  static gboolean           _input_window_draging        = FALSE;
-@@ -647,9 +654,9 @@
+@@ -648,9 +655,9 @@
  
  #if ENABLE_TRAY_ICON
      if (_tray_icon) {
@@ -52,7 +52,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
      }
      _tray_icon = 0;
  #endif
-@@ -1312,9 +1319,9 @@
+@@ -1305,9 +1312,9 @@
          }
  
  #if ENABLE_TRAY_ICON
@@ -65,7 +65,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
  #endif
  
          if (_help_dialog) {
-@@ -1337,65 +1344,75 @@
+@@ -1330,65 +1337,75 @@
  #endif
  
  #if ENABLE_TRAY_ICON
@@ -191,7 +191,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
  
      return FALSE;
  }
-@@ -1686,6 +1703,19 @@
+@@ -1679,6 +1696,19 @@
  }
  
  static void
@@ -211,7 +211,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
  ui_factory_menu_activate_cb (GtkMenuItem *item,
                               gpointer     user_data)
  {
-@@ -2243,19 +2273,19 @@
+@@ -2236,19 +2266,19 @@
  }
  
  #if ENABLE_TRAY_ICON
@@ -244,7 +244,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=447848
  #endif
  
  static void
-@@ -2685,18 +2715,21 @@
+@@ -2681,18 +2711,21 @@
      }
  
  #if ENABLE_TRAY_ICON

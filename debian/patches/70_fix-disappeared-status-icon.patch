@@ -2,7 +2,7 @@ Author: Mingxi Wu <fengshenx@gmail.com>
 Description: https://bugs.launchpad.net/bugs/475800
 --- a/extras/panel/scim_panel_gtk.cpp
 +++ b/extras/panel/scim_panel_gtk.cpp
-@@ -1079,11 +1079,13 @@
+@@ -1074,11 +1074,13 @@
  #ifdef GDK_WINDOWING_X11
      // Add an event filter function to observe X root window's properties.
      GdkWindow *root_window = gdk_get_default_root_window ();
@@ -17,7 +17,7 @@ Description: https://bugs.launchpad.net/bugs/475800
      gdk_window_add_filter (root_window, ui_event_filter, NULL);
  #endif
  
-@@ -1330,9 +1332,11 @@
+@@ -1325,9 +1327,11 @@
  
  #ifdef GDK_WINDOWING_X11
          GdkWindow *root_window = gdk_get_default_root_window ();

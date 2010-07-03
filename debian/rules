@@ -5,6 +5,10 @@ export DH_OPTIONS=-v
 %:
 	dh --with autotools-dev $@
 
+override_dh_auto_configure:
+	./bootstrap
+	dh_auto_configure
+
 override_dh_auto_clean:
 	# http://bugs.debian.org/427520
 	rm -f docs/manual/zh_CN/user-manual.*
