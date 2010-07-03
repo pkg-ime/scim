@@ -1,8 +1,8 @@
 etc/scim/config
 etc/scim/global
 
-etc/X11/xinit/xinput.d/scim
-etc/X11/xinit/xinput.d/scim-immodule
+debian/im-switch/scim etc/X11/xinit/xinput.d
+debian/im-switch/scim-immodule etc/X11/xinit/xinput.d
 
 usr/bin/scim
 usr/bin/scim-config-agent
@@ -28,4 +28,4 @@ usr/share/locale/*/LC_MESSAGES/scim.mo
 usr/share/pixmaps/scim-setup.png
 usr/share/scim/icons/*.png
 
-usr/share/bug/scim/script
+debian/bug/script usr/share/bug/scim
