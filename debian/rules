@@ -3,11 +3,15 @@ export DH_VERBOSE=1
 export DH_OPTIONS=-v
 
 %:
-	dh --with autotools-dev $@
+	dh --with autotools-dev --with autoreconf $@
 
-override_dh_auto_configure:
-	./bootstrap
-	dh_auto_configure
+# If --with autoreconf is not available, use following while
+# ebian/control: Build-Depends: entry "dh-autoreconf" replaced
+# by "perl, debhelper, autoconf, automake | automaken, libtool".
+#
+#override_dh_auto_configure:
+#	./bootstrap
+#	dh_auto_configure
 
 override_dh_auto_clean:
 	# http://bugs.debian.org/427520
