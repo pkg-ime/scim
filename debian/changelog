@@ -1,3 +1,35 @@
+scim (1.4.9-3) unstable; urgency=low
+
+  [ Osamu Aoki ]
+  * update debian/control pointing to git repo
+
+  [ Rolf Leggewie ]
+  * debian/control: take over maintainership of scim from Ming-Hua
+  * debian/control: add DMUA field
+  * debian/patches/70_fix-disappeared-status-icon.dpatch: fix missing
+    taskbar icon (LP: #475800)
+  * debian/control: update to 3.8.4 standard
+  * debian/README.source: document commands to get patched source
+  * debian/source: make explicit that we are still using DebSrc1.0
+    format
+  * add help2man-generated man pages for scim-setup and scim-config-
+    agent
+
+  [ Osamu Aoki ]
+  * fix broken manpages
+  * conversion to 3.0 (quilt) format
+  * renumbered patches to match FC14
+  * used GTK_IM_MODULE=scim as default. Closes: #587524
+  * Supported scim-bridge
+  * added package dependency to im-config etc.
+  * debian/rules: converted to new dh syntax
+  * imported patches including one for rpath from the FC14 package.
+  * replaced config by the FC14 scim-system-config
+  * build with autoreconf
+  * fixed doc-base for scim-dev-doc. Closes: #295802
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 03 Jul 2010 23:10:21 +0900
+
 scim (1.4.9-2) unstable; urgency=low
 
   The "contributions from Ubuntu" release
