@@ -1,6 +1,7 @@
+Description: turn off key snooper in im-scim to avoid crashes when clicking during scim gtkimm preedit 
+Status: committed upstream in r265, can be dropped past 1.4.9
 Author: Shawn Huang <phuang@redhat.com>
 Source: FC14, Fri Nov 24 2006, 1.4.5-4
-Description: turn off key snooper in im-scim to avoid crashes when clicking during scim gtkimm preedit 
 --- a/extras/gtk2_immodule/gtkimcontextscim.cpp
 +++ b/extras/gtk2_immodule/gtkimcontextscim.cpp
 @@ -308,7 +308,7 @@

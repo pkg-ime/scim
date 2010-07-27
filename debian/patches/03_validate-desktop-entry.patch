@@ -1,4 +1,6 @@
 Author: Ming Hua <minghua-guest@users.alioth.debian.org>
+Status: all relevant changes applied in upstream svn since r253
+patch can be dropped past 1.4.9
 Description: Update to conform Desktop Entry Specification version 1.0.  The "Icon"
 key uses a hardcoded path because scim-setup.desktop is generated
 without any variable substitution.  Maybe it can use a name without

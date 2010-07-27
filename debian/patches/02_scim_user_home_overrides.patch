@@ -1,6 +1,7 @@
-Author: Colin Watson <cjwatson@ubuntu.com>
 Description: Allow home directory and user name detection to be overridden using
 SCIM_HOME and SCIM_USER environment variables respectively.
+Status: committed to upstream svn in r252, can be dropped past 1.4.9
+Author: Colin Watson <cjwatson@ubuntu.com>
 --- a/src/scim_utility.cpp
 +++ b/src/scim_utility.cpp
 @@ -547,6 +547,11 @@

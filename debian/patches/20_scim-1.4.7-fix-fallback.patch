@@ -1,6 +1,7 @@
-Athor: Peng Huang <phuang@redhat.com>
-Source: FC14, Mon Mar 3 2008, 1.4.7-13,fc9
 Description Fix fallback problem in gtkim module https://bugzilla.redhat.com/show_bug.cgi?id=235147
+Status: committed upstream in r268, can be dropped past 1.4.9
+Author: Peng Huang <phuang@redhat.com>
+Source: FC14, Mon Mar 3 2008, 1.4.7-13,fc9
 diff -up scim-1.4.7/extras/gtk2_immodule/gtkimcontextscim.cpp.fix-fallback scim-1.4.7/extras/gtk2_immodule/gtkimcontextscim.cpp
 --- scim-1.4.7/extras/gtk2_immodule/gtkimcontextscim.cpp.fix-fallback	2008-03-03 16:02:44.000000000 +0800
 +++ scim-1.4.7/extras/gtk2_immodule/gtkimcontextscim.cpp	2008-03-03 16:29:49.000000000 +0800

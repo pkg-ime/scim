@@ -1,6 +1,7 @@
-Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
 Description: Ignore caps lock to enable switcing input methods with it on
-https://bugzilla.redhat.com/show_bug.cgi?id=431222
+Status: committed upstream in r254, can be dropped past 1.4.9
+Fixes: https://bugzilla.redhat.com/show_bug.cgi?id=431222
+Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
 --- a/utils/scimkeyselection.cpp
 +++ b/utils/scimkeyselection.cpp
 @@ -267,6 +267,11 @@

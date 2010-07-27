@@ -1,6 +1,7 @@
+Description: remove the frame around the help text in the help dialog
+Status: committed upstream in r270, can be dropped past 1.4.9
 Author: Jens Petersen <petersen@redhat.com>
 Source: FC14, Mon Mar 10 2008, 1.4.7-17.fc9
-Description: remove the frame around the help text in the help dialog 
 diff -u scim-1.4.7/extras/panel/scim_panel_gtk.cpp\~ scim-1.4.7/extras/panel/scim_panel_gtk.cpp
 --- scim-1.4.7/extras/panel/scim_panel_gtk.cpp~	2007-10-12 11:17:29.000000000 +1000
 +++ scim-1.4.7/extras/panel/scim_panel_gtk.cpp	2008-03-10 17:03:06.000000000 +1000

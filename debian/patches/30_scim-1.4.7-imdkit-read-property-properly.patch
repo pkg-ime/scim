@@ -1,4 +1,5 @@
 Author: Ikuya Awashiro <ikuya@fruitsbasket.info>
+Status: applied upstream in r255, can be dropped past 1.4.9
 Description: Correctly read XIM_FORWARD_EVENT, triggered when rapidly typing keys
 https://bugzilla.redhat.com/show_bug.cgi?id=466657
 --- a/modules/FrontEnd/IMdkit/Xi18n.h

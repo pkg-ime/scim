@@ -1,4 +1,6 @@
-Source: FC14 
+Source: FC14
+Status: committed the patch to src/scim_module.cpp in r 278.
+rest of the patch looks bogus.
 diff -up scim-1.4.8/src/ltdl.cpp.fix-dlopen scim-1.4.8/src/ltdl.cpp
 --- scim-1.4.8/src/ltdl.cpp.fix-dlopen	2008-11-02 14:42:40.000000000 +0800
 +++ scim-1.4.8/src/ltdl.cpp	2009-03-25 15:12:45.733010053 +0800

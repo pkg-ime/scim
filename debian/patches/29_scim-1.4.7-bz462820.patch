@@ -1,4 +1,5 @@
 Source: FC14
+Status: committed upstream in r273, can be dropped past 1.4.9
 --- a/src/scim_utility.cpp
 +++ b/src/scim_utility.cpp
 @@ -776,6 +776,8 @@

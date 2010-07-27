@@ -1,6 +1,7 @@
+Description: remove rpaths to libdir
+Status: committed upstream in r266, can be dropped past 1.4.9
 Author: Jens Petersen <petersen@redhat.com>
 Source: FC14, Fri Mar  9 2007, 1.4.5-9
-Description: remove rpaths to libdir
  This patch requires to run bootstrap
 diff -up scim-1.4.7/src/Makefile.am.17-rpath~ scim-1.4.7/src/Makefile.am
 --- scim-1.4.7/src/Makefile.am.17-rpath~	2007-06-26 22:31:38.000000000 +0800

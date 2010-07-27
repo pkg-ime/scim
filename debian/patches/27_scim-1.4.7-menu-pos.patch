@@ -1,6 +1,7 @@
+Description: menu-pos.patch to fix https://bugzilla.redhat.com/show_bug.cgi?id=444711
+Status: committed upstream in r272, can be dropped past 1.4.9
 Author: Peng Huang <phuang@redhat.com>
 Source: FC14, Thu Jul 17 2008, 1.4.7-27.fc10
-Description: menu-pos.patch to fix https://bugzilla.redhat.com/show_bug.cgi?id=444711
 diff -up scim-1.4.7/extras/panel/scim_panel_gtk.cpp.menu-pos scim-1.4.7/extras/panel/scim_panel_gtk.cpp
 --- scim-1.4.7/extras/panel/scim_panel_gtk.cpp.menu-pos	2008-07-17 16:02:08.000000000 +0800
 +++ scim-1.4.7/extras/panel/scim_panel_gtk.cpp	2008-07-17 16:50:32.000000000 +0800

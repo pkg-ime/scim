@@ -1,6 +1,7 @@
+Description: Fix various icon size problems
+Status: committed upstream in r263, can be dropped past 1.4.9
 Author: Jens Petersen <petersen@redhat.com>
 Source: FC14, patch from Mon Jul 17 2006, 1.4.4-24
-Description: Fix various icon size problems
 --- a/extras/panel/scim_panel_gtk.cpp
 +++ b/extras/panel/scim_panel_gtk.cpp
 @@ -111,7 +111,7 @@

@@ -1,6 +1,7 @@
+Description: timeout.patch to fix https://bugzilla.redhat.com/show_bug.cgi?id=444150
+Status: committed upstream in r274, can be dropped past 1.4.9
 Author: Peng Huang <phuang@redhat.com>
 Source: FC14, Thu Jul 17 2008, 1.4.7-27.fc10
-Description: timeout.patch to fix https://bugzilla.redhat.com/show_bug.cgi?id=444150
 * Thu Jul 17 2008 Peng Huang <phuang@redhat.com> - 1.4.7-27.fc10
 - add patch scim-1.4.7-timeout.patch to fix bug 444150.
 - add patch scim-1.4.7-trayicon.patch to fix bug 447848.

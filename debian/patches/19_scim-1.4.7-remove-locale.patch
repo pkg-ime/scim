@@ -1,6 +1,7 @@
+Description: remove support locales in gtk im-scim module to avoid gtk automatically picking up scim im module.
+Status: committed upstream in r267, can be dropped past 1.4.9
 Author: Peng Huang <phuang@redhat.com>
 Source: FC14, Thu Feb 14 2008 Peng Huang, 1.4.7-9.fc9
-Description: remove support locales in gtk im-scim module to avoid gtk automatically picking up scim im module.
 diff -up scim-1.4.7/extras/gtk2_immodule/imscim.cpp.remove-locale scim-1.4.7/extras/gtk2_immodule/imscim.cpp
 --- scim-1.4.7/extras/gtk2_immodule/imscim.cpp.remove-locale	2008-02-14 18:19:12.000000000 +0800
 +++ scim-1.4.7/extras/gtk2_immodule/imscim.cpp	2008-02-14 18:19:21.000000000 +0800

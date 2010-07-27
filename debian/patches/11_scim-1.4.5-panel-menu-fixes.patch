@@ -1,6 +1,7 @@
+Description: fix latest factory menu labelling
+Status: committed upstream in r264, can be dropped past 1.4.9
 Author: Jens Petersen <petersen@redhat.com>
 Source: FC14, Tue Nov  7 2006, 1.4.5-1
-Description: fix latest factory menu labelling
 --- a/extras/panel/scim_panel_gtk.cpp
 +++ b/extras/panel/scim_panel_gtk.cpp
 @@ -742,7 +742,6 @@

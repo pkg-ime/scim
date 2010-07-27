@@ -1,5 +1,6 @@
 Author: Mingxi Wu <fengshenx@gmail.com>
-Description: https://bugs.launchpad.net/bugs/475800
+Status: commited upstream in r277, can be dropped past 1.4.9
+Fixes:: https://bugs.launchpad.net/bugs/475800 and others
 --- a/extras/panel/scim_panel_gtk.cpp
 +++ b/extras/panel/scim_panel_gtk.cpp
 @@ -1074,11 +1074,13 @@
