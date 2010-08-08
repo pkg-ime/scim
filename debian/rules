@@ -20,6 +20,11 @@ override_dh_auto_clean:
 
 override_dh_auto_install:
 	dh_auto_install
+	# empty the dependency_libs field in .la files (bug 591628)
+	for FILE in debian/tmp/usr/lib/*.la; \
+	do \
+		sed -i "/dependency_libs/ s/'.*'/''/" $$FILE; \
+	done
 	# move libraries based on gtk_binary_version
 	mkdir -p debian/tmp/usr/lib/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
 	mv debian/tmp/usr/lib/gtk-2.0/immodules \
