@@ -1,3 +1,10 @@
+scim (1.4.9-4) unstable; urgency=medium
+
+  * debian/patches: push back patches upstream, document status
+  * debian/rules: empty dependency_libs field in .la files (Closes: 591628)
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Sun, 08 Aug 2010 21:04:51 +0200
+
 scim (1.4.9-3) unstable; urgency=low
 
   [ Osamu Aoki ]
