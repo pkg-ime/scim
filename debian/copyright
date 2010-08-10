@@ -1,13 +1,11 @@
 This package was debianized by Anthony Fok <foka@debian.org> on Sat,
-05 Apr 2003 23:38:30 +0800.  The current package maintainers are Ming Hua
-<minghua-guest@users.alioth.debian.org> and Osamu Aoki <osamu@debian.org>.
+05 Apr 2003 23:38:30 +0800.  The current package maintainers are Rolf
+Leggewie <foss@rolf.leggewie.biz> and Osamu Aoki <osamu@debian.org>.
 
 The upstream release was downloaded from:
-    http://prdownloads.sourceforge.net/scim/scim-1.4.7.tar.gz
-on 28 Jun 2007.
+    http://prdownloads.sourceforge.net/scim/scim-1.4.9.tar.gz
 
 Upstream Home Page:  http://www.scim-im.org/
-
 Upstream Authors:  James Su <suzhe@tsinghua.org.cn>
                    LIU Cougar <liucougar@gmail.com>
                    and many developers and translators
@@ -185,6 +183,7 @@ Debian packaging and license:
         Copyright (C) 2003,2004 Anthony Fok
         Copyright (C) 2004-2008 Ming Hua
         Copyright (C) 2004-2007 Osamu Aoki
+        Copyright (C) 2009-2010 Rolf Leggewie
 
     The packaging is license under the same license as scim, i.e., GNU
     Lesser General Public License, version 2 or later.
