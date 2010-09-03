@@ -16,7 +16,7 @@ XIM_PROGRAM_SETS_ITSELF_AS_DAEMON=yes
 gtkimm_exists () {
 	# check if any immodules installed
 	for dir in /usr/lib*/gtk-2.0/2.*/immodules; do
-		if [ -x ${dir}/im-$1.so ]; then
+		if [ -r ${dir}/im-$1.so ]; then
 			return 0
 		fi
 	done
@@ -34,7 +34,7 @@ fi
 qtimm_exists () {
 	# check if any immodule installed
 	for dir in /usr/lib*/qt*/plugins/inputmethods; do
-		if [ -x ${dir}/$1.so ]; then
+		if [ -r ${dir}/$1.so ]; then
 			 return 0
 		fi
 	done
