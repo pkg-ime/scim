@@ -1,0 +1,19 @@
+Description: Fix translation for "Hindi". (LP: #310123)
+ .
+ Hindi is a language.  Hindou refers to a group of people.
+Author: Rolf Leggewie <foss@rolf.leggewie.biz>
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/scim/+bug/310123
+
+diff --git a/po/fr.po b/po/fr.po
+index ae6cdee..db3b8fe 100644
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -176,7 +176,7 @@ msgstr "Hébreu"
+ 
+ #: ../src/scim_utility.cpp:732
+ msgid "Hindi"
+-msgstr "Hindou"
++msgstr "Hindi"
+ 
+ #: ../src/scim_utility.cpp:733 ../src/scim_keyboard_layout_data.h:4594
+ msgid "Croatian"

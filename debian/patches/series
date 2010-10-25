@@ -20,3 +20,4 @@
 31_scim-1.4.7-syslibltdl.patch
 32_scim-1.4.8-fix-dlopen.patch
 70_fix-disappeared-status-icon.patch
+72_fix-fr-translation-hindi.patch
