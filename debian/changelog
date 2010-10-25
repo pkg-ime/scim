@@ -1,3 +1,12 @@
+scim (1.4.9-6) unstable; urgency=low
+
+  * debian/im-switch/scim-immodule: test for readability instead of
+    executability of immodules files.  Closes: #595150.
+  * debian/patches/72_fix-fr-translation-hindi.patch
+    Fix translation for "Hindi". (LP: #310123)
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Tue, 26 Oct 2010 03:43:00 +0900
+
 scim (1.4.9-5) unstable; urgency=low
 
   * debian/copyright: add my copyright
