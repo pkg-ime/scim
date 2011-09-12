@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=1
 export DH_OPTIONS=-v
+export DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 %:
 	dh --with autotools-dev --with autoreconf $@
@@ -26,16 +27,16 @@ override_dh_auto_install:
 		sed -i "/dependency_libs/ s/'.*'/''/" $$FILE; \
 	done
 	# move libraries based on gtk_binary_version
-	mkdir -p debian/tmp/usr/lib/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
-	mv debian/tmp/usr/lib/gtk-2.0/immodules \
-		debian/tmp/usr/lib/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
+	mkdir -p debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
+	mv debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gtk-2.0/immodules \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/gtk-2.0/`pkg-config --variable=gtk_binary_version gtk+-2.0`/
 
 override_dh_installdocs:
 	dh_installdocs -X Makefile
 
 override_dh_install:
 	dh_install
-	LD_LIBRARY_PATH=debian/libscim8c2a/usr/lib:$(LD_LIBRARY_PATH) \
+	LD_LIBRARY_PATH=debian/libscim8c2a/usr/lib/$(DEB_HOST_MULTIARCH):$(LD_LIBRARY_PATH) \
 		dh_gtkmodules -p scim-gtk2-immodule
 
 override_dh_makeshlibs:
