@@ -1,3 +1,10 @@
+scim (1.4.9-7) unstable; urgency=medium
+
+  * fix FTBFS from introduction of multi-arch. Closes: #640629, LP: #832945.
+    full multi-arch support still needs further work.
+
+ -- Rolf Leggewie <foss@rolf.leggewie.biz>  Tue, 13 Sep 2011 23:53:16 +0900
+
 scim (1.4.9-6) unstable; urgency=low
 
   * debian/im-switch/scim-immodule: test for readability instead of
