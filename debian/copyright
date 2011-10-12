@@ -183,7 +183,7 @@ Debian packaging and license:
         Copyright (C) 2003,2004 Anthony Fok
         Copyright (C) 2004-2008 Ming Hua
         Copyright (C) 2004-2007 Osamu Aoki
-        Copyright (C) 2009-2010 Rolf Leggewie
+        Copyright (C) 2009-2012 Rolf Leggewie
 
     The packaging is license under the same license as scim, i.e., GNU
     Lesser General Public License, version 2 or later.
